@@ -22,6 +22,10 @@ PlasmaExtras.Menu {
     signal savePdfRequested()
     signal saveMhtmlRequested()
 
+    function isHttpLink(value) {
+        return /^(https?):\/\/[^\s]+$/i.test(String(value || ""));
+    }
+
     visualParent: webviewItem
 
     PlasmaExtras.MenuItem {
@@ -65,7 +69,7 @@ PlasmaExtras.Menu {
     PlasmaExtras.MenuItem {
         text: i18n("Open Link in Browser")
         icon: "internet-web-browser"
-        visible: contextMenu.link !== ""
+        visible: contextMenu.isHttpLink(contextMenu.link)
         onClicked: Qt.openUrlExternally(contextMenu.link)
     }
 

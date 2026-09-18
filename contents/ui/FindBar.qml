@@ -7,11 +7,12 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtWebEngine
 
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
-import QtWebEngine
 
+// Find-in-page bar. Sized through implicitHeight so it can live in a layout.
 Rectangle {
     id: findBar
 
@@ -22,15 +23,9 @@ Rectangle {
     signal closeRequested()
 
     visible: findBarVisible
-    height: visible ? findBarRow.height + Kirigami.Units.smallSpacing * 2 : 0
+    implicitHeight: findBarVisible ? findBarRow.implicitHeight + Kirigami.Units.smallSpacing * 2 : 0
     color: Kirigami.Theme.backgroundColor
-    z: 5
-
-    anchors {
-        top: parent.top
-        left: parent.left
-        right: parent.right
-    }
+    Accessible.name: i18n("Find in page")
 
     RowLayout {
         id: findBarRow
@@ -49,62 +44,58 @@ Rectangle {
 
             Layout.fillWidth: true
 
-            placeholderText: i18n("Find in page...")
+            placeholderText: i18n("Find in page…")
             onTextChanged: {
-                if (text && webviewItem) {
+                if (webviewItem)
                     webviewItem.findText(text);
-                }
             }
             onAccepted: {
-                if (webviewItem) {
+                if (webviewItem)
                     webviewItem.findText(text);
-                }
             }
-            Keys.onEscapePressed: findBarVisible = false
-
-            Component.onCompleted: {
-                if (findBarVisible) {
-                    forceActiveFocus();
-                }
-            }
+            Keys.onEscapePressed: findBar.closeRequested()
         }
 
-        PlasmaComponents3.Button {
+        PlasmaComponents3.ToolButton {
             icon.name: "go-up"
+            text: i18n("Find previous")
             display: PlasmaComponents3.AbstractButton.IconOnly
+            enabled: findField.text !== ""
             onClicked: {
-                if (webviewItem) {
+                if (webviewItem)
                     webviewItem.findText(findField.text, WebEngineView.FindBackward);
-                }
             }
-            PlasmaComponents3.ToolTip.text: i18n("Find previous")
+            PlasmaComponents3.ToolTip.text: text
             PlasmaComponents3.ToolTip.visible: hovered
-            enabled: findField.text !== ""
+            PlasmaComponents3.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
 
-        PlasmaComponents3.Button {
+        PlasmaComponents3.ToolButton {
             icon.name: "go-down"
+            text: i18n("Find next")
             display: PlasmaComponents3.AbstractButton.IconOnly
-            onClicked: {
-                if (webviewItem) {
-                    webviewItem.findText(findField.text);
-                }
-            }
-            PlasmaComponents3.ToolTip.text: i18n("Find next")
-            PlasmaComponents3.ToolTip.visible: hovered
             enabled: findField.text !== ""
+            onClicked: {
+                if (webviewItem)
+                    webviewItem.findText(findField.text);
+            }
+            PlasmaComponents3.ToolTip.text: text
+            PlasmaComponents3.ToolTip.visible: hovered
+            PlasmaComponents3.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
 
-        PlasmaComponents3.Button {
+        PlasmaComponents3.ToolButton {
             icon.name: "dialog-close"
+            text: i18n("Close")
             display: PlasmaComponents3.AbstractButton.IconOnly
-            PlasmaComponents3.ToolTip.text: i18n("Close")
+            onClicked: findBar.closeRequested()
+            PlasmaComponents3.ToolTip.text: text
             PlasmaComponents3.ToolTip.visible: hovered
-            onClicked: closeRequested()
+            PlasmaComponents3.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
     }
 
-    Behavior on height {
+    Behavior on implicitHeight {
         NumberAnimation {
             duration: Kirigami.Units.shortDuration
             easing.type: Easing.InOutQuad
@@ -118,8 +109,7 @@ Rectangle {
 
     function clearSearch() {
         findField.text = "";
-        if (webviewItem) {
+        if (webviewItem)
             webviewItem.findText("");
-        }
     }
 }

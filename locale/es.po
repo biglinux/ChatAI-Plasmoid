@@ -2,351 +2,1552 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the ChatAI-Plasmoid package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ChatAI-Plasmoid\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: https://github.com/ruscher/ChatAI-Plasmoid/issues\n"
+"POT-Creation-Date: 2026-09-17 07:15-0300\n"
+"Last-Translator: ChatAI translations\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: NEEDS WORK
-msgid "Open"
-msgstr "Abrir"
-
-#: NEEDS WORK
-msgid "ChatAI"
-msgstr "ChatAI"
-
-#: NEEDS WORK
-msgid "Back"
-msgstr "Atrás"
-
-#: NEEDS WORK
-msgid "Forward"
-msgstr "Adelante"
-
-#: NEEDS WORK
-msgid "Reload"
-msgstr "Recargar"
-
-#: NEEDS WORK
-msgid "Save as PDF"
-msgstr "Guardar como PDF"
-
-#: NEEDS WORK
-msgid "Save as MHTML"
-msgstr "Guardar como MHTML"
-
-#: NEEDS WORK
-msgid "Open Link in Browser"
-msgstr "Abrir enlace en el navegador"
-
-#: NEEDS WORK
-msgid "Copy Link Address"
-msgstr "Copiar dirección del enlace"
-
-#: NEEDS WORK
-msgid "Download in progress"
-msgstr "Descargando en progreso"
-
-#: NEEDS WORK
-msgid "The file "
-msgstr "El archivo"
-
-#: NEEDS WORK
-msgid "Open file"
-msgstr "Abrir archivo"
-
-#: NEEDS WORK
-msgid "Open folder"
-msgstr "Abrir carpeta"
-
-#: NEEDS WORK
-msgid "Close"
-msgstr "Cerrar"
-
-#: NEEDS WORK
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: NEEDS WORK
-msgid "Go back to previous page"
-msgstr "Volver a la página anterior"
-
-#: NEEDS WORK
-msgid "Go forward to next page"
-msgstr "Ir a la siguiente página"
-
-#: NEEDS WORK
-msgid "Return to homepage/default chat"
-msgstr "Volver a la página de inicio/chat predeterminado"
-
-#: NEEDS WORK
-msgid "Reload current page"
-msgstr "Recargar la página actual"
-
-#: NEEDS WORK
-msgid "Select or enter chat website URL"
-msgstr "Selecciona o ingresa la URL del sitio web de chat."
-
-#: NEEDS WORK
-msgid "Header will hide automatically when not in use"
-msgstr "El encabezado se ocultará automáticamente cuando no esté en uso."
-
-#: NEEDS WORK
-msgid "Header will stay visible"
-msgstr "El encabezado permanecerá visible."
-
-#: NEEDS WORK
-msgid "Manage downloads and download folder"
-msgstr "Gestionar descargas y carpeta de descargas"
-
-#: NEEDS WORK
-msgid "Open Download Folder"
-msgstr "Abrir carpeta de descargas"
-
-#: NEEDS WORK
-msgid "Choose Download Folder"
-msgstr "Elegir carpeta de descargas"
-
-#: NEEDS WORK
-msgid "Widget will stay open when clicking outside"
-msgstr "El widget permanecerá abierto al hacer clic fuera."
-
-#: NEEDS WORK
-msgid "Widget will close when clicking outside"
-msgstr "El widget se cerrará al hacer clic fuera de él."
-
-#: NEEDS WORK
-msgid "Close the webview and release memory"
-msgstr "Cierra la vista web y libera memoria."
-
-#: NEEDS WORK
-msgid "Custom URL..."
-msgstr "URL personalizado..."
-
-#: NEEDS WORK
-msgid "Icon:"
-msgstr "Ícono:"
-
-#: NEEDS WORK
-msgid "Use website favicon"
-msgstr "Usar favicon del sitio web"
-
-#: NEEDS WORK
-msgid "Default adaptive icon"
-msgstr "Icono adaptativo predeterminado"
-
-#: NEEDS WORK
-msgid "Default dark icon"
-msgstr "Icono oscuro predeterminado"
-
-#: NEEDS WORK
-msgid "Default light icon"
-msgstr "Icono de luz predeterminado"
-
-#: NEEDS WORK
-msgid "Outlined icon"
-msgstr "Icono contorneado"
-
-#: NEEDS WORK
-msgid "Filled icon"
-msgstr "Ícono relleno"
-
-#: NEEDS WORK
-msgid "Colorful icon"
-msgstr "Icono colorido"
-
-#: NEEDS WORK
-msgid "Header Options"
-msgstr "Opciones de encabezado"
-
-#: NEEDS WORK
-msgid "Hide header"
-msgstr "Ocultar encabezado"
-
-#: NEEDS WORK
-msgid "Auto-hide header (show on mouse hover)"
-msgstr "Ocultar automáticamente el encabezado (mostrar al pasar el ratón)"
-
-#: NEEDS WORK
-msgid "Hide Keep Open button"
-msgstr "Ocultar botón Mantener Abierto"
-
-#: NEEDS WORK
-msgid "Hide Custom URL button"
-msgstr "Ocultar botón de URL personalizada"
-
-#: NEEDS WORK
-msgid "Hide Auto-Hide button"
-msgstr "Ocultar botón de autoocultación"
-
-#: NEEDS WORK
-msgid "Hide Close button"
-msgstr "Ocultar botón Cerrar"
-
-#: NEEDS WORK
-msgid "Hide Home button"
-msgstr "Ocultar botón de inicio"
-
-#: NEEDS WORK
-msgid "Hide Download button"
-msgstr "Ocultar botón de descarga"
-
-#: NEEDS WORK
-msgid "Hide navigation buttons"
-msgstr "Ocultar botones de navegación"
-
-#: NEEDS WORK
-msgid "Hide refresh button"
-msgstr "Ocultar botón de refresco"
-
-#: NEEDS WORK
-msgid "You can still use the Go back to... and Keep open actions by right-clicking the widget icon."
-msgstr ""
-"Todavía puedes usar las acciones Volver a... y Mantener abierto haciendo clic derecho en el ícono "
-"del widget."
-
-#: NEEDS WORK
-msgid "Predefined Sites"
-msgstr "Sitios predefinidos"
-
-#: NEEDS WORK
-msgid ""
-"Claude.ai only allows account creation or Google login in well-known browsers. To use it in this "
-"Plasmoid, you need to use login credentials previously created in a traditional browser."
-msgstr ""
-"Claude.ai solo permite la creación de cuentas o el inicio de sesión con Google en navegadores bien "
-"conocidos. Para usarlo en este Plasmoid, necesitas utilizar las credenciales de inicio de sesión "
-"creadas previamente en un navegador tradicional."
-
-#: NEEDS WORK
-msgid "Custom Sites"
-msgstr "Sitios Personalizados"
-
-#: NEEDS WORK
-msgid "Site Name"
-msgstr "Nombre del sitio"
-
-#: NEEDS WORK
-msgid "Site URL"
-msgstr "URL del sitio"
-
-#: NEEDS WORK
-msgid "No custom sites added yet"
-msgstr "No se han añadido sitios personalizados aún."
-
-#: NEEDS WORK
-msgid "Permissions"
-msgstr "Permisos"
-
-#: NEEDS WORK
-msgid "Load website on Plasma startup"
-msgstr "Cargar sitio web al iniciar Plasma"
-
-#: NEEDS WORK
-msgid "Allow notifications"
-msgstr "Permitir notificaciones"
-
-#: NEEDS WORK
-msgid "If notifications are not working create the file:"
-msgstr "Si las notificaciones no funcionan, crea el archivo:"
-
-#: NEEDS WORK
-msgid "containing the following text:"
-msgstr "contiene el siguiente texto:"
-
-#: NEEDS WORK
-msgid "Allow geolocation access"
-msgstr "Permitir acceso a la geolocalización"
-
-#: NEEDS WORK
-msgid "Allow using microphone"
-msgstr "Permitir el uso del micrófono"
-
-#: NEEDS WORK
-msgid "Allow using webcam"
-msgstr "Permitir el uso de la cámara web"
-
-#: NEEDS WORK
-msgid "Allow screen sharing"
-msgstr "Permitir compartir pantalla"
-
-#: NEEDS WORK
-msgid "Web Features"
-msgstr "Características de la web"
-
-#: NEEDS WORK
-msgid "Enable spatial navigation"
-msgstr "Habilitar navegación espacial"
-
-#: NEEDS WORK
-msgid "Allows navigation between focusable elements using arrow keys"
-msgstr "Permite la navegación entre elementos enfocados utilizando las teclas de flecha."
-
-#: NEEDS WORK
-msgid "Allow JavaScript to paste from clipboard"
-msgstr "Permitir que JavaScript pegue del portapapeles"
-
-#: NEEDS WORK
-msgid "Allow JavaScript to open new windows"
-msgstr "Permitir que JavaScript abra nuevas ventanas"
-
-#: NEEDS WORK
-msgid "Allow JavaScript to access clipboard"
-msgstr "Permitir que JavaScript acceda al portapapeles"
-
-#: NEEDS WORK
-msgid "Allow unknown URL schemes"
-msgstr "Permitir esquemas de URL desconocidos"
-
-#: NEEDS WORK
-msgid "Require user gesture for media playback"
-msgstr "Requiere un gesto del usuario para la reproducción de medios."
-
-#: NEEDS WORK
-msgid "Enable focus on navigation"
-msgstr "Habilitar enfoque en la navegación"
-
-#: NEEDS WORK
-msgid "Notification Settings"
-msgstr "Configuración de notificaciones"
-
-#: NEEDS WORK
-msgid "Download Folder"
-msgstr "Carpeta de Descargas"
-
-#: NEEDS WORK
-msgid "Cache Management"
-msgstr "Gestión de caché"
-
-#: NEEDS WORK
-msgid "Open Cache Folder"
-msgstr "Abrir carpeta de caché"
-
-#: NEEDS WORK
-msgid "Open Profile Folder"
-msgstr "Abrir carpeta de perfil"
-
-#: NEEDS WORK
-msgid ""
-"Cache location: %1\n"
-"Profile location: %2"
-msgstr ""
-"Ubicación de caché: %1  \n"
-"Ubicación de perfil: %2"
-
-#: NEEDS WORK
+#: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:151
+#: contents/ui/SettingsPanel.qml:34
 msgid "General"
 msgstr "General"
 
-#: NEEDS WORK
+#: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:152
+#: contents/ui/SettingsPanel.qml:35
+msgid "Sites"
+msgstr "Sitios"
+
+#: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:153
+#: contents/ui/SettingsPanel.qml:36
+msgid "Permissions"
+msgstr "Permisos"
+
+#: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:154
+#: contents/ui/SettingsPanel.qml:37
+msgid "Web Features"
+msgstr "Funciones web"
+
+#: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:113
+#: contents/ui/ChatAIMenu.qml:155 contents/ui/DownloadPopup.qml:97
+#: contents/ui/SettingsPanel.qml:38
+msgid "Downloads"
+msgstr "Descargas"
+
+#: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:156
+#: contents/ui/SettingsPanel.qml:39
+msgid "Cache and Data"
+msgstr "Caché y datos"
+
+#: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:157
+#: contents/ui/SettingsPanel.qml:40
 msgid "Appearance"
 msgstr "Apariencia"
+
+#: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:158
+#: contents/ui/SettingsPanel.qml:41
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: contents/config/config.qml:56
+msgid "Help"
+msgstr "Ayuda"
+
+#: contents/ui/AiSelector.qml:30
+msgid "Custom address…"
+msgstr "Dirección personalizada…"
+
+#: contents/ui/AiSelector.qml:58
+msgid "AI assistant"
+msgstr "Asistente de IA"
+
+#: contents/ui/AiSelector.qml:64
+msgid "Choose the AI assistant"
+msgstr "Elige el asistente de IA"
+
+#: contents/ui/AuthPopup.qml:61
+msgctxt "popup window title with host"
+msgid "Sign in — %1"
+msgstr "Iniciar sesión — %1"
+
+#: contents/ui/AuthPopup.qml:61
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: contents/ui/AuthPopup.qml:76
+msgid "Close sign-in window"
+msgstr "Cerrar la ventana de inicio de sesión"
+
+#: contents/ui/ChatAIMenu.qml:45 contents/ui/WebView.qml:1132
+msgid "Open in Browser"
+msgstr "Abrir en el navegador"
+
+#: contents/ui/ChatAIMenu.qml:52
+msgid "Copy Address"
+msgstr "Copiar dirección"
+
+#: contents/ui/ChatAIMenu.qml:59
+msgid "Reload Ignoring Cache"
+msgstr "Recargar ignorando la caché"
+
+#: contents/ui/ChatAIMenu.qml:69
+#, javascript-format
+msgid "Zoom (%1%)"
+msgstr "Zoom (%1%)"
+
+#: contents/ui/ChatAIMenu.qml:74
+msgid "Zoom In"
+msgstr "Acercar"
+
+#: contents/ui/ChatAIMenu.qml:79
+msgid "Zoom Out"
+msgstr "Alejar"
+
+#: contents/ui/ChatAIMenu.qml:84
+msgid "Reset Zoom (100%)"
+msgstr "Restablecer zoom (100%)"
+
+#: contents/ui/ChatAIMenu.qml:92
+msgid "Exit Full Screen"
+msgstr "Salir de pantalla completa"
+
+#: contents/ui/ChatAIMenu.qml:92
+msgid "Full Screen"
+msgstr "Pantalla completa"
+
+#: contents/ui/ChatAIMenu.qml:102
+#: contents/ui/settings/AppearanceSettings.qml:127
+msgid "Hide Toolbar Automatically"
+msgstr "Ocultar la barra automáticamente"
+
+#: contents/ui/ChatAIMenu.qml:113
+msgid "Downloads (%1)"
+msgstr "Descargas (%1)"
+
+#: contents/ui/ChatAIMenu.qml:127
+#: contents/ui/settings/AppearanceSettings.qml:49
+msgid "Home"
+msgstr "Inicio"
+
+#: contents/ui/ChatAIMenu.qml:136
+msgid "Find in Page"
+msgstr "Buscar en la página"
+
+#: contents/ui/ChatAIMenu.qml:146
+msgid "ChatAI Settings"
+msgstr "Ajustes de ChatAI"
+
+#: contents/ui/ChatAIMenu.qml:171
+msgid "Open Configuration Window…"
+msgstr "Abrir la ventana de configuración…"
+
+#: contents/ui/ChatAIMenu.qml:179
+msgid "Keyboard Shortcuts"
+msgstr "Atajos de teclado"
+
+#: contents/ui/ChatAIMenu.qml:187
+msgid "Close Developer Tools"
+msgstr "Cerrar las herramientas de desarrollo"
+
+#: contents/ui/ChatAIMenu.qml:187
+msgid "Developer Tools"
+msgstr "Herramientas de desarrollo"
+
+#: contents/ui/ChatAIMenu.qml:199
+msgid "About ChatAI"
+msgstr "Acerca de ChatAI"
+
+#: contents/ui/CompactRepresentation.qml:28 contents/ui/WebView.qml:670
+#: contents/ui/main.qml:46 contents/ui/settings/AboutSettings.qml:65
+msgid "ChatAI"
+msgstr "ChatAI"
+
+#: contents/ui/CompactRepresentation.qml:43
+msgid "Open ChatAI — %1"
+msgstr "Abrir ChatAI — %1"
+
+#: contents/ui/ContextMenu.qml:32 contents/ui/Header.qml:110
+msgid "Back"
+msgstr "Atrás"
+
+#: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:118
+msgid "Forward"
+msgstr "Adelante"
+
+#: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:128
+#: contents/ui/settings/AppearanceSettings.qml:48
+msgid "Reload"
+msgstr "Recargar"
+
+#: contents/ui/ContextMenu.qml:56
+msgid "Save as PDF"
+msgstr "Guardar como PDF"
+
+#: contents/ui/ContextMenu.qml:63
+msgid "Save as MHTML"
+msgstr "Guardar como MHTML"
+
+#: contents/ui/ContextMenu.qml:70
+msgid "Open Link in Browser"
+msgstr "Abrir enlace en el navegador"
+
+#: contents/ui/ContextMenu.qml:77
+msgid "Copy Link Address"
+msgstr "Copiar dirección del enlace"
+
+#: contents/ui/DevToolsWindow.qml:22
+msgid "ChatAI — Developer tools"
+msgstr "ChatAI — Herramientas de desarrollo"
+
+#: contents/ui/DownloadIndicator.qml:36
+msgid "One download in progress"
+msgid_plural "%1 downloads in progress"
+msgstr[0] "Una descarga en curso"
+msgstr[1] "%1 descargas en curso"
+
+#: contents/ui/DownloadIndicator.qml:37
+msgid "One download in progress, %2%"
+msgid_plural "%1 downloads in progress, %2%"
+msgstr[0] "Una descarga en curso, %2%"
+msgstr[1] "%1 descargas en curso, %2%"
+
+#: contents/ui/DownloadIndicator.qml:40
+msgid "One download failed"
+msgid_plural "%1 downloads failed"
+msgstr[0] "Una descarga falló"
+msgstr[1] "%1 descargas fallaron"
+
+#: contents/ui/DownloadIndicator.qml:41
+msgid "One download completed, not opened yet"
+msgid_plural "%1 downloads completed, not opened yet"
+msgstr[0] "Una descarga completada, sin abrir todavía"
+msgstr[1] "%1 descargas completadas, sin abrir todavía"
+
+#: contents/ui/DownloadIndicator.qml:44
+msgid "Open the downloads list"
+msgstr "Abrir la lista de descargas"
+
+#: contents/ui/DownloadPopup.qml:42
+msgctxt "bytes"
+msgid "B"
+msgstr "B"
+
+#: contents/ui/DownloadPopup.qml:42
+msgctxt "kilobytes"
+msgid "kB"
+msgstr "kB"
+
+#: contents/ui/DownloadPopup.qml:42
+msgctxt "megabytes"
+msgid "MB"
+msgstr "MB"
+
+#: contents/ui/DownloadPopup.qml:42
+msgctxt "gigabytes"
+msgid "GB"
+msgstr "GB"
+
+#: contents/ui/DownloadPopup.qml:42
+msgctxt "terabytes"
+msgid "TB"
+msgstr "TB"
+
+#: contents/ui/DownloadPopup.qml:46
+msgctxt "file size: value and unit"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: contents/ui/DownloadPopup.qml:50
+msgctxt "transfer rate"
+msgid "%1/s"
+msgstr "%1/s"
+
+#: contents/ui/DownloadPopup.qml:55
+msgid "%1 second left"
+msgid_plural "%1 seconds left"
+msgstr[0] "queda %1 segundo"
+msgstr[1] "quedan %1 segundos"
+
+#: contents/ui/DownloadPopup.qml:57
+msgid "%1 minute left"
+msgid_plural "%1 minutes left"
+msgstr[0] "queda %1 minuto"
+msgstr[1] "quedan %1 minutos"
+
+#: contents/ui/DownloadPopup.qml:58
+msgid "%1 hour left"
+msgid_plural "%1 hours left"
+msgstr[0] "queda %1 hora"
+msgstr[1] "quedan %1 horas"
+
+#: contents/ui/DownloadPopup.qml:64
+msgid "Starting…"
+msgstr "Iniciando…"
+
+#: contents/ui/DownloadPopup.qml:67 contents/ui/DownloadPopup.qml:69
+msgid "%1 of %2"
+msgstr "%1 de %2"
+
+#: contents/ui/DownloadPopup.qml:67
+msgid "Paused — %1"
+msgstr "En pausa — %1"
+
+#: contents/ui/DownloadPopup.qml:71
+#, javascript-format
+msgctxt "percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/DownloadPopup.qml:76
+msgctxt "separator between download status parts"
+msgid " · "
+msgstr " · "
+
+#: contents/ui/DownloadPopup.qml:79
+msgid "PDF saved — %1"
+msgstr "PDF guardado — %1"
+
+#: contents/ui/DownloadPopup.qml:79
+msgid "Completed — %1"
+msgstr "Completada — %1"
+
+#: contents/ui/DownloadPopup.qml:81
+#: contents/ui/settings/DownloadsSettings.qml:140
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#: contents/ui/DownloadPopup.qml:83
+msgid "Interrupted — %1"
+msgstr "Interrumpida — %1"
+
+#: contents/ui/DownloadPopup.qml:83
+#: contents/ui/settings/DownloadsSettings.qml:141
+msgid "Interrupted"
+msgstr "Interrumpida"
+
+#: contents/ui/DownloadPopup.qml:85
+msgid "Unknown state"
+msgstr "Estado desconocido"
+
+#: contents/ui/DownloadPopup.qml:104
+msgid "Clear finished"
+msgstr "Borrar completadas"
+
+#: contents/ui/DownloadPopup.qml:125
+msgid "No downloads in this session"
+msgstr "No hay descargas en esta sesión"
+
+#: contents/ui/DownloadPopup.qml:137
+msgid "Downloads list"
+msgstr "Lista de descargas"
+
+#: contents/ui/DownloadPopup.qml:147
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: contents/ui/DownloadPopup.qml:225
+msgid "Resume"
+msgstr "Reanudar"
+
+#: contents/ui/DownloadPopup.qml:225
+msgid "Pause"
+msgstr "Pausar"
+
+#: contents/ui/DownloadPopup.qml:231
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: contents/ui/DownloadPopup.qml:237 contents/ui/WebView.qml:624
+msgid "Open"
+msgstr "Abrir"
+
+#: contents/ui/DownloadPopup.qml:243 contents/ui/WebView.qml:628
+msgid "Show in Folder"
+msgstr "Mostrar en la carpeta"
+
+#: contents/ui/DownloadPopup.qml:249 contents/ui/WebView.qml:1127
+msgid "Retry"
+msgstr "Reintentar"
+
+#: contents/ui/DownloadPopup.qml:255
+msgid "Remove from list"
+msgstr "Quitar de la lista"
+
+#: contents/ui/DownloadPopup.qml:273
+#: contents/ui/settings/DownloadsSettings.qml:81
+msgid "Open Download Folder"
+msgstr "Abrir la carpeta de descargas"
+
+#: contents/ui/DownloadPopup.qml:279
+msgid "Choose Folder…"
+msgstr "Elegir carpeta…"
+
+#: contents/ui/ErrorView.qml:21
+msgid "Web content error"
+msgstr "Error de contenido web"
+
+#: contents/ui/ErrorView.qml:31
+msgid "This service could not be loaded inside ChatAI."
+msgstr "No se pudo cargar este servicio dentro de ChatAI."
+
+#: contents/ui/ErrorView.qml:54
+msgid "Try again"
+msgstr "Reintentar"
+
+#: contents/ui/ErrorView.qml:61
+msgid "Open in browser"
+msgstr "Abrir en el navegador"
+
+#: contents/ui/FindBar.qml:28 contents/ui/settings/AboutSettings.qml:44
+#: contents/ui/settings/HelpSettings.qml:21
+msgid "Find in page"
+msgstr "Buscar en la página"
+
+#: contents/ui/FindBar.qml:47
+msgid "Find in page…"
+msgstr "Buscar en la página…"
+
+#: contents/ui/FindBar.qml:61
+msgid "Find previous"
+msgstr "Buscar anterior"
+
+#: contents/ui/FindBar.qml:75
+msgid "Find next"
+msgstr "Buscar siguiente"
+
+#: contents/ui/FindBar.qml:89 contents/ui/settings/AppearanceSettings.qml:51
+msgid "Close"
+msgstr "Cerrar"
+
+#: contents/ui/FullScreenWindow.qml:24
+msgid "ChatAI — Full screen"
+msgstr "ChatAI — Pantalla completa"
+
+#: contents/ui/Header.qml:102
+msgid "Pinned: stays open when clicking outside"
+msgstr "Fijado: permanece abierto al hacer clic fuera"
+
+#: contents/ui/Header.qml:102
+msgid "Pin: keep open when clicking outside"
+msgstr "Fijar: mantener abierto al hacer clic fuera"
+
+#: contents/ui/Header.qml:128
+msgid "Stop loading"
+msgstr "Detener la carga"
+
+#: contents/ui/Header.qml:137
+msgid "Home page of the current assistant"
+msgstr "Página de inicio del asistente actual"
+
+#: contents/ui/Header.qml:157
+msgid "Custom address"
+msgstr "Dirección personalizada"
+
+#: contents/ui/Header.qml:170
+msgid "Find in page (Ctrl+F)"
+msgstr "Buscar en la página (Ctrl+F)"
+
+#: contents/ui/Header.qml:193
+msgid "More actions"
+msgstr "Más acciones"
+
+#: contents/ui/Header.qml:213
+msgid "Close and release memory"
+msgstr "Cerrar y liberar memoria"
+
+#: contents/ui/Header.qml:227 contents/ui/settings/DownloadsSettings.qml:88
+msgid "Choose Download Folder"
+msgstr "Elegir la carpeta de descargas"
+
+#: contents/ui/PermissionBar.qml:40
+msgid "%1 wants to show notifications"
+msgstr "%1 quiere mostrar notificaciones"
+
+#: contents/ui/PermissionBar.qml:42
+msgid "%1 wants to use your microphone"
+msgstr "%1 quiere usar tu micrófono"
+
+#: contents/ui/PermissionBar.qml:44
+msgid "%1 wants to use your camera"
+msgstr "%1 quiere usar tu cámara"
+
+#: contents/ui/PermissionBar.qml:46
+msgid "%1 wants to use your camera and microphone"
+msgstr "%1 quiere usar tu cámara y micrófono"
+
+#: contents/ui/PermissionBar.qml:49
+msgid "%1 wants to share your screen"
+msgstr "%1 quiere compartir tu pantalla"
+
+#: contents/ui/PermissionBar.qml:51
+msgid "%1 wants to know your location"
+msgstr "%1 quiere conocer tu ubicación"
+
+#: contents/ui/PermissionBar.qml:53
+msgid "%1 wants to read your clipboard"
+msgstr "%1 quiere leer tu portapapeles"
+
+#: contents/ui/PermissionBar.qml:55
+msgid "%1 requests a permission"
+msgstr "%1 solicita un permiso"
+
+#: contents/ui/PermissionBar.qml:91
+msgid "Your choice is remembered for this site. Review it in Settings › Permissions."
+msgstr "Tu elección se recuerda para este sitio. Revísala en Ajustes › Permisos."
+
+#: contents/ui/PermissionBar.qml:100
+msgid "Block"
+msgstr "Bloquear"
+
+#: contents/ui/PermissionBar.qml:106
+msgid "Allow"
+msgstr "Permitir"
+
+#: contents/ui/ProviderModel.qml:34
+msgctxt "provider category"
+msgid "General"
+msgstr "General"
+
+#: contents/ui/ProviderModel.qml:35
+msgctxt "provider category"
+msgid "Search"
+msgstr "Búsqueda"
+
+#: contents/ui/ProviderModel.qml:36
+msgctxt "provider category"
+msgid "Code"
+msgstr "Código"
+
+#: contents/ui/ProviderModel.qml:37
+msgctxt "provider category"
+msgid "Privacy"
+msgstr "Privacidad"
+
+#: contents/ui/ProviderModel.qml:38
+msgctxt "provider category"
+msgid "Agents"
+msgstr "Agentes"
+
+#: contents/ui/ProviderModel.qml:39
+msgctxt "provider category"
+msgid "Open models"
+msgstr "Modelos abiertos"
+
+#: contents/ui/ProviderModel.qml:42
+msgid "Google sign-in works with the default browser identity. If Google says the browser may not be secure, make sure \"Identify as Chromium\" is off in Advanced."
+msgstr "El inicio de sesión de Google funciona con la identidad predeterminada del navegador. Si Google dice que el navegador puede no ser seguro, asegúrate de que \"Identificarse como Chromium\" esté desactivado en Avanzado."
+
+#: contents/ui/ProviderModel.qml:48
+msgid "OpenAI's assistant with voice, files and web search."
+msgstr "Asistente de OpenAI con voz, archivos y búsqueda web."
+
+#: contents/ui/ProviderModel.qml:55
+msgid "Anthropic's assistant for writing, analysis and code."
+msgstr "Asistente de Anthropic para escritura, análisis y código."
+
+#: contents/ui/ProviderModel.qml:58
+msgid "Claude only allows account creation and Google sign-in in well-known browsers. Sign in with an e-mail code or reuse credentials created in a regular browser."
+msgstr "Claude solo permite crear cuenta e iniciar sesión con Google en navegadores conocidos. Inicia sesión con un código por correo o reutiliza credenciales creadas en un navegador normal."
+
+#: contents/ui/ProviderModel.qml:63
+msgid "Google's multimodal assistant."
+msgstr "Asistente multimodal de Google."
+
+#: contents/ui/ProviderModel.qml:70
+msgid "DeepSeek's chat with reasoning mode."
+msgstr "Chat de DeepSeek con modo de razonamiento."
+
+#: contents/ui/ProviderModel.qml:77
+msgid "Private, anonymous access to several models. No account needed."
+msgstr "Acceso privado y anónimo a varios modelos. No necesita cuenta."
+
+#: contents/ui/ProviderModel.qml:84
+msgid "Answer engine with cited web sources."
+msgstr "Motor de respuestas con fuentes web citadas."
+
+#: contents/ui/ProviderModel.qml:91
+msgid "Microsoft's assistant (formerly Bing Copilot)."
+msgstr "Asistente de Microsoft (antes Bing Copilot)."
+
+#: contents/ui/ProviderModel.qml:98
+msgid "Copilot Chat on github.com with repository context. Requires a GitHub account."
+msgstr "Copilot Chat en github.com con contexto del repositorio. Requiere una cuenta de GitHub."
+
+#: contents/ui/ProviderModel.qml:105
+msgid "Mistral's assistant and agent (formerly Le Chat)."
+msgstr "Asistente y agente de Mistral (antes Le Chat)."
+
+#: contents/ui/ProviderModel.qml:112
+msgid "xAI's assistant. Works without an account with limits."
+msgstr "Asistente de xAI. Funciona sin cuenta, con límites."
+
+#: contents/ui/ProviderModel.qml:119
+msgid "Alibaba's Qwen Studio: chat, images, documents and web search."
+msgstr "Qwen Studio de Alibaba: chat, imágenes, documentos y búsqueda web."
+
+#: contents/ui/ProviderModel.qml:126
+msgid "Moonshot AI's assistant with long-context and research modes."
+msgstr "Asistente de Moonshot AI con contexto largo y modos de investigación."
+
+#: contents/ui/ProviderModel.qml:133
+msgid "General AI agent with a chat mode. Requires an account."
+msgstr "Agente de IA general con modo de chat. Requiere una cuenta."
+
+#: contents/ui/ProviderModel.qml:140
+msgid "Hugging Face's chat with open models (Omni router)."
+msgstr "Chat de Hugging Face con modelos abiertos (enrutador Omni)."
+
+#: contents/ui/ProviderModel.qml:147
+msgid "Meta's assistant. Availability depends on your region."
+msgstr "Asistente de Meta. La disponibilidad depende de tu región."
+
+#: contents/ui/ProviderModel.qml:154
+msgid "Fast multi-model chat client."
+msgstr "Cliente de chat rápido con varios modelos."
+
+#: contents/ui/ProviderModel.qml:161
+msgid "You.com chat. The product now targets enterprise users; a login is required."
+msgstr "Chat de You.com. El producto ahora se orienta a empresas; se requiere iniciar sesión."
+
+#: contents/ui/ProviderModel.qml:168
+msgid "Coding-oriented assistant."
+msgstr "Asistente orientado a la programación."
+
+#: contents/ui/ProviderModel.qml:175
+msgid "LobeHub cloud chat (bring your own keys or subscription)."
+msgstr "Chat en la nube de LobeHub (usa tus propias claves o suscripción)."
+
+#: contents/ui/ProviderModel.qml:182
+msgid "Big-AGI web client (bring your own keys)."
+msgstr "Cliente web de Big-AGI (usa tus propias claves)."
+
+#: contents/ui/ProviderModel.qml:300
+msgctxt "provider category"
+msgid "Custom"
+msgstr "Personalizado"
+
+#: contents/ui/SettingsPanel.qml:42
+msgid "About"
+msgstr "Acerca de"
+
+#: contents/ui/SettingsPanel.qml:80
+msgid "Settings categories"
+msgstr "Categorías de ajustes"
+
+#: contents/ui/SettingsPanel.qml:133
+msgid "Back to the assistant"
+msgstr "Volver al asistente"
+
+#: contents/ui/WebView.qml:185
+msgid "The configured address is not a valid HTTP or HTTPS URL."
+msgstr "La dirección configurada no es una URL HTTP o HTTPS válida."
+
+#: contents/ui/WebView.qml:638
+msgid "Download finished"
+msgstr "Descarga completada"
+
+#: contents/ui/WebView.qml:638
+msgid "Download failed"
+msgstr "Descarga fallida"
+
+#: contents/ui/WebView.qml:639
+msgid "interrupted"
+msgstr "interrumpida"
+
+#: contents/ui/WebView.qml:639 contents/ui/settings/SitesSettings.qml:258
+msgid "%1 — %2"
+msgstr "%1 — %2"
+
+#: contents/ui/WebView.qml:769
+msgid "Download in progress"
+msgstr "Descarga en curso"
+
+#: contents/ui/WebView.qml:769
+msgid "The file '%1' is already being downloaded"
+msgstr "El archivo '%1' ya se está descargando"
+
+#: contents/ui/WebView.qml:875
+msgid "The service did not provide an error description."
+msgstr "El servicio no proporcionó una descripción del error."
+
+#: contents/ui/WebView.qml:897
+msgid "The site's security certificate is not trusted."
+msgstr "El certificado de seguridad del sitio no es de confianza."
+
+#: contents/ui/WebView.qml:911
+msgid "The web content process stopped unexpectedly (exit code %1)."
+msgstr "El proceso de contenido web se detuvo inesperadamente (código de salida %1)."
+
+#: contents/ui/WebView.qml:920
+msgid "The PDF could not be created."
+msgstr "No se pudo crear el PDF."
+
+#: contents/ui/WebView.qml:931
+msgid "Blocked navigation"
+msgstr "Navegación bloqueada"
+
+#: contents/ui/WebView.qml:931
+msgid "Only HTTP and HTTPS links can be opened from ChatAI."
+msgstr "Desde ChatAI solo se pueden abrir enlaces HTTP y HTTPS."
+
+#: contents/ui/WebView.qml:1073
+msgid "Sign-in blocked"
+msgstr "Inicio de sesión bloqueado"
+
+#: contents/ui/WebView.qml:1073
+msgid "The sign-in site's security certificate is not trusted."
+msgstr "El certificado de seguridad del sitio de inicio de sesión no es de confianza."
+
+#: contents/ui/WebView.qml:1123
+msgid "The site"
+msgstr "El sitio"
+
+#: contents/ui/WebView.qml:1123
+msgid "%1 is taking long to respond. Some services hold the connection for automated clients; retrying usually works."
+msgstr "%1 está tardando en responder. Algunos servicios retienen la conexión de clientes automatizados; reintentar suele funcionar."
+
+#: contents/ui/WebView.qml:1149
+msgid "At %1% zoom the page sees a %2 px wide viewport and switches to its mobile layout, which may break sign-in. Reset the zoom or widen the widget."
+msgstr "Con un zoom del %1%, la página ve una ventana de %2 px de ancho y cambia a su diseño móvil, lo que puede romper el inicio de sesión. Restablece el zoom o ensancha el widget."
+
+#: contents/ui/WebView.qml:1150
+msgid "The page sees a %1 px wide viewport and switches to its mobile layout, which may break sign-in. Widen the widget by dragging its edge."
+msgstr "La página ve una ventana de %1 px de ancho y cambia a su diseño móvil, lo que puede romper el inicio de sesión. Ensancha el widget arrastrando su borde."
+
+#: contents/ui/WebView.qml:1155
+msgid "Reset Zoom"
+msgstr "Restablecer zoom"
+
+#: contents/ui/settings/AboutSettings.qml:45
+#: contents/ui/settings/HelpSettings.qml:22
+msgid "Zoom in / out"
+msgstr "Acercar / alejar"
+
+#: contents/ui/settings/AboutSettings.qml:46
+#: contents/ui/settings/HelpSettings.qml:23
+msgid "Reset zoom"
+msgstr "Restablecer zoom"
+
+#: contents/ui/settings/AboutSettings.qml:47
+#: contents/ui/settings/HelpSettings.qml:24
+msgid "Full screen (Esc exits)"
+msgstr "Pantalla completa (Esc sale)"
+
+#: contents/ui/settings/AboutSettings.qml:48
+#: contents/ui/settings/HelpSettings.qml:25
+msgctxt "mouse buttons"
+msgid "Mouse back / forward"
+msgstr "Atrás / adelante del ratón"
+
+#: contents/ui/settings/AboutSettings.qml:48
+#: contents/ui/settings/HelpSettings.qml:25
+msgid "Navigate history"
+msgstr "Navegar por el historial"
+
+#: contents/ui/settings/AboutSettings.qml:49
+#: contents/ui/settings/HelpSettings.qml:26
+msgid "Close find bar, settings or full screen"
+msgstr "Cerrar la búsqueda, los ajustes o la pantalla completa"
+
+#: contents/ui/settings/AboutSettings.qml:69
+msgid "Version %1"
+msgstr "Versión %1"
+
+#: contents/ui/settings/AboutSettings.qml:73
+msgid "AI assistants inside KDE Plasma"
+msgstr "Asistentes de IA dentro de KDE Plasma"
+
+#: contents/ui/settings/AboutSettings.qml:80
+#: contents/ui/settings/HelpSettings.qml:32
+msgid "ChatAI embeds the official web apps of AI assistants in a native Plasma widget, with a persistent profile, per-site permissions and a memory-conscious web engine lifecycle. It does not provide an AI API and does not bypass authentication or anti-bot protections."
+msgstr "ChatAI integra las aplicaciones web oficiales de asistentes de IA en un widget nativo de Plasma, con un perfil persistente, permisos por sitio y un ciclo de vida del motor web consciente de la memoria. No proporciona una API de IA ni evade la autenticación o las protecciones anti-bot."
+
+#: contents/ui/settings/AboutSettings.qml:89
+msgid "Repository:"
+msgstr "Repositorio:"
+
+#: contents/ui/settings/AboutSettings.qml:94
+msgid "Report a problem:"
+msgstr "Informar de un problema:"
+
+#: contents/ui/settings/AboutSettings.qml:99
+msgid "License:"
+msgstr "Licencia:"
+
+#: contents/ui/settings/AboutSettings.qml:109
+msgid "Authors"
+msgstr "Autores"
+
+#: contents/ui/settings/AboutSettings.qml:123
+#: contents/ui/settings/HelpSettings.qml:72
+msgid "Provider icons: Icons8, IconScout, Simple Icons (CC0) and the services' own brand assets. Trademarks belong to their owners."
+msgstr "Iconos de los proveedores: Icons8, IconScout, Simple Icons (CC0) y los propios recursos de marca de los servicios. Las marcas pertenecen a sus dueños."
+
+#: contents/ui/settings/AboutSettings.qml:135
+#: contents/ui/settings/HelpSettings.qml:40
+msgid "Keyboard shortcuts"
+msgstr "Atajos de teclado"
+
+#: contents/ui/settings/AdvancedSettings.qml:41
+#: contents/ui/settings/AdvancedSettings.qml:42
+msgid "unknown"
+msgstr "desconocido"
+
+#: contents/ui/settings/AdvancedSettings.qml:48
+msgid "custom"
+msgstr "personalizado"
+
+#: contents/ui/settings/AdvancedSettings.qml:65
+msgid "These options are for troubleshooting. The defaults are the safe choice."
+msgstr "Estas opciones son para solución de problemas. Los valores predeterminados son la opción segura."
+
+#: contents/ui/settings/AdvancedSettings.qml:72
+msgid "Browser identity:"
+msgstr "Identidad del navegador:"
+
+#: contents/ui/settings/AdvancedSettings.qml:73
+msgid "Identify as Chromium (hide the Qt WebEngine token)"
+msgstr "Identificarse como Chromium (ocultar el token de Qt WebEngine)"
+
+#: contents/ui/settings/AdvancedSettings.qml:79
+msgid "Not recommended for Google accounts: Google rejects browsers that hide their identity (\"This browser or app may not be secure\") and accepts the honest Qt WebEngine identity. Enable only if a specific site refuses the Qt WebEngine token."
+msgstr "No recomendado para cuentas de Google: Google rechaza los navegadores que ocultan su identidad (\"Este navegador o aplicación puede no ser seguro\") y acepta la identidad honesta de Qt WebEngine. Actívalo solo si un sitio concreto rechaza el token de Qt WebEngine."
+
+#: contents/ui/settings/AdvancedSettings.qml:87
+msgid "Custom user agent:"
+msgstr "Agente de usuario personalizado:"
+
+#: contents/ui/settings/AdvancedSettings.qml:90
+msgid "Leave empty for the default"
+msgstr "Déjalo vacío para usar el predeterminado"
+
+#: contents/ui/settings/AdvancedSettings.qml:92
+msgid "Custom user agent"
+msgstr "Agente de usuario personalizado"
+
+#: contents/ui/settings/AdvancedSettings.qml:98
+msgid "Resources:"
+msgstr "Recursos:"
+
+#: contents/ui/settings/AdvancedSettings.qml:99
+msgid "Freeze the page while the widget is hidden"
+msgstr "Congelar la página mientras el widget está oculto"
+
+#: contents/ui/settings/AdvancedSettings.qml:105
+msgid "Pauses scripts of the hidden page after 30 seconds when the engine reports it is safe (no audio, upload or download). Resumes instantly on opening."
+msgstr "Pausa los scripts de la página oculta tras 30 segundos cuando el motor indica que es seguro (sin audio, subida ni descarga). Se reanuda al instante al abrir."
+
+#: contents/ui/settings/AdvancedSettings.qml:113
+msgid "Discard hidden page after:"
+msgstr "Descartar la página oculta tras:"
+
+#: contents/ui/settings/AdvancedSettings.qml:118
+msgid "Never"
+msgstr "Nunca"
+
+#: contents/ui/settings/AdvancedSettings.qml:118
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minuto"
+msgstr[1] "%1 minutos"
+
+#: contents/ui/settings/AdvancedSettings.qml:121
+msgid "Discard hidden page after"
+msgstr "Descartar la página oculta tras"
+
+#: contents/ui/settings/AdvancedSettings.qml:125
+msgid "Discarding frees most memory but reloads the page on the next opening; unsent text is lost."
+msgstr "Descartar libera la mayor parte de la memoria pero recarga la página al abrirla de nuevo; el texto sin enviar se pierde."
+
+#: contents/ui/settings/AdvancedSettings.qml:135
+msgid "Developer tools:"
+msgstr "Herramientas de desarrollo:"
+
+#: contents/ui/settings/AdvancedSettings.qml:136
+msgid "Show \"Developer Tools\" in the ⋮ menu"
+msgstr "Mostrar \"Herramientas de desarrollo\" en el menú ⋮"
+
+#: contents/ui/settings/AdvancedSettings.qml:147
+#: contents/ui/settings/AdvancedSettings.qml:158
+msgid "Diagnostics"
+msgstr "Diagnóstico"
+
+#: contents/ui/settings/AdvancedSettings.qml:166
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: contents/ui/settings/AdvancedSettings.qml:172
+msgid "Copy Diagnostics"
+msgstr "Copiar el diagnóstico"
+
+#: contents/ui/settings/AdvancedSettings.qml:182
+msgid "No cookies, tokens or page contents are included."
+msgstr "No se incluyen cookies, tokens ni contenido de páginas."
+
+#: contents/ui/settings/AppearanceSettings.qml:35
+msgid "Website favicon"
+msgstr "Favicon del sitio"
+
+#: contents/ui/settings/AppearanceSettings.qml:36
+msgid "ChatAI logo (adapts to the theme)"
+msgstr "Logo de ChatAI (se adapta al tema)"
+
+#: contents/ui/settings/AppearanceSettings.qml:37
+msgid "ChatAI logo, dark"
+msgstr "Logo de ChatAI, oscuro"
+
+#: contents/ui/settings/AppearanceSettings.qml:38
+msgid "ChatAI logo, light"
+msgstr "Logo de ChatAI, claro"
+
+#: contents/ui/settings/AppearanceSettings.qml:39
+msgid "Assistant icon, outlined"
+msgstr "Icono del asistente, contorneado"
+
+#: contents/ui/settings/AppearanceSettings.qml:40
+msgid "Assistant icon, filled"
+msgstr "Icono del asistente, relleno"
+
+#: contents/ui/settings/AppearanceSettings.qml:41
+msgid "Assistant icon, colorful"
+msgstr "Icono del asistente, a color"
+
+#: contents/ui/settings/AppearanceSettings.qml:42
+msgid "Custom icon"
+msgstr "Icono personalizado"
+
+#: contents/ui/settings/AppearanceSettings.qml:46
+msgid "Pin"
+msgstr "Fijar"
+
+#: contents/ui/settings/AppearanceSettings.qml:47
+msgid "Back and Forward"
+msgstr "Atrás y adelante"
+
+#: contents/ui/settings/AppearanceSettings.qml:50
+msgid "\"Custom address…\" entry in the selector"
+msgstr "Elemento \"Dirección personalizada…\" en el selector"
+
+#: contents/ui/settings/AppearanceSettings.qml:59
+msgid "Panel icon:"
+msgstr "Icono del panel:"
+
+#: contents/ui/settings/AppearanceSettings.qml:64
+msgid "Panel icon"
+msgstr "Icono del panel"
+
+#: contents/ui/settings/AppearanceSettings.qml:69
+msgid "Assistants without a dedicated icon fall back to the ChatAI logo."
+msgstr "Los asistentes sin icono propio usan el logo de ChatAI."
+
+#: contents/ui/settings/AppearanceSettings.qml:79
+msgid "Custom icon:"
+msgstr "Icono personalizado:"
+
+#: contents/ui/settings/AppearanceSettings.qml:82
+msgid "Choose custom icon"
+msgstr "Elegir icono personalizado"
+
+#: contents/ui/settings/AppearanceSettings.qml:105
+msgid "Toolbar buttons:"
+msgstr "Botones de la barra de herramientas:"
+
+#: contents/ui/settings/AppearanceSettings.qml:106
+msgid "Hidden buttons remain available in the ⋮ menu where it makes sense. Auto-hide and Downloads always live in the ⋮ menu; a download indicator appears in the toolbar only while a download needs attention."
+msgstr "Los botones ocultos siguen disponibles en el menú ⋮ cuando tiene sentido. Ocultar automáticamente y Descargas están siempre en el menú ⋮; un indicador de descarga aparece en la barra solo mientras una descarga necesita atención."
+
+#: contents/ui/settings/AppearanceSettings.qml:126
+#: contents/ui/settings/GeneralSettings.qml:96
+msgid "Toolbar:"
+msgstr "Barra de herramientas:"
+
+#: contents/ui/settings/AppearanceSettings.qml:134
+#, fuzzy
+#| msgid "Hide the toolbar"
+msgid "Always hide the toolbar"
+msgstr "Ocultar siempre la barra de herramientas"
+
+#: contents/ui/settings/AppearanceSettings.qml:142
+msgid "Theme:"
+msgstr "Tema:"
+
+#: contents/ui/settings/AppearanceSettings.qml:143
+msgid "Colours, spacing and animations follow your Plasma theme. Pages receive a dark-mode hint when the theme is dark."
+msgstr "Los colores, el espaciado y las animaciones siguen tu tema de Plasma. Las páginas reciben una indicación de modo oscuro cuando el tema es oscuro."
+
+#: contents/ui/settings/DownloadsSettings.qml:48
+#: contents/ui/settings/StorageSettings.qml:182
+msgid "Folder:"
+msgstr "Carpeta:"
+
+#: contents/ui/settings/DownloadsSettings.qml:56
+msgid "Download folder"
+msgstr "Carpeta de descargas"
+
+#: contents/ui/settings/DownloadsSettings.qml:66
+msgid "Choose…"
+msgstr "Elegir…"
+
+#: contents/ui/settings/DownloadsSettings.qml:72
+msgid "Leave empty to use the system Downloads folder. Files are saved automatically with a sanitized name and are never executed."
+msgstr "Déjalo vacío para usar la carpeta de descargas del sistema. Los archivos se guardan automáticamente con un nombre saneado y nunca se ejecutan."
+
+#: contents/ui/settings/DownloadsSettings.qml:98
+msgid "Current downloads"
+msgstr "Descargas actuales"
+
+#: contents/ui/settings/DownloadsSettings.qml:106
+msgid "Downloads are listed here while the ChatAI widget is open."
+msgstr "Las descargas se muestran aquí mientras el widget de ChatAI está abierto."
+
+#: contents/ui/settings/DownloadsSettings.qml:111
+msgid "No downloads in this session."
+msgstr "No hay descargas en esta sesión."
+
+#: contents/ui/settings/DownloadsSettings.qml:138
+msgid "Completed"
+msgstr "Completada"
+
+#: contents/ui/settings/DownloadsSettings.qml:139
+msgid "Downloading"
+msgstr "Descargando"
+
+#: contents/ui/settings/DownloadsSettings.qml:142
+msgid "Waiting"
+msgstr "Esperando"
+
+#: contents/ui/settings/DownloadsSettings.qml:151
+msgid "Clear Finished Downloads"
+msgstr "Borrar las descargas completadas"
+
+#: contents/ui/settings/GeneralSettings.qml:38
+msgid "Assistant:"
+msgstr "Asistente:"
+
+#: contents/ui/settings/GeneralSettings.qml:43
+msgid "The assistant shown when the widget opens and when you press Home"
+msgstr "El asistente que se muestra al abrir el widget y al pulsar Inicio"
+
+#: contents/ui/settings/GeneralSettings.qml:62
+msgid "Enable more assistants in the Sites page."
+msgstr "Activa más asistentes en la página Sitios."
+
+#: contents/ui/settings/GeneralSettings.qml:72
+msgid "Window:"
+msgstr "Ventana:"
+
+#: contents/ui/settings/GeneralSettings.qml:73
+msgid "Keep the widget open when clicking outside (pin)"
+msgstr "Mantener el widget abierto al hacer clic fuera (fijar)"
+
+#: contents/ui/settings/GeneralSettings.qml:79
+msgid "Preload the assistant when Plasma starts"
+msgstr "Precargar el asistente al iniciar Plasma"
+
+#: contents/ui/settings/GeneralSettings.qml:85
+msgid "Preloading makes the first opening instant but keeps the web engine in memory from login."
+msgstr "La precarga hace que la primera apertura sea instantánea, pero mantiene el motor web en memoria desde el inicio de sesión."
+
+#: contents/ui/settings/GeneralSettings.qml:97
+msgid "Hide the toolbar"
+msgstr "Ocultar la barra de herramientas"
+
+#: contents/ui/settings/GeneralSettings.qml:103
+msgid "Hide the toolbar automatically and reveal it on hover"
+msgstr "Ocultar la barra automáticamente y mostrarla al pasar el ratón"
+
+#: contents/ui/settings/GeneralSettings.qml:112
+msgid "Links:"
+msgstr "Enlaces:"
+
+#: contents/ui/settings/GeneralSettings.qml:113
+msgid "Links that would open a new window are opened in your default browser. Sign-in pages stay inside ChatAI so logins keep working."
+msgstr "Los enlaces que abrirían una ventana nueva se abren en tu navegador predeterminado. Las páginas de inicio de sesión permanecen en ChatAI para que el acceso siga funcionando."
+
+#: contents/ui/settings/HelpSettings.qml:64
+msgid "Credits"
+msgstr "Créditos"
+
+#: contents/ui/settings/PermissionsSettings.qml:32
+msgid "Ask per site"
+msgstr "Preguntar por sitio"
+
+#: contents/ui/settings/PermissionsSettings.qml:32
+msgid "Always allow"
+msgstr "Permitir siempre"
+
+#: contents/ui/settings/PermissionsSettings.qml:32
+msgid "Always block"
+msgstr "Bloquear siempre"
+
+#: contents/ui/settings/PermissionsSettings.qml:35
+msgid "Notifications:"
+msgstr "Notificaciones:"
+
+#: contents/ui/settings/PermissionsSettings.qml:35
+msgid "Shown as Plasma notifications."
+msgstr "Se muestran como notificaciones de Plasma."
+
+#: contents/ui/settings/PermissionsSettings.qml:36
+msgid "Microphone:"
+msgstr "Micrófono:"
+
+#: contents/ui/settings/PermissionsSettings.qml:36
+msgid "Voice input. Only active while a site you allowed is recording."
+msgstr "Entrada de voz. Solo activa mientras un sitio permitido está grabando."
+
+#: contents/ui/settings/PermissionsSettings.qml:37
+msgid "Camera:"
+msgstr "Cámara:"
+
+#: contents/ui/settings/PermissionsSettings.qml:38
+msgid "Screen sharing:"
+msgstr "Compartir pantalla:"
+
+#: contents/ui/settings/PermissionsSettings.qml:38
+msgid "The primary screen is shared when allowed."
+msgstr "Se comparte la pantalla principal cuando se permite."
+
+#: contents/ui/settings/PermissionsSettings.qml:39
+#: contents/ui/settings/StorageSettings.qml:57
+msgid "Location:"
+msgstr "Ubicación:"
+
+#: contents/ui/settings/PermissionsSettings.qml:40
+msgid "Read clipboard:"
+msgstr "Leer el portapapeles:"
+
+#: contents/ui/settings/PermissionsSettings.qml:40
+msgid "Lets a page read what you copied. Pasting with Ctrl+V never needs this."
+msgstr "Permite que una página lea lo que copiaste. Pegar con Ctrl+V nunca lo necesita."
+
+#: contents/ui/settings/PermissionsSettings.qml:45
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: contents/ui/settings/PermissionsSettings.qml:46
+msgid "Microphone"
+msgstr "Micrófono"
+
+#: contents/ui/settings/PermissionsSettings.qml:47
+msgid "Camera"
+msgstr "Cámara"
+
+#: contents/ui/settings/PermissionsSettings.qml:48
+msgid "Camera and microphone"
+msgstr "Cámara y micrófono"
+
+#: contents/ui/settings/PermissionsSettings.qml:50
+msgid "Screen sharing"
+msgstr "Compartir pantalla"
+
+#: contents/ui/settings/PermissionsSettings.qml:51
+msgid "Location"
+msgstr "Ubicación"
+
+#: contents/ui/settings/PermissionsSettings.qml:52
+msgid "Clipboard"
+msgstr "Portapapeles"
+
+#: contents/ui/settings/PermissionsSettings.qml:53
+msgid "Mouse lock"
+msgstr "Bloqueo del ratón"
+
+#: contents/ui/settings/PermissionsSettings.qml:54
+msgid "Local fonts"
+msgstr "Tipografías locales"
+
+#: contents/ui/settings/PermissionsSettings.qml:55
+msgid "Other"
+msgstr "Otro"
+
+#: contents/ui/settings/PermissionsSettings.qml:61
+msgid "Allowed"
+msgstr "Permitido"
+
+#: contents/ui/settings/PermissionsSettings.qml:62
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#: contents/ui/settings/PermissionsSettings.qml:63
+msgid "Ask"
+msgstr "Preguntar"
+
+#: contents/ui/settings/PermissionsSettings.qml:64
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: contents/ui/settings/PermissionsSettings.qml:79
+msgid "Default behaviour"
+msgstr "Comportamiento predeterminado"
+
+#: contents/ui/settings/PermissionsSettings.qml:84
+msgid "\"Ask per site\" shows a prompt inside ChatAI the first time a site requests the permission; the answer is remembered for that site."
+msgstr "\"Preguntar por sitio\" muestra un aviso dentro de ChatAI la primera vez que un sitio solicita el permiso; la respuesta se recuerda para ese sitio."
+
+#: contents/ui/settings/PermissionsSettings.qml:127
+msgid "Saved site permissions"
+msgstr "Permisos guardados por sitio"
+
+#: contents/ui/settings/PermissionsSettings.qml:135
+msgid "Open the ChatAI widget to review the permissions saved per site. They are stored in the web engine profile."
+msgstr "Abre el widget de ChatAI para revisar los permisos guardados por sitio. Se almacenan en el perfil del motor web."
+
+#: contents/ui/settings/PermissionsSettings.qml:140
+msgid "No site has saved permissions yet."
+msgstr "Ningún sitio tiene permisos guardados todavía."
+
+#: contents/ui/settings/PermissionsSettings.qml:169
+msgid "Reset"
+msgstr "Restablecer"
+
+#: contents/ui/settings/PermissionsSettings.qml:172
+msgid "Ask again next time"
+msgstr "Preguntar de nuevo la próxima vez"
+
+#: contents/ui/settings/PermissionsSettings.qml:181
+msgid "Reset All Site Permissions…"
+msgstr "Restablecer todos los permisos de sitios…"
+
+#: contents/ui/settings/PermissionsSettings.qml:187
+msgid "Reset all site permissions?"
+msgstr "¿Restablecer todos los permisos de sitios?"
+
+#: contents/ui/settings/PermissionsSettings.qml:188
+msgid "Every site will ask again the next time it needs a permission. Logins are not affected."
+msgstr "Cada sitio volverá a preguntar la próxima vez que necesite un permiso. Los inicios de sesión no se ven afectados."
+
+#: contents/ui/settings/PermissionsSettings.qml:198
+msgid "Privacy: the microphone, camera, screen and location are only used after you allow them, and only by the site that asked. Login data belongs to the web engine profile (see Cache and Data). ChatAI does not read page contents or credentials."
+msgstr "Privacidad: el micrófono, la cámara, la pantalla y la ubicación solo se usan después de que los permitas, y solo por el sitio que lo pidió. Los datos de inicio de sesión pertenecen al perfil del motor web (ver Caché y datos). ChatAI no lee el contenido de las páginas ni las credenciales."
+
+#: contents/ui/settings/SitesSettings.qml:63
+msgid "A custom site with this name or address already exists."
+msgstr "Ya existe un sitio personalizado con este nombre o dirección."
+
+#: contents/ui/settings/SitesSettings.qml:100
+#: contents/ui/settings/SitesSettings.qml:243
+msgid "Enter a name and a valid http:// or https:// address."
+msgstr "Introduce un nombre y una dirección http:// o https:// válida."
+
+#: contents/ui/settings/SitesSettings.qml:104
+msgid "Built-in assistants"
+msgstr "Asistentes integrados"
+
+#: contents/ui/settings/SitesSettings.qml:109
+msgid "Enabled assistants appear in the toolbar selector. ChatAI embeds each service's official website; accounts, limits and features are controlled by the service."
+msgstr "Los asistentes activados aparecen en el selector de la barra de herramientas. ChatAI integra el sitio web oficial de cada servicio; las cuentas, los límites y las funciones los controla el servicio."
+
+#: contents/ui/settings/SitesSettings.qml:156
+msgid "Login required"
+msgstr "Requiere inicio de sesión"
+
+#: contents/ui/settings/SitesSettings.qml:189
+msgid "Custom sites"
+msgstr "Sitios personalizados"
+
+#: contents/ui/settings/SitesSettings.qml:194
+msgid "Add any chat website by name and address. Custom sites use the ChatAI icon and get no special access to your system."
+msgstr "Añade cualquier sitio de chat por nombre y dirección. Los sitios personalizados usan el icono de ChatAI y no obtienen acceso especial a tu sistema."
+
+#: contents/ui/settings/SitesSettings.qml:206
+msgid "Name"
+msgstr "Nombre"
+
+#: contents/ui/settings/SitesSettings.qml:209
+msgid "Site name"
+msgstr "Nombre del sitio"
+
+#: contents/ui/settings/SitesSettings.qml:218
+msgid "Site address"
+msgstr "Dirección del sitio"
+
+#: contents/ui/settings/SitesSettings.qml:223
+msgid "Save"
+msgstr "Guardar"
+
+#: contents/ui/settings/SitesSettings.qml:223
+msgid "Add"
+msgstr "Añadir"
+
+#: contents/ui/settings/SitesSettings.qml:230
+msgid "Cancel editing"
+msgstr "Cancelar la edición"
+
+#: contents/ui/settings/SitesSettings.qml:289
+msgid "Edit"
+msgstr "Editar"
+
+#: contents/ui/settings/SitesSettings.qml:298
+msgid "Remove"
+msgstr "Quitar"
+
+#: contents/ui/settings/SitesSettings.qml:312
+msgid "No custom sites added yet"
+msgstr "Aún no se han añadido sitios personalizados"
+
+#: contents/ui/settings/StorageSettings.qml:49
+msgid "HTTP cache"
+msgstr "Caché HTTP"
+
+#: contents/ui/settings/StorageSettings.qml:64
+msgid "Size limit:"
+msgstr "Límite de tamaño:"
+
+#: contents/ui/settings/StorageSettings.qml:69
+msgid "Automatic"
+msgstr "Automático"
+
+#: contents/ui/settings/StorageSettings.qml:69
+msgid "%1 MiB"
+msgstr "%1 MiB"
+
+#: contents/ui/settings/StorageSettings.qml:72
+msgid "Cache size limit"
+msgstr "Límite de tamaño de la caché"
+
+#: contents/ui/settings/StorageSettings.qml:80
+msgid "Clearing…"
+msgstr "Borrando…"
+
+#: contents/ui/settings/StorageSettings.qml:80
+msgid "Clear Cache"
+msgstr "Borrar la caché"
+
+#: contents/ui/settings/StorageSettings.qml:94
+msgid "Open Cache Folder"
+msgstr "Abrir la carpeta de la caché"
+
+#: contents/ui/settings/StorageSettings.qml:101
+msgid "Open the ChatAI widget to clear the cache. Clearing removes downloaded page resources only; you stay signed in."
+msgstr "Abre el widget de ChatAI para borrar la caché. Borrarla elimina solo los recursos de página descargados; tu sesión se mantiene."
+
+#: contents/ui/settings/StorageSettings.qml:102
+msgid "Clearing removes downloaded page resources only; you stay signed in. Navigation is paused until it finishes."
+msgstr "Borrarla elimina solo los recursos de página descargados; tu sesión se mantiene. La navegación se pausa hasta que termine."
+
+#: contents/ui/settings/StorageSettings.qml:115
+msgid "Site data and sessions"
+msgstr "Datos de sitios y sesiones"
+
+#: contents/ui/settings/StorageSettings.qml:120
+msgid "Cookies, logins, local storage and per-site permissions live in the profile folder below. Qt WebEngine offers no way to wipe cookies from a widget while it is running: to end a session, use the site's own \"Sign out\", or switch to a new profile name. Site permissions can be reset in the Permissions page."
+msgstr "Las cookies, los inicios de sesión, el almacenamiento local y los permisos por sitio están en la carpeta de perfil de abajo. Qt WebEngine no permite borrar cookies de un widget en ejecución: para cerrar una sesión, usa el \"Cerrar sesión\" del propio sitio o cambia a un nuevo nombre de perfil. Los permisos de sitios se pueden restablecer en la página Permisos."
+
+#: contents/ui/settings/StorageSettings.qml:131
+msgid "WebEngine profile"
+msgstr "Perfil de WebEngine"
+
+#: contents/ui/settings/StorageSettings.qml:136
+msgid "Each storage name is a separate folder with its own cookies, logins, cache and permissions. Use different names to keep separate accounts in different widget instances."
+msgstr "Cada nombre de almacenamiento es una carpeta independiente con sus propias cookies, inicios de sesión, caché y permisos. Usa nombres distintos para mantener cuentas separadas en distintas instancias del widget."
+
+#: contents/ui/settings/StorageSettings.qml:146
+msgid "Storage name:"
+msgstr "Nombre de almacenamiento:"
+
+#: contents/ui/settings/StorageSettings.qml:155
+msgid "Storage name"
+msgstr "Nombre de almacenamiento"
+
+#: contents/ui/settings/StorageSettings.qml:161
+msgid "Apply"
+msgstr "Aplicar"
+
+#: contents/ui/settings/StorageSettings.qml:171
+msgid "Default"
+msgstr "Predeterminado"
+
+#: contents/ui/settings/StorageSettings.qml:190
+msgid "Open Profile Folder"
+msgstr "Abrir la carpeta del perfil"
+
+#: contents/ui/settings/StorageSettings.qml:197
+msgid "Switch WebEngine profile?"
+msgstr "¿Cambiar el perfil de WebEngine?"
+
+#: contents/ui/settings/StorageSettings.qml:198
+msgid "The assistant will reload using the profile \"%1\". You will be signed out of the current sessions until you sign in again; the data of the previous profile stays on disk and can be removed from its folder."
+msgstr "El asistente se recargará usando el perfil \"%1\". Se cerrarán las sesiones actuales hasta que vuelvas a iniciar sesión; los datos del perfil anterior permanecen en el disco y se pueden eliminar de su carpeta."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:33
+msgid "Let pages write to the clipboard"
+msgstr "Permitir que las páginas escriban en el portapapeles"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:33
+msgid "Needed by the \"Copy\" buttons of most assistants. Reading the clipboard is a separate permission."
+msgstr "Necesario para los botones \"Copiar\" de la mayoría de los asistentes. Leer el portapapeles es un permiso aparte."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:34
+msgid "Let scripts paste from the clipboard"
+msgstr "Permitir que los scripts peguen desde el portapapeles"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:34
+msgid "Allows a page to read the clipboard without asking. Ctrl+V works without this. Off by default for privacy."
+msgstr "Permite que una página lea el portapapeles sin preguntar. Ctrl+V funciona sin esto. Desactivado por defecto por privacidad."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:35
+msgid "Let pages open new windows"
+msgstr "Permitir que las páginas abran ventanas nuevas"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:35
+msgid "New windows are intercepted: sign-in pages stay in ChatAI, other links open in your browser."
+msgstr "Las ventanas nuevas se interceptan: las páginas de inicio de sesión permanecen en ChatAI, otros enlaces se abren en tu navegador."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:36
+msgid "Require a click before media plays"
+msgstr "Exigir un clic antes de reproducir contenido"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:36
+msgid "Blocks autoplaying audio and video (including voice replies) until you interact with the page."
+msgstr "Bloquea la reproducción automática de audio y vídeo (incluidas las respuestas por voz) hasta que interactúes con la página."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:37
+msgid "Spatial navigation with arrow keys"
+msgstr "Navegación espacial con las flechas"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:37
+msgid "Move between links and fields with the arrow keys instead of Tab."
+msgstr "Muévete entre enlaces y campos con las flechas en lugar del tabulador."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:38
+msgid "Focus the page after navigating"
+msgstr "Enfocar la página tras navegar"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:38
+msgid "Lets you type immediately after the page loads. Disable if the page steals focus from the toolbar."
+msgstr "Permite escribir en cuanto la página carga. Desactívalo si la página roba el foco de la barra de herramientas."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:39
+msgid "Allow unknown link types after a click"
+msgstr "Permitir tipos de enlace desconocidos tras un clic"
+
+#: contents/ui/settings/WebFeaturesSettings.qml:39
+msgid "Lets a link you click open another application (for example mailto: or a custom scheme). Links opened by scripts are still blocked."
+msgstr "Permite que un enlace que pulses abra otra aplicación (por ejemplo mailto: o un esquema personalizado). Los enlaces abiertos por scripts siguen bloqueados."
+
+#: contents/ui/settings/WebFeaturesSettings.qml:43
+msgid "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
+msgstr "Estas opciones cambian el comportamiento del motor web integrado para todos los asistentes. Los cambios se aplican de inmediato."
+
+#~ msgid "Open file"
+#~ msgstr "Abrir archivo"
+
+#~ msgid "Go back to previous page"
+#~ msgstr "Volver a la página anterior"
+
+#~ msgid "Go forward to next page"
+#~ msgstr "Ir a la siguiente página"
+
+#~ msgid "Return to homepage/default chat"
+#~ msgstr "Volver a la página de inicio/chat predeterminado"
+
+#~ msgid "Select or enter chat website URL"
+#~ msgstr "Selecciona o ingresa la URL del sitio web de chat."
+
+#~ msgid "Header will hide automatically when not in use"
+#~ msgstr "El encabezado se ocultará automáticamente cuando no esté en uso."
+
+#~ msgid "Header will stay visible"
+#~ msgstr "El encabezado permanecerá visible."
+
+#~ msgid "Manage downloads and download folder"
+#~ msgstr "Gestionar descargas y carpeta de descargas"
+
+#~ msgid "Widget will close when clicking outside"
+#~ msgstr "El widget se cerrará al hacer clic fuera de él."
+
+#~ msgid "Custom URL..."
+#~ msgstr "URL personalizado..."
+
+#~ msgid "Icon:"
+#~ msgstr "Ícono:"
+
+#~ msgid "Default adaptive icon"
+#~ msgstr "Icono adaptativo predeterminado"
+
+#~ msgid "Default light icon"
+#~ msgstr "Icono de luz predeterminado"
+
+#~ msgid "Filled icon"
+#~ msgstr "Ícono relleno"
+
+#~ msgid "Colorful icon"
+#~ msgstr "Icono colorido"
+
+#~ msgid "Header Options"
+#~ msgstr "Opciones de encabezado"
+
+#~ msgid "Auto-hide header (show on mouse hover)"
+#~ msgstr "Ocultar automáticamente el encabezado (mostrar al pasar el ratón)"
+
+#~ msgid "Hide Keep Open button"
+#~ msgstr "Ocultar botón Mantener Abierto"
+
+#~ msgid "Hide Custom URL button"
+#~ msgstr "Ocultar botón de URL personalizada"
+
+#~ msgid "Hide Auto-Hide button"
+#~ msgstr "Ocultar botón de autoocultación"
+
+#~ msgid "Hide Close button"
+#~ msgstr "Ocultar botón Cerrar"
+
+#~ msgid "Hide Home button"
+#~ msgstr "Ocultar botón de inicio"
+
+#~ msgid "Hide Download button"
+#~ msgstr "Ocultar botón de descarga"
+
+#~ msgid "Hide navigation buttons"
+#~ msgstr "Ocultar botones de navegación"
+
+#~ msgid "Hide refresh button"
+#~ msgstr "Ocultar botón de refresco"
+
+#~ msgid "You can still use the Go back to... and Keep open actions by right-clicking the widget icon."
+#~ msgstr "Todavía puedes usar las acciones Volver a... y Mantener abierto haciendo clic derecho en el ícono del widget."
+
+#~ msgid "Predefined Sites"
+#~ msgstr "Sitios predefinidos"
+
+#~ msgid "If notifications are not working create the file:"
+#~ msgstr "Si las notificaciones no funcionan, crea el archivo:"
+
+#~ msgid "containing the following text:"
+#~ msgstr "contiene el siguiente texto:"
+
+#~ msgid "Allow geolocation access"
+#~ msgstr "Permitir acceso a la geolocalización"
+
+#~ msgid "Allow using webcam"
+#~ msgstr "Permitir el uso de la cámara web"
+
+#~ msgid "Enable spatial navigation"
+#~ msgstr "Habilitar navegación espacial"
+
+#~ msgid "Allows navigation between focusable elements using arrow keys"
+#~ msgstr "Permite la navegación entre elementos enfocados utilizando las teclas de flecha."
+
+#~ msgid "Allow JavaScript to access clipboard"
+#~ msgstr "Permitir que JavaScript acceda al portapapeles"
+
+#~ msgid "Allow unknown URL schemes"
+#~ msgstr "Permitir esquemas de URL desconocidos"
+
+#~ msgid ""
+#~ "Cache location: %1\n"
+#~ "Profile location: %2"
+#~ msgstr ""
+#~ "Ubicación de caché: %1  \n"
+#~ "Ubicación de perfil: %2"

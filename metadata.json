@@ -9,15 +9,22 @@
             {
                 "Email": "bigbruno@gmail.com",
                 "Name": "Bruno Gonçalves"
+            },
+            {
+                "Email": "rruscher@gmail.com",
+                "Name": "Rafael Ruscher"
             }
         ],
         "Category": "Online Services",
-        "Description": "A range of chatbots in your desktop",
-        "Icon": "applications-internet",
+        "Copyright": "© 2024–2026 The ChatAI authors",
+        "Description": "Access AI chat assistants (ChatGPT, Claude, Gemini, DeepSeek, Copilot and more) from the Plasma desktop",
+        "Icon": "chatai",
         "Id": "ChatAI-Plasmoid",
-        "License": "GPL-2.0+",
+        "License": "GPL-2.0-or-later",
         "Name": "ChatAI",
-        "Website": "https://github.com/DenysMb/ChatAI-Plasmoid"
+        "Version": "1.0.1",
+        "Website": "https://github.com/ruscher/ChatAI-Plasmoid",
+        "BugReportUrl": "https://github.com/ruscher/ChatAI-Plasmoid/issues"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
 }
