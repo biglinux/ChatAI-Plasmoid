@@ -1,600 +1,985 @@
+/*
+ *  SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+ *  SPDX-FileCopyrightText: 2025 Bruno Gonçalves <bigbruno@gmail.com>
+ *  SPDX-FileCopyrightText: 2026 Rafael Ruscher <rruscher@gmail.com>
+ *
+ *  SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ */
+
 import QtCore
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Dialogs
 import QtQuick.Layouts
-import QtQuick.LocalStorage 2.0
 import QtWebEngine
-import Qt.labs.platform 1.1
+
 import org.kde.plasma.components as PlasmaComponents3
-import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.plasmoid
-import org.kde.notification 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.notification
+import org.kde.plasma.plasma5support as P5Support
 
+import "Downloads.js" as Downloads
+
+/*
+ * Web engine host: profile, navigation, permissions, downloads, zoom,
+ * fullscreen and lifecycle. Created lazily by the Loader in main.qml and
+ * destroyed by Close to release the Chromium processes.
+ */
 Item {
-    function goBackToHomePage() {
-        webview.url = plasmoid.configuration.url;
+    id: webViewRoot
+
+    required property QtObject providerModel
+
+    // Set by main.qml: true while the popup is collapsed or the settings
+    // panel covers the view. Drives visibility and lifecycle freezing.
+    property bool hidden: false
+
+    readonly property alias webview: webview
+    readonly property alias downloads: downloadsModel
+    readonly property string effectiveProfileName: String(plasmoid.configuration.webEngineProfileName || "").replace(/[^A-Za-z0-9._-]/g, "-").slice(0, 64) || providerModel.defaultProfileName
+    property var webProfile: null
+
+    property bool hasLoadError: false
+    property string loadErrorDetails: ""
+    // True when the main document has been waiting for the server for a while
+    // (some anti-bot front ends hold the connection without answering).
+    property bool slowResponse: false
+    // CSS viewport width seen by the page (zoom shrinks it). Below 768 px most
+    // assistants switch to mobile layouts whose sign-in flows misbehave here.
+    readonly property int desktopViewportWidth: 768
+    readonly property real cssViewportWidth: webview.zoomFactor > 0 ? webview.width / webview.zoomFactor : webview.width
+    property bool mobileLayoutHintDismissed: false
+    property bool findBarVisible: false
+
+    // Navigation funnel: every navigation (initial load, provider switch, Home,
+    // custom address) goes through navigateTo(). The load is deferred one tick
+    // and coalesced, so the config.url change and the goHome() call that follow
+    // a provider switch never fire two competing navigations, and stop() always
+    // settles before the new URL is assigned. This is what makes switching
+    // assistants load reliably every time.
+    property string pendingUrl: ""
+    property bool navScheduled: false
+
+    // Permissions
+    property var pendingPermission: null
+    property var permissionQueue: []
+    property int permissionsRevision: 0
+
+    // State exposed to the header and menus
+    property bool clearingCache: false
+    readonly property bool devToolsOpen: devToolsLoader.active
+    readonly property bool fullScreenActive: fullScreenLoader.item ? fullScreenLoader.item.active : false
+    readonly property bool loading: webview.loading
+    readonly property bool canGoBack: webview.canGoBack
+    readonly property bool canGoForward: webview.canGoForward
+    readonly property int zoomPercent: Math.round(webview.zoomFactor * 100)
+    readonly property var zoomSteps: [0.5, 0.67, 0.75, 0.8, 0.9, 1.0, 1.1, 1.25, 1.5, 1.75, 2.0]
+    readonly property string currentTitle: webview.title
+    readonly property string currentUrl: String(webview.url || "")
+    readonly property int renderProcessPid: webview.renderProcessPid
+    readonly property int lifecycleState: webview.lifecycleState
+    readonly property int recommendedState: webview.recommendedState
+
+    // Downloads: the single source of truth is downloadsModel (below);
+    // downloadSummary is derived for the toolbar indicator and menus.
+    property int downloadsRevision: 0
+    readonly property var downloadSummary: Downloads.summarize(downloadItems(downloadsRevision))
+    readonly property int activeDownloadCount: downloadSummary.active
+    readonly property real activeDownloadProgress: Math.max(0, downloadSummary.progress)
+    property var downloadCache: ({})
+    // Emitted when a download completes or fails so the toolbar can reveal
+    // the indicator briefly (never a modal popup).
+    signal downloadAttention()
+
+    // OAuth / window.open() popups are shown in AuthPopup with the same profile.
+    readonly property bool authPopupOpen: authPopupLoader.active
+
+    // Anything that must not be interrupted by freezing the page.
+    readonly property bool busy: webview.loading || webview.recentlyAudible || activeDownloadCount > 0
+        || pendingPermission !== null || devToolsOpen || clearingCache || fullScreenActive || authPopupOpen
+
+    readonly property var currentProvider: providerModel.providerForUrl(plasmoid.configuration.url)
+
+    readonly property int policyAsk: 0
+    readonly property int policyAllow: 1
+    readonly property int policyBlock: 2
+
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+
+    Component.onCompleted: {
+        // Prototype instances must be created after the component is ready;
+        // creating them inside a binding crashes QQuickWebEngineView::setProfile.
+        const profile = profilePrototype.instance();
+        configureProfile(profile);
+        webProfile = profile;
+        applyZoom();
+        // Initial load, explicit (there is no reactive url binding).
+        goHome();
     }
 
-    function goBack() {
-        webview.goBack();
+    Connections {
+        target: plasmoid.configuration
+
+        function onUrlChanged() {
+            webViewRoot.configureProfile();
+            webViewRoot.hasLoadError = false;
+            // Do not carry the previous provider's icon over; the new one
+            // arrives through WebEngineView.icon.
+            plasmoid.configuration.favIcon = "";
+            // Navigate to the newly selected provider / address.
+            webViewRoot.goHome();
+        }
+        function onDownloadPathChanged() { webViewRoot.configureProfile(); }
+        function onCustomUserAgentChanged() { webViewRoot.configureProfile(); }
+        function onCompatibilityUserAgentChanged() { webViewRoot.configureProfile(); }
+        function onZoomFactorChanged() { webViewRoot.applyZoom(); }
     }
 
-    function goForward() {
-        webview.goForward();
+    // ---- helpers -----------------------------------------------------------
+
+    function isHttpUrl(value) {
+        return providerModel.isHttpUrl(value);
     }
 
-    function reloadPage() {
-        webview.reloadAndBypassCache();
+    function localPath(value) {
+        let path = String(value || "").trim();
+        if (path.indexOf("file://") === 0)
+            path = path.replace(/^file:\/\/(localhost)?/, "");
+        return path || String(StandardPaths.writableLocation(StandardPaths.DownloadLocation)).replace(/^file:\/\/(localhost)?/, "");
+    }
+
+    function downloadDirectory() {
+        const path = localPath(plasmoid.configuration.downloadPath);
+        return path.charAt(0) === "/" ? path : localPath("");
+    }
+
+    function safeFileName(value, fallback) {
+        let name = String(value || fallback || "download").split(/[\\/]/).pop();
+        // Strip control characters, path separators and reserved characters.
+        name = name.replace(/[\x00-\x1f\x7f<>:"|?*]/g, "_").replace(/\.\./g, "_").trim();
+        if (name === "." || name === "..")
+            name = fallback || "download";
+        return name || fallback || "download";
+    }
+
+    function configureProfile(profileOverride) {
+        const profile = profileOverride || webProfile;
+        if (!profile)
+            return;
+        profile.httpUserAgent = providerModel.effectiveUserAgent(WebEngine.defaultProfile.httpUserAgent, currentProvider);
+        profile.downloadPath = downloadDirectory();
+    }
+
+    // ---- navigation API used by Header / menu ------------------------------
+
+    function goHome() {
+        navigateTo(currentProvider ? currentProvider.url : plasmoid.configuration.url);
+    }
+
+    // Single navigation entry point. Aborts any in-flight load (some pages, e.g.
+    // ChatGPT bouncing to a blocked Google sign-in, keep redirecting and would
+    // override a plain assignment), then loads on the next tick so stop() has
+    // settled. Multiple calls in the same tick collapse into one load.
+    function navigateTo(url) {
+        if (!isHttpUrl(url)) {
+            loadErrorDetails = i18n("The configured address is not a valid HTTP or HTTPS URL.");
+            hasLoadError = true;
+            return;
+        }
+        hasLoadError = false;
+        pendingUrl = url;
+        if (navScheduled)
+            return;
+        navScheduled = true;
+        webview.stop();
+        Qt.callLater(startPendingNavigation);
+    }
+
+    function startPendingNavigation() {
+        navScheduled = false;
+        const url = pendingUrl;
+        if (!url)
+            return;
+        if (String(webview.url) === url)
+            webview.reload();
+        else
+            webview.url = url;
+        navWatchdog.restart();
+    }
+
+    function goBack() { if (webview.canGoBack) webview.goBack(); }
+    function goForward() { if (webview.canGoForward) webview.goForward(); }
+    function reload() { hasLoadError = false; webview.reload(); }
+    function reloadBypassCache() { hasLoadError = false; webview.reloadAndBypassCache(); }
+    function stop() { webview.stop(); }
+    function toggleFind() { findBarVisible = !findBarVisible; }
+
+    function openExternally() {
+        if (isHttpUrl(currentUrl))
+            Qt.openUrlExternally(currentUrl);
+    }
+
+    function copyUrl() {
+        clipboardHelper.text = currentUrl;
+        clipboardHelper.selectAll();
+        clipboardHelper.copy();
+        clipboardHelper.text = "";
+    }
+
+    // ---- zoom --------------------------------------------------------------
+
+    function applyZoom() {
+        const factor = Math.min(5.0, Math.max(0.25, Number(plasmoid.configuration.zoomFactor) || 1.0));
+        if (Math.abs(webview.zoomFactor - factor) > 0.001)
+            webview.zoomFactor = factor;
+    }
+
+    function setZoom(factor) {
+        plasmoid.configuration.zoomFactor = Math.min(5.0, Math.max(0.25, factor));
+        applyZoom();
+    }
+
+    function zoomIn() {
+        const current = webview.zoomFactor;
+        const next = zoomSteps.find(step => step > current + 0.001);
+        setZoom(next !== undefined ? next : Math.min(5.0, current + 0.25));
+    }
+
+    function zoomOut() {
+        const current = webview.zoomFactor;
+        const lower = zoomSteps.filter(step => step < current - 0.001);
+        setZoom(lower.length ? lower[lower.length - 1] : Math.max(0.25, current - 0.25));
+    }
+
+    function zoomReset() { setZoom(1.0); }
+
+    // ---- fullscreen --------------------------------------------------------
+
+    function enterFullScreen() {
+        fullScreenLoader.active = true;
+        fullScreenLoader.item.enter(webview);
+    }
+
+    function exitFullScreen() {
+        if (fullScreenLoader.item)
+            fullScreenLoader.item.leave();
+        if (webview.isFullScreen)
+            webview.fullScreenCancelled();
+        fullScreenLoader.active = false;
+    }
+
+    function toggleFullScreen() {
+        if (fullScreenActive)
+            exitFullScreen();
+        else
+            enterFullScreen();
+    }
+
+    // ---- devtools ----------------------------------------------------------
+
+    function openDevTools() {
+        devToolsLoader.active = true;
+        devToolsLoader.item.show();
+        devToolsLoader.item.requestActivate();
+    }
+
+    function closeDevTools() {
+        devToolsLoader.active = false;
+    }
+
+    // ---- cache & permissions management -----------------------------------
+
+    function clearHttpCache() {
+        if (!webProfile || clearingCache)
+            return;
+        clearingCache = true;
+        webProfile.clearHttpCache();
+    }
+
+    function listPermissions() {
+        return webProfile ? webProfile.listAllPermissions() : [];
+    }
+
+    function resetPermission(permission) {
+        if (permission)
+            permission.reset();
+        permissionsRevision++;
+    }
+
+    function resetAllPermissions() {
+        listPermissions().forEach(permission => permission.reset());
+        permissionsRevision++;
+    }
+
+    // ---- lifecycle ----------------------------------------------
+
+    onHiddenChanged: {
+        if (!hidden) {
+            freezeTimer.stop();
+            discardTimer.stop();
+            // A visible page must be Active: order matters.
+            webview.lifecycleState = WebEngineView.LifecycleState.Active;
+            webview.visible = true;
+        } else {
+            webview.visible = false;
+            if (plasmoid.configuration.freezeWhenHidden)
+                freezeTimer.restart();
+            if (plasmoid.configuration.discardAfterMinutes > 0)
+                discardTimer.restart();
+        }
+    }
+
+    function tryFreeze() {
+        if (!hidden || !plasmoid.configuration.freezeWhenHidden)
+            return;
+        if (busy || webview.recommendedState === WebEngineView.LifecycleState.Active) {
+            // The engine still recommends Active (audio, upload, form work…): retry later.
+            freezeTimer.restart();
+            return;
+        }
+        if (webview.lifecycleState === WebEngineView.LifecycleState.Active)
+            webview.lifecycleState = WebEngineView.LifecycleState.Frozen;
+    }
+
+    Timer {
+        id: freezeTimer
+        interval: 30 * 1000
+        onTriggered: webViewRoot.tryFreeze()
+    }
+
+    Timer {
+        id: discardTimer
+        interval: Math.max(1, plasmoid.configuration.discardAfterMinutes) * 60 * 1000
+        onTriggered: {
+            if (!webViewRoot.hidden || webViewRoot.busy || webview.lifecycleState === WebEngineView.LifecycleState.Discarded)
+                return;
+            if (webview.recommendedState !== WebEngineView.LifecycleState.Active)
+                webview.lifecycleState = WebEngineView.LifecycleState.Discarded;
+        }
+    }
+
+    Timer {
+        id: slowResponseTimer
+        interval: 12 * 1000
+        onTriggered: {
+            if (webview.loading && webview.loadProgress < 10)
+                webViewRoot.slowResponse = true;
+        }
+    }
+
+    // Safety net: if a requested navigation silently never took (target still
+    // not showing and nothing is loading), force it once.
+    Timer {
+        id: navWatchdog
+        interval: 2500
+        onTriggered: {
+            if (webViewRoot.pendingUrl && String(webview.url) !== webViewRoot.pendingUrl && !webview.loading)
+                webview.url = webViewRoot.pendingUrl;
+        }
+    }
+
+    // ---- downloads ---------------------------------------------------------
+    //
+    // Model roles: downloadId, fileName, fullPath, sourceUrl, mimeType,
+    // progress (0..1), receivedBytes, totalBytes (0 = unknown), isPdfExport,
+    // state (WebEngineDownloadRequest.DownloadState), isPaused, error,
+    // seen (opened/acknowledged by the user), speed (B/s or -1), eta (s or -1).
+    // UI updates from receivedBytesChanged are throttled to ~4/s.
+
+    readonly property int downloadUiIntervalMs: 250
+
+    function downloadItems() {
+        const items = [];
+        for (let i = 0; i < downloadsModel.count; i++) {
+            const item = downloadsModel.get(i);
+            items.push({ state: item.state, receivedBytes: item.receivedBytes, totalBytes: item.totalBytes, seen: item.seen, isPaused: item.isPaused });
+        }
+        return items;
+    }
+
+    ListModel {
+        id: downloadsModel
+
+        function addDownload(downloadItem, fileName, path, isPdf) {
+            const downloadId = downloadItem ? String(downloadItem.id) : "pdf-" + Date.now().toString();
+            append({
+                "downloadId": downloadId,
+                "fileName": fileName,
+                "fullPath": path,
+                "sourceUrl": downloadItem ? String(downloadItem.url) : "",
+                "mimeType": downloadItem ? String(downloadItem.mimeType || "") : "application/pdf",
+                "progress": 0,
+                "receivedBytes": 0,
+                "totalBytes": downloadItem && downloadItem.totalBytes > 0 ? downloadItem.totalBytes : 0,
+                "isPdfExport": isPdf,
+                "state": downloadItem ? downloadItem.state : WebEngineDownloadRequest.DownloadInProgress,
+                "isPaused": downloadItem ? downloadItem.isPaused : false,
+                "error": "",
+                "seen": false,
+                "speed": -1,
+                "eta": -1
+            });
+            webViewRoot.downloadsRevision++;
+            return count - 1;
+        }
+
+        function removeAt(index) {
+            const item = get(index);
+            if (item && item.downloadId)
+                delete webViewRoot.downloadCache[item.downloadId];
+            remove(index);
+            webViewRoot.downloadsRevision++;
+        }
+
+        function clearFinished() {
+            for (let i = count - 1; i >= 0; i--) {
+                if (Downloads.isFinished(get(i).state))
+                    removeAt(i);
+            }
+        }
+    }
+
+    function downloadIndex(downloadId) {
+        const id = String(downloadId || "");
+        for (let i = 0; i < downloadsModel.count; i++) {
+            if (String(downloadsModel.get(i).downloadId) === id)
+                return i;
+        }
+        return -1;
+    }
+
+    function setDownloadProperty(index, role, value) {
+        if (downloadsModel.get(index)[role] !== value)
+            downloadsModel.setProperty(index, role, value);
+    }
+
+    function applyDownloadUpdate(download) {
+        if (!download)
+            return;
+        const index = downloadIndex(download.id);
+        if (index < 0)
+            return;
+        const entry = downloadCache[String(download.id)];
+        const now = Date.now();
+        const total = download.totalBytes > 0 ? download.totalBytes : 0;
+        const received = download.receivedBytes;
+        const progress = total > 0 ? Math.min(1, received / total) : 0;
+        let speed = -1;
+        let eta = -1;
+        if (entry && download.state === WebEngineDownloadRequest.DownloadInProgress && !download.isPaused) {
+            entry.samples = Downloads.pushSample(entry.samples, now, received, 10000);
+            speed = Downloads.speedFromSamples(entry.samples, 10000);
+            eta = Downloads.etaSeconds(received, total, speed);
+        }
+        setDownloadProperty(index, "state", download.state);
+        setDownloadProperty(index, "receivedBytes", received);
+        setDownloadProperty(index, "totalBytes", total);
+        setDownloadProperty(index, "progress", download.state === WebEngineDownloadRequest.DownloadCompleted ? 1 : progress);
+        setDownloadProperty(index, "isPaused", download.isPaused);
+        setDownloadProperty(index, "error", download.interruptReasonString || "");
+        setDownloadProperty(index, "speed", speed);
+        setDownloadProperty(index, "eta", eta);
+        if (entry) {
+            entry.lastUpdate = now;
+            entry.pending = false;
+        }
+        downloadsRevision++;
+    }
+
+    // Byte counters change hundreds of times per second; coalesce them.
+    function scheduleDownloadUpdate(download) {
+        const entry = downloadCache[String(download.id)];
+        if (!entry) {
+            applyDownloadUpdate(download);
+            return;
+        }
+        if (Date.now() - entry.lastUpdate >= downloadUiIntervalMs) {
+            applyDownloadUpdate(download);
+        } else {
+            entry.pending = true;
+            if (!downloadFlushTimer.running)
+                downloadFlushTimer.start();
+        }
+    }
+
+    Timer {
+        id: downloadFlushTimer
+        interval: webViewRoot.downloadUiIntervalMs
+        onTriggered: {
+            for (const id in webViewRoot.downloadCache) {
+                const entry = webViewRoot.downloadCache[id];
+                if (entry && entry.pending)
+                    webViewRoot.applyDownloadUpdate(entry.download);
+            }
+        }
+    }
+
+    function downloadEntry(downloadId) {
+        return downloadCache[String(downloadId || "")] || null;
+    }
+
+    function cancelDownload(downloadId) {
+        const entry = downloadEntry(downloadId);
+        if (entry)
+            entry.download.cancel();
+    }
+
+    function pauseDownload(downloadId) {
+        const entry = downloadEntry(downloadId);
+        if (entry)
+            entry.download.pause();
+    }
+
+    function resumeDownload(downloadId) {
+        const entry = downloadEntry(downloadId);
+        if (entry)
+            entry.download.resume();
+    }
+
+    function markDownloadSeen(downloadId) {
+        const index = downloadIndex(downloadId);
+        if (index >= 0 && !downloadsModel.get(index).seen) {
+            downloadsModel.setProperty(index, "seen", true);
+            downloadsRevision++;
+        }
+    }
+
+    function downloadFileUrl(path) {
+        return "file://" + String(path).split("/").map(encodeURIComponent).join("/");
+    }
+
+    function openDownload(downloadId) {
+        const index = downloadIndex(downloadId);
+        if (index < 0)
+            return;
+        const item = downloadsModel.get(index);
+        markDownloadSeen(downloadId);
+        if (item.fullPath)
+            Qt.openUrlExternally(downloadFileUrl(item.fullPath));
+    }
+
+    // Ask the file manager to reveal the file (org.freedesktop.FileManager1,
+    // implemented by Dolphin and others); falls back to opening the folder.
+    function showDownloadInFolder(downloadId) {
+        const index = downloadIndex(downloadId);
+        if (index < 0)
+            return;
+        const item = downloadsModel.get(index);
+        markDownloadSeen(downloadId);
+        if (!item.fullPath)
+            return;
+        const fileUrl = downloadFileUrl(item.fullPath);
+        const quoted = "'" + fileUrl.replace(/'/g, "'\\''") + "'";
+        fileManagerBridge.pendingFolder = item.fullPath.replace(/\/[^/]*$/, "");
+        fileManagerBridge.connectSource("dbus-send --session --print-reply --dest=org.freedesktop.FileManager1 /org/freedesktop/FileManager1 org.freedesktop.FileManager1.ShowItems array:string:" + quoted + " string:''");
+    }
+
+    P5Support.DataSource {
+        id: fileManagerBridge
+        engine: "executable"
+        property string pendingFolder: ""
+        onNewData: function (sourceName, data) {
+            disconnectSource(sourceName);
+            if (Number(data["exit code"]) !== 0 && pendingFolder)
+                Qt.openUrlExternally(webViewRoot.downloadFileUrl(pendingFolder));
+            pendingFolder = "";
+        }
+    }
+
+    // Re-request a cancelled or interrupted download from its original URL.
+    // (Finished requests are released by Qt, so resume() is not available.)
+    function retryDownload(downloadId) {
+        const index = downloadIndex(downloadId);
+        if (index < 0)
+            return;
+        const item = downloadsModel.get(index);
+        const source = String(item.sourceUrl || "");
+        if (!isHttpUrl(source))
+            return;
+        downloadsModel.removeAt(index);
+        webview.runJavaScript("(function (u) { const a = document.createElement('a'); a.href = u; a.download = ''; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove(); })(" + JSON.stringify(source) + ")");
+    }
+
+    function removeDownload(downloadId) {
+        const index = downloadIndex(downloadId);
+        if (index >= 0 && Downloads.isFinished(downloadsModel.get(index).state))
+            downloadsModel.removeAt(index);
+    }
+
+    function clearFinishedDownloads() {
+        downloadsModel.clearFinished();
+    }
+
+    // Per-download KDE notification with Open / Show in Folder actions.
+    Component {
+        id: downloadNotificationComponent
+        Notification {
+            id: downloadNotification
+            property string downloadId
+            componentName: "plasma_workspace"
+            eventId: "notification"
+            iconName: "folder-download"
+            actions: [
+                NotificationAction {
+                    label: i18n("Open")
+                    onActivated: webViewRoot.openDownload(downloadNotification.downloadId)
+                },
+                NotificationAction {
+                    label: i18n("Show in Folder")
+                    onActivated: webViewRoot.showDownloadInFolder(downloadNotification.downloadId)
+                }
+            ]
+            onClosed: destroy()
+        }
+    }
+
+    function notifyDownloadFinished(download, ok) {
+        const notification = downloadNotificationComponent.createObject(webViewRoot, { downloadId: String(download.id) });
+        notification.title = ok ? i18n("Download finished") : i18n("Download failed");
+        notification.text = ok ? download.downloadFileName : i18n("%1 — %2", download.downloadFileName, download.interruptReasonString || i18n("interrupted"));
+        notification.iconName = ok ? "folder-download" : "data-warning";
+        notification.sendEvent();
     }
 
     function printPage() {
-        webview.runJavaScript("document.title", function(title) {
-            let downloadDirectory = plasmoid.configuration.downloadPath ? 
-                plasmoid.configuration.downloadPath.toString().replace(/^file:\/\//, '') : 
-                StandardPaths.writableLocation(StandardPaths.DownloadLocation);
-                
-            let timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            let safeName = title.replace(/[^a-z0-9]/gi, '-').toLowerCase();
-            let filename = `${downloadDirectory}/${safeName}-${timestamp}.pdf`;
-
-            // Add the PDF as a special type of download
-            let pdfIndex = webview.downloads.addDownload(null, `${safeName}-${timestamp}.pdf`, filename, true);
-            
-            // Store the PDF index for future reference
-            let currentPdfIndex = pdfIndex;
-            
+        webview.runJavaScript("document.title", function (title) {
+            const directory = webViewRoot.downloadDirectory();
+            const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+            const safeName = webViewRoot.safeFileName(title, "ChatAI").replace(/[^a-z0-9._-]/gi, "-").toLowerCase();
+            const filename = `${directory}/${safeName}-${timestamp}.pdf`;
+            downloadsModel.addDownload(null, `${safeName}-${timestamp}.pdf`, filename, true);
             webview.printToPdf(filename, WebEngineView.A4, WebEngineView.Portrait);
         });
     }
 
     function saveMHTML() {
-        webview.runJavaScript("document.title", function(title) {
-            let downloadDirectory = plasmoid.configuration.downloadPath ? 
-                plasmoid.configuration.downloadPath.toString().replace(/^file:\/\//, '') : 
-                StandardPaths.writableLocation(StandardPaths.DownloadLocation);
-                
-            let timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            let safeName = title.replace(/[^a-z0-9]/gi, '-').toLowerCase();
-            let filename = `${downloadDirectory}/${safeName}-${timestamp}.mhtml`;
-            
-            webview.triggerWebAction(WebEngineView.SavePage, filename);
-        });
+        webview.triggerWebAction(WebEngineView.SavePage);
     }
 
-
-    function getUserAgent() {
-        return plasmoid.configuration.url.includes("https://duckduckgo.com") || plasmoid.configuration.url.includes("x.com/i/grok")
-            ? "Mozilla/5.0 (Linux; Android 9; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.111 Mobile Safari/537.36"
-            : ""
-    }
+    // ---- notifications -----------------------------------------------------
 
     Notification {
         id: webNotification
-        componentName: "chatai_plasmoid"
+        // Standard Plasma event: no per-applet .notifyrc required.
+        componentName: "plasma_workspace"
         eventId: "notification"
-        defaultAction: i18n("Open")
-        title: i18n("ChatAI")
         iconName: "dialog-information"
     }
 
-    function showNotification(title, message, icon = "dialog-information") {
-        webNotification.title = title || i18n("ChatAI")
-        webNotification.text = message
-        webNotification.iconName = icon
-        webNotification.sendEvent()
+    function showNotification(title, message, icon) {
+        webNotification.title = title || i18n("ChatAI");
+        webNotification.text = message;
+        webNotification.iconName = icon || "dialog-information";
+        webNotification.sendEvent();
     }
 
-    function getProgressPath(path) {
-        // For the progress bar, it needs file:///
-        return "file:///" + path.replace(/^\/+/, '');
+    // ---- permissions --------------------------------------------
+
+    function combinePolicies(a, b) {
+        if (a === policyBlock || b === policyBlock)
+            return policyBlock;
+        if (a === policyAllow && b === policyAllow)
+            return policyAllow;
+        return policyAsk;
     }
 
-    function getOpenPath(path) {
-        // To open the file, it cannot have file://
-        return path.replace(/^file:\/+/, '').replace(/^\/+/, '/');
+    function policyForPermission(type) {
+        const config = plasmoid.configuration;
+        switch (type) {
+        case WebEnginePermission.PermissionType.Notifications:
+            return config.notificationsPolicy;
+        case WebEnginePermission.PermissionType.MediaAudioCapture:
+            return config.microphonePolicy;
+        case WebEnginePermission.PermissionType.MediaVideoCapture:
+            return config.webcamPolicy;
+        case WebEnginePermission.PermissionType.MediaAudioVideoCapture:
+            return combinePolicies(config.microphonePolicy, config.webcamPolicy);
+        case WebEnginePermission.PermissionType.DesktopVideoCapture:
+        case WebEnginePermission.PermissionType.DesktopAudioVideoCapture:
+            return config.screenSharePolicy;
+        case WebEnginePermission.PermissionType.Geolocation:
+            return config.geolocationPolicy;
+        case WebEnginePermission.PermissionType.ClipboardReadWrite:
+            return config.clipboardPolicy;
+        default:
+            // MouseLock, LocalFontsAccess, Unsupported and anything newer.
+            return policyBlock;
+        }
     }
 
-    // Add this helper function before the WebEngineView
-    function isDownloadInProgress(fileName) {
-        if (!webview || !webview.downloads) return false;
-        
-        for (let i = 0; i < webview.downloads.count; i++) {
-            let item = webview.downloads.get(i);
-            if (item && item.state === WebEngineDownloadRequest.DownloadInProgress && 
-                item.fileName === fileName) {
-                return true;
+    function handlePermission(permission) {
+        const policy = policyForPermission(permission.permissionType);
+        if (policy === policyAllow) {
+            permission.grant();
+        } else if (policy === policyAsk) {
+            if (pendingPermission === null)
+                pendingPermission = permission;
+            else
+                permissionQueue.push(permission);
+        } else {
+            permission.deny();
+        }
+    }
+
+    function resolvePendingPermission(grant) {
+        const permission = pendingPermission;
+        pendingPermission = null;
+        if (permission) {
+            if (grant)
+                permission.grant();
+            else
+                permission.deny();
+            permissionsRevision++;
+        }
+        if (permissionQueue.length)
+            pendingPermission = permissionQueue.shift();
+    }
+
+    // ---- profile -----------------------------------------------------------
+
+    WebEngineProfilePrototype {
+        id: profilePrototype
+
+        storageName: webViewRoot.effectiveProfileName
+        httpCacheType: WebEngineProfile.DiskHttpCache
+        httpCacheMaximumSize: Math.max(0, plasmoid.configuration.httpCacheMaximumSize) * 1024 * 1024
+        persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
+        persistentPermissionsPolicy: WebEngineProfile.StoreOnDisk
+    }
+
+    Connections {
+        target: webViewRoot.webProfile
+
+        function onPresentNotification(notification) {
+            webViewRoot.showNotification(notification.title, notification.message);
+            notification.show();
+        }
+
+        function onClearHttpCacheCompleted() {
+            webViewRoot.clearingCache = false;
+        }
+
+        function onDownloadRequested(download) {
+            const directory = webViewRoot.downloadDirectory();
+            const fileName = webViewRoot.safeFileName(download.downloadFileName, "download");
+
+            for (let i = 0; i < downloadsModel.count; i++) {
+                const current = downloadsModel.get(i);
+                if (Downloads.isActive(current.state) && current.fileName === fileName && !current.isPdfExport) {
+                    webViewRoot.showNotification(i18n("Download in progress"), i18n("The file '%1' is already being downloaded", fileName), "dialog-warning");
+                    download.cancel();
+                    return;
+                }
+            }
+
+            download.downloadDirectory = directory;
+            download.downloadFileName = fileName;
+            downloadsModel.addDownload(download, fileName, directory + "/" + fileName, false);
+
+            // Byte counters are throttled; state and pause changes apply at once.
+            const throttled = function () { webViewRoot.scheduleDownloadUpdate(download); };
+            const immediate = function () { webViewRoot.applyDownloadUpdate(download); };
+            download.receivedBytesChanged.connect(throttled);
+            download.totalBytesChanged.connect(throttled);
+            download.stateChanged.connect(immediate);
+            download.isPausedChanged.connect(immediate);
+            webViewRoot.downloadCache[String(download.id)] = { download: download, throttled: throttled, immediate: immediate, samples: [], lastUpdate: 0, pending: false };
+            download.accept();
+            webViewRoot.applyDownloadUpdate(download);
+        }
+
+        function onDownloadFinished(download) {
+            webViewRoot.applyDownloadUpdate(download);
+            const id = String(download.id);
+            const entry = webViewRoot.downloadCache[id];
+            if (entry) {
+                download.receivedBytesChanged.disconnect(entry.throttled);
+                download.totalBytesChanged.disconnect(entry.throttled);
+                download.stateChanged.disconnect(entry.immediate);
+                download.isPausedChanged.disconnect(entry.immediate);
+            }
+            delete webViewRoot.downloadCache[id];
+            if (download.state === WebEngineDownloadRequest.DownloadCompleted) {
+                webViewRoot.notifyDownloadFinished(download, true);
+                webViewRoot.downloadAttention();
+            } else if (download.state === WebEngineDownloadRequest.DownloadInterrupted) {
+                webViewRoot.notifyDownloadFinished(download, false);
+                webViewRoot.downloadAttention();
             }
         }
-        return false;
     }
 
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-
-    PlasmaExtras.Menu {
-        id: linkContextMenu
-
-        property string link
-
-        visualParent: webview
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Back")
-            icon: "go-previous"
-            enabled: webview.canGoBack
-            onClicked: webview.goBack()
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Forward")
-            icon: "go-next"
-            enabled: webview.canGoForward
-            onClicked: webview.goForward()
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Reload")
-            icon: "view-refresh"
-            onClicked: reloadPage()
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Save as PDF")
-            icon: "document-save-as"
-            visible: !linkContextMenu.link
-            onClicked: printPage()
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Save as MHTML")
-            icon: "document-save"
-            visible: !linkContextMenu.link
-            onClicked: saveMHTML()
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Open Link in Browser")
-            icon: "internet-web-browser"
-            visible: linkContextMenu.link !== ""
-            onClicked: Qt.openUrlExternally(linkContextMenu.link)
-        }
-
-        PlasmaExtras.MenuItem {
-            text: i18n("Copy Link Address")
-            icon: "edit-copy"
-            visible: linkContextMenu.link !== ""
-            onClicked: webview.triggerWebAction(WebEngineView.CopyLinkToClipboard)
-        }
-
-    }
+    // ---- the view ----------------------------------------------------------
 
     WebEngineView {
         id: webview
 
-        property var downloadCache: ({})
-
-        property var downloads: ListModel {
-            function addDownload(downloadItem, fileName, path, isPdf) {
-                let downloadId = Date.now().toString();
-                let download = {
-                    "downloadId": downloadId,
-                    "fileName": fileName,
-                    "fullPath": path,
-                    "progress": 0,
-                    "receivedBytes": 0,
-                    "totalBytes": downloadItem ? downloadItem.totalBytes : 0,
-                    "isPdfExport": isPdf,
-                    "state": WebEngineDownloadRequest.DownloadInProgress
-                };
-
-                if (downloadItem) {
-                    // Store reference in cache
-                    webview.downloadCache[downloadId] = downloadItem;
-                }
-
-                this.append(download);
-                return this.count - 1;
-            }
-
-            function removeDownload(index) {
-                let item = this.get(index);
-                if (item && item.downloadId) {
-                    delete webview.downloadCache[item.downloadId];
-                }
-                this.remove(index);
-            }
-        }
-
-        function checkAndUpdateFavicon() {
-            // Use the last known favicon while loading the new one
-            if (Plasmoid.configuration.lastFavIcon)
-                Plasmoid.configuration.favIcon = Plasmoid.configuration.lastFavIcon;
-
-            // Parse page HTML for favicon information
-            webview.runJavaScript(`
-                function findFaviconInHTML() {
-                    const icons = [];
-                    // 1. Search meta tags first
-                    const metas = document.getElementsByTagName('meta');
-                    for (let i = 0; i < metas.length; i++) {
-                        const property = metas[i].getAttribute('property');
-                        if (property === 'og:image') {
-                            const content = metas[i].getAttribute('content');
-                            if (content) icons.push({ href: content, size: 64 });
-                        }
-                    }
-
-                    // 2. Search for link tags
-                    const links = document.getElementsByTagName('link');
-                    for (let i = 0; i < links.length; i++) {
-                        const rel = links[i].getAttribute('rel');
-                        if (rel && (rel.includes('icon') || rel.includes('shortcut'))) {
-                            const href = links[i].getAttribute('href');
-                            const sizes = links[i].getAttribute('sizes');
-                            if (href) {
-                                icons.push({
-                                    href: href,
-                                    size: sizes ? parseInt(sizes.split('x')[0]) : 32
-                                });
-                            }
-                        }
-                    }
-
-                    // 3. Check for default favicon.ico
-                    if (icons.length === 0) {
-                        icons.push({ href: '/favicon.ico', size: 32 });
-                    }
-
-                    // Sort by size
-                    icons.sort((a, b) => b.size - a.size);
-
-                    // Get the best icon
-                    const bestIcon = icons[0];
-                    if (!bestIcon) return null;
-
-                    // Convert to absolute URL
-                    const absoluteUrl = bestIcon.href.startsWith('http')
-                        ? bestIcon.href
-                        : new URL(bestIcon.href, window.location.origin).href;
-
-                    return absoluteUrl;
-                }
-                findFaviconInHTML();
-            `, function(result) {
-                if (result) {
-                    // Process WebEngine favicon result
-                    if (result.startsWith('image://favicon/'))
-                        result = result.replace('image://favicon/', '');
-
-                    Plasmoid.configuration.favIcon = result;
-                    Plasmoid.configuration.lastFavIcon = result;
-                } else if (icon && icon.toString()) {
-                    // Use WebEngine icon as fallback
-                    let webEngineIcon = icon.toString();
-                    if (webEngineIcon.startsWith('image://favicon/'))
-                        webEngineIcon = webEngineIcon.replace('image://favicon/', '');
-
-                    Plasmoid.configuration.favIcon = webEngineIcon;
-                    Plasmoid.configuration.lastFavIcon = webEngineIcon;
-                }
-            });
-        }
-
         anchors.fill: parent
-        url: plasmoid.configuration.url
-        profile: webProfile
-        onLinkHovered: (hoveredUrl) => {
-            if (hoveredUrl == "") {
+        // No reactive url binding: navigation is driven only by navigateTo()
+        // (initial load in Component.onCompleted, then provider switch / Home /
+        // custom address), so nothing competes with an in-flight load.
+        profile: webViewRoot.webProfile || WebEngine.defaultProfile
+
+        onIconChanged: {
+            // Chromium already picked the best icon declared by the page.
+            const value = String(icon || "").replace(/^image:\/\/favicon\//, "");
+            if (!webViewRoot.isHttpUrl(value))
+                return;
+            if (plasmoid.configuration.favIcon !== value)
+                plasmoid.configuration.favIcon = value;
+            if (plasmoid.configuration.lastFavIcon !== value)
+                plasmoid.configuration.lastFavIcon = value;
+        }
+
+        onLinkHovered: hoveredUrl => {
+            const text = String(hoveredUrl || "");
+            if (text === "") {
                 hideStatusText.start();
             } else {
-                statusText.text = hoveredUrl;
+                statusText.text = text;
                 statusBubble.visible = true;
                 hideStatusText.stop();
             }
-            if (hoveredUrl.toString() !== "")
-                mouseArea.cursorShape = Qt.PointingHandCursor;
-            else
-                mouseArea.cursorShape = Qt.ArrowCursor;
         }
-        onContextMenuRequested: (request) => {
-            // Use default menu for special elements (text fields, selection, etc)
+
+        onContextMenuRequested: request => {
             if (request.isContentEditable || request.selectedText || request.mediaType !== ContextMenuRequest.MediaTypeNone) {
-                request.accepted = false;  // Permite que o menu padrão apareça
+                request.accepted = false;
                 return;
             }
-
-            // Update link only if there is a URL
-            let hasLink = request.linkUrl.toString() !== "";
-            linkContextMenu.link = hasLink ? request.linkUrl.toString() : "";
-
-            // Always show our custom menu when it's not a special element
+            linkContextMenu.link = String(request.linkUrl || "");
             linkContextMenu.open(request.position.x, request.position.y);
             request.accepted = true;
         }
 
-        // https://doc.qt.io/qt-6/qml-application-permissions.html
-        onPermissionRequested: function(request) {
-            if (request.permissionType === WebEnginePermission.Geolocation || request.permissionType === 8) {
-                if (plasmoid.configuration.geolocationEnabled) {
-                    request.grant();
-                } else {
-                    request.deny();
-                }
-                return;
-            }
-            if (request.permissionType === WebEnginePermission.Notifications) {
-                if (plasmoid.configuration.notificationsEnabled) {
-                    request.grant();
-                } else {
-                    request.deny();
-                }
-                return;
-            }
-            if (request.permissionType === WebEnginePermission.MediaAudioCapture || request.permissionType === 1 || request.permissionType === WebEnginePermission.MediaVideoCapture || request.permissionType === 2 || request.permissionType === 5) {
-                let isMicrophoneRequest = request.permissionType === 1 || request.permissionType === WebEnginePermission.MediaAudioCapture;
-                let isWebcamRequest = request.permissionType === 2 || request.permissionType === WebEnginePermission.MediaVideoCapture;
-                let isScreenShareRequest = request.permissionType === 5 || request.permissionType === WebEnginePermission.DesktopAudioVideoCapture;
-                return ;
-            }
-            // Even if MediaAudioCapture and MediaVideoCapture are allowed, it is still necessary to allow DesktopAudioVideoCapture
-            if ( request.permissionType === WebEnginePermission.DesktopAudioVideoCapture  || request.permissionType === 3) {
-                if ( WebEnginePermission.MediaAudioCapture && WebEnginePermission.MediaVideoCapture ) {
-                    request.grant();
-                } else {
-                    request.deny();
-                }
-            }
-
-            request.grant();
-        }
-        onLoadingChanged: {
-            if (!webview.loading) {
-                checkAndUpdateFavicon();
-            }
-
-            var isCompatibleModel = ['duckduckgo', 'chatgpt', 'google', 'claude', 'you'].some(site => plasmoid.configuration.url.includes(site));
-
-            if (isCompatibleModel) {
-                webview.runJavaScript("
-                    document.addEventListener('keydown', function(event) {
-                        if (event.key === 'Enter' && !event.shiftKey) {
-                            var duckDuckGoButton = document.querySelector('button[type=submit]');
-                            var chatGPTButton = document.querySelector('button[data-testid=\"send-button\"]');
-                            var googleGeminiButton = document.querySelector('button.send-button');
-                            var claudeButton = document.querySelector('button[aria-label=\"Send Message\"]');
-                            
-                            if (duckDuckGoButton) {
-                                event.preventDefault();
-                                duckDuckGoButton.click();
-                                waitForTextareaEnabledAndFocus();
-                            }
-
-                            if (chatGPTButton) {
-                                event.preventDefault();
-                                chatGPTButton.click();
-                                waitForTextareaEnabledAndFocus();
-                            }
-
-                            if (googleGeminiButton) {
-                                event.preventDefault();
-                                googleGeminiButton.click();
-                                waitForTextareaEnabledAndFocus();
-                            }
-
-                            if (claudeButton) {
-                                event.preventDefault();
-                                claudeButton.click();
-                                waitForTextareaEnabledAndFocus();
-                            }
-                        }
-                    });
-
-                    function waitForTextareaEnabledAndFocus() {
-                        var attempts = 0;
-                        var interval = 100;
-
-                        var textareaFocusInterval = setInterval(function() {
-                            var textarea = document.querySelector('textarea');
-                            if (textarea && !textarea.disabled) {
-                                clearInterval(textareaFocusInterval);
-                                setTimeout(function() {
-                                    textarea.focus();
-                                }, 100);
-                            }
-                        }, interval);
-                    }
-
-                    waitForTextareaEnabledAndFocus();
-                ");
-            }
-        }
-        onFeaturePermissionRequested: function(securityOrigin, feature) {
-            if (feature === WebEngineView.MediaAudioCapture)
-                grantFeaturePermission(securityOrigin, feature, plasmoid.configuration.microphoneEnabled);
-            else if (feature === WebEngineView.MediaVideoCapture)
-                grantFeaturePermission(securityOrigin, feature, plasmoid.configuration.webcamEnabled);
-            else if (feature === WebEngineView.DesktopAudioVideoCapture)
-                grantFeaturePermission(securityOrigin, feature, plasmoid.configuration.screenShareEnabled);
+        onPermissionRequested: function (permission) {
+            webViewRoot.handlePermission(permission);
         }
 
-        onPrintRequested: function() {
-            webview.triggerWebAction(WebEngineView.Print)
+        onDesktopMediaRequested: function (request) {
+            if (plasmoid.configuration.screenSharePolicy === webViewRoot.policyBlock || request.screensModel.rowCount() === 0)
+                request.cancel();
+            else
+                request.selectScreen(request.screensModel.index(0, 0));
         }
 
-        onPdfPrintingFinished: function(filePath, success) {
-            // Find the index of the PDF download
-            for (let i = 0; i < downloads.count; i++) {
-                if (downloads.get(i).fullPath === filePath) {
-                    if (success) {
-                        downloads.setProperty(i, "state", WebEngineDownloadRequest.DownloadCompleted);
-                    } else {
-                        downloads.remove(i);
-                    }
+        onLoadingChanged: function (loadingInfo) {
+            if (loadingInfo.status === WebEngineView.LoadStartedStatus) {
+                webViewRoot.hasLoadError = false;
+                webViewRoot.slowResponse = false;
+                slowResponseTimer.restart();
+            } else if (loadingInfo.status === WebEngineView.LoadFailedStatus) {
+                slowResponseTimer.stop();
+                webViewRoot.slowResponse = false;
+                webViewRoot.hasLoadError = true;
+                webViewRoot.loadErrorDetails = loadingInfo.errorString || i18n("The service did not provide an error description.");
+            } else if (loadingInfo.status === WebEngineView.LoadSucceededStatus) {
+                slowResponseTimer.stop();
+                webViewRoot.slowResponse = false;
+                if (String(webview.url) === webViewRoot.pendingUrl)
+                    webViewRoot.pendingUrl = "";
+                // Chromium keeps zoom per host; re-apply the global preference.
+                webViewRoot.applyZoom();
+            }
+        }
+
+        onLoadProgressChanged: {
+            if (loadProgress >= 10) {
+                slowResponseTimer.stop();
+                webViewRoot.slowResponse = false;
+            }
+        }
+
+        onPrintRequested: webview.triggerWebAction(WebEngineView.Print)
+
+        onCertificateError: function (error) {
+            webViewRoot.hasLoadError = true;
+            webViewRoot.loadErrorDetails = error.description || i18n("The site's security certificate is not trusted.");
+            error.rejectCertificate();
+        }
+
+        onFullScreenRequested: function (request) {
+            if (request.toggleOn)
+                webViewRoot.enterFullScreen();
+            else
+                webViewRoot.exitFullScreen();
+            request.accept();
+        }
+
+        onRenderProcessTerminated: function (terminationStatus, exitCode) {
+            webViewRoot.hasLoadError = true;
+            webViewRoot.loadErrorDetails = i18n("The web content process stopped unexpectedly (exit code %1).", exitCode);
+        }
+
+        onPdfPrintingFinished: function (filePath, success) {
+            for (let i = 0; i < downloadsModel.count; i++) {
+                if (downloadsModel.get(i).fullPath === filePath) {
+                    downloadsModel.setProperty(i, "state", success ? WebEngineDownloadRequest.DownloadCompleted : WebEngineDownloadRequest.DownloadInterrupted);
+                    downloadsModel.setProperty(i, "progress", success ? 1 : 0);
+                    if (!success)
+                        downloadsModel.setProperty(i, "error", i18n("The PDF could not be created."));
+                    webViewRoot.downloadsRevision++;
+                    webViewRoot.downloadAttention();
                     break;
                 }
             }
         }
 
-        // Helper function to check if it's an authentication URL
-        function isAuthUrl(url) {
-            const authDomains = [
-                'accounts.google.com',
-                'appleid.apple.com',
-                'login.live.com',
-                'github.com/login',
-                'instagram.com/oauth',
-                'facebook.com/oidc'
-            ];
-            return authDomains.some(domain => url.includes(domain));
+        function openExternalIfSafe(url) {
+            const target = String(url || "");
+            if (!webViewRoot.isHttpUrl(target)) {
+                webViewRoot.showNotification(i18n("Blocked navigation"), i18n("Only HTTP and HTTPS links can be opened from ChatAI."), "dialog-warning");
+                return false;
+            }
+            Qt.openUrlExternally(target);
+            return true;
         }
 
-        // Add these handlers to intercept new windows and tabs
-        onNewWindowRequested: function(request) {
-            let url = request.requestedUrl.toString();
-            if (isAuthUrl(url)) {
-                webview.url = url;
-                request.action = WebEngineNewWindowRequest.IgnoreRequest;
-            } else {
-                Qt.openUrlExternally(request.requestedUrl);
-                request.action = WebEngineNewWindowRequest.IgnoreRequest;
+        // window.open(): dialogs/windows (OAuth popups such as "Continue with
+        // Google", which need window.opener + postMessage + window.close()),
+        // popups that start blank and sign-in URLs open in AuthPopup with the
+        // same profile; plain target="_blank" links go to the system browser.
+        onNewWindowRequested: function (request) {
+            const url = String(request.requestedUrl);
+            const startsBlank = url === "" || url === "about:blank";
+            if (!startsBlank && !webViewRoot.isHttpUrl(url))
+                return; // dropped: unknown scheme
+            // DestinationType lives on the C++ base class and is not exposed to
+            // QML; values per the Qt docs: InWindow=0, InTab=1, InDialog=2, InBackgroundTab=3.
+            const destinationWindow = WebEngineNewWindowRequest.NewViewInWindow ?? 0;
+            const destinationDialog = WebEngineNewWindowRequest.NewViewInDialog ?? 2;
+            const wantsWindow = request.destination === destinationDialog || request.destination === destinationWindow;
+            if (wantsWindow || startsBlank || webViewRoot.providerModel.isAuthUrl(url))
+                webViewRoot.openAuthPopup(request);
+            else
+                openExternalIfSafe(url);
+        }
+
+        // A page in the main view calling window.close() (a callback that
+        // expected to be a popup): nothing to close here; go back home.
+        onWindowCloseRequested: webViewRoot.goHome()
+
+        onNavigationRequested: function (request) {
+            const requestedUrl = String(request.url);
+            // Sub-frames legitimately navigate to about:blank, blob: and data:
+            // (Cloudflare Turnstile, Google One Tap, React portals); only the
+            // main frame is restricted to HTTP(S).
+            if (!request.isMainFrame)
+                return;
+            if (!webViewRoot.isHttpUrl(requestedUrl)) {
+                request.action = WebEngineNavigationRequest.IgnoreRequest;
+                return;
+            }
+            const isLink = request.navigationType === WebEngineNavigationRequest.NavigationTypeLinkClicked;
+            if (isLink && request.userInitiated && request.disposition !== WebEngineNavigationRequest.CurrentTabDisposition) {
+                request.action = WebEngineNavigationRequest.IgnoreRequest;
+                if (webViewRoot.providerModel.isAuthUrl(requestedUrl))
+                    webview.url = requestedUrl;
+                else
+                    openExternalIfSafe(requestedUrl);
             }
         }
 
-        // Intercept links that try to open in new tab/window
-        onNavigationRequested: function(request) {
-            if (request.navigationType === WebEngineNavigationRequest.NavigationTypeRedirect || 
-                request.navigationType === WebEngineNavigationRequest.NavigationTypeLinkClicked) {
-                
-                // If the link has target="_blank" or similar
-                if (request.userInitiated && request.disposition !== WebEngineNavigationRequest.CurrentTabDisposition) {
-                    let url = request.url.toString();
-                    if (isAuthUrl(url)) {
-                        webview.url = url;
-                        request.action = WebEngineNavigationRequest.IgnoreRequest;
-                    } else {
-                        Qt.openUrlExternally(request.url);
-                        request.action = WebEngineNavigationRequest.IgnoreRequest;
-                    }
-                }
-            }
-        }
-
-        Component.onCompleted: {
-            // Ensure the downloads model is initialized
-            if (!downloads) {
-                downloads = Qt.createQmlObject('import QtQml; ListModel {}', webview);
-            }
-        }
-
-        WebEngineProfile {
-            id: webProfile
-            httpUserAgent: getUserAgent()
-            storageName: "chat-ai"
-            offTheRecord: false
-            httpCacheType: WebEngineProfile.DiskHttpCache
-            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
-            persistentPermissionsPolicy: WebEngineProfile.AskEveryTime
-            downloadPath: {
-                if (plasmoid.configuration.downloadPath)
-                    return plasmoid.configuration.downloadPath.toString().replace(/^file:\/\//, '');
-
-                return StandardPaths.writableLocation(StandardPaths.DownloadLocation);
-            }
-            onPresentNotification: function(notification) {
-                showNotification(notification.title, notification.message)
-                notification.show()
-            }
-            onDownloadRequested: function(download) {
-                // Ensure downloads model exists
-                if (!webview.downloads) {
-                    webview.downloads = Qt.createQmlObject('import QtQml; ListModel {}', webview);
-                }
-
-                let downloadDirectory = plasmoid.configuration.downloadPath ? 
-                    plasmoid.configuration.downloadPath.toString().replace(/^file:\/\//, '') : 
-                    StandardPaths.writableLocation(StandardPaths.DownloadLocation);
-                
-                if (!plasmoid.configuration.downloadPath) {
-                    plasmoid.configuration.downloadPath = downloadDirectory;
-                }
-
-                download.downloadDirectory = downloadDirectory;
-
-                // Check for duplicate downloads
-                for (let i = 0; i < webview.downloads.count; i++) {
-                    let currentDownload = webview.downloads.get(i);
-                    if (currentDownload.state === WebEngineDownloadRequest.DownloadInProgress && 
-                        currentDownload.fileName === download.downloadFileName &&
-                        !currentDownload.isPdfExport) {
-                        showNotification(
-                            i18n("Download in progress"),
-                            i18n("The file '%1' is already being downloaded", download.downloadFileName),
-                            "dialog-warning"
-                        );
-                        download.cancel();
-                        return;
-                    }
-                }
-
-                // Create a unique ID for this download
-                let downloadId = Date.now().toString() + Math.random().toString(36).substring(7);
-                
-                let downloadIndex = webview.downloads.addDownload(
-                    download,
-                    download.downloadFileName,
-                    downloadDirectory + "/" + download.downloadFileName,
-                    false
-                );
-
-                // Store the index in the download object for reference
-                let currentIndex = downloadIndex;
-
-                // Create independent connections for each download
-                let bytesConnection = function() {
-                    if (currentIndex >= 0 && currentIndex < webview.downloads.count) {
-                        let currentProgress = download.receivedBytes / download.totalBytes;
-                        webview.downloads.setProperty(currentIndex, "progress", currentProgress);
-                        webview.downloads.setProperty(currentIndex, "receivedBytes", download.receivedBytes);
-                        webview.downloads.setProperty(currentIndex, "totalBytes", download.totalBytes);
-                    }
-                }
-
-                let stateConnection = function(state) {
-                    if (currentIndex >= 0 && currentIndex < webview.downloads.count) {
-                        webview.downloads.setProperty(currentIndex, "state", state);
-                        if (state === WebEngineDownloadRequest.DownloadCompleted) {
-                            webview.downloads.setProperty(currentIndex, "progress", 1.0);
-                        }
-                        // Clear connections after completion or cancellation
-                        if (state === WebEngineDownloadRequest.DownloadCompleted || 
-                            state === WebEngineDownloadRequest.DownloadCancelled) {
-                            download.receivedBytesChanged.disconnect(bytesConnection);
-                            download.stateChanged.disconnect(stateConnection);
-                            delete webview.downloadCache[downloadId];
-                        }
-                    }
-                }
-
-                // Connect signals to the updated functions
-                download.receivedBytesChanged.connect(bytesConnection);
-                download.stateChanged.connect(stateConnection);
-
-                // Store all relevant information in the cache
-                webview.downloadCache[downloadId] = {
-                    download: download,
-                    index: currentIndex,
-                    bytesConnection: bytesConnection,
-                    stateConnection: stateConnection
-                };
-
-                // Atualizar o modelo com o ID único
-                webview.downloads.setProperty(currentIndex, "downloadId", downloadId);
-
-                download.accept();
-            }
-        }
         // https://doc.qt.io/qt-6/qml-qtwebengine-webenginesettings.html
         settings {
             spatialNavigationEnabled: plasmoid.configuration.spatialNavigationEnabled
@@ -602,196 +987,250 @@ Item {
             javascriptCanAccessClipboard: plasmoid.configuration.javascriptCanAccessClipboard
             javascriptCanOpenWindows: plasmoid.configuration.javascriptCanOpenWindows
             javascriptCanPaste: plasmoid.configuration.javascriptCanPaste
-            unknownUrlSchemePolicy: plasmoid.configuration.allowUnknownUrlSchemes ? WebEngineSettings.AllowAllUnknownUrlSchemes : WebEngineSettings.DisallowUnknownUrlSchemes
+            unknownUrlSchemePolicy: plasmoid.configuration.allowUnknownUrlSchemes ? WebEngineSettings.AllowUnknownUrlSchemesFromUserInteraction : WebEngineSettings.DisallowUnknownUrlSchemes
             playbackRequiresUserGesture: plasmoid.configuration.playbackRequiresUserGesture
             focusOnNavigationEnabled: plasmoid.configuration.focusOnNavigationEnabled
-            screenCaptureEnabled: true
+            screenCaptureEnabled: plasmoid.configuration.screenSharePolicy !== webViewRoot.policyBlock
             pluginsEnabled: true
             forceDarkMode: {
-                const hex = PlasmaCore.Theme.backgroundColor.toString().substring(1);
-                const r = parseInt(hex.substring(0, 2), 16);
-                const g = parseInt(hex.substring(2, 4), 16);
-                const b = parseInt(hex.substring(4, 6), 16);
-                const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-                return luma < 128;
-            
+                const color = Kirigami.Theme.backgroundColor;
+                return (0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b) < 0.5;
             }
         }
     }
 
+    // Mouse back/forward buttons
     MouseArea {
-        id: mouseArea
-
         anchors.fill: parent
         acceptedButtons: Qt.BackButton | Qt.ForwardButton
-        onPressed: (mouse) => {
+        onPressed: mouse => {
             if (mouse.button === Qt.BackButton)
-                webview.goBack();
+                webViewRoot.goBack();
             else if (mouse.button === Qt.ForwardButton)
-                webview.goForward();
+                webViewRoot.goForward();
+        }
+    }
+
+    Shortcut {
+        sequence: StandardKey.Find
+        onActivated: webViewRoot.findBarVisible = true
+    }
+    Shortcut {
+        sequences: [StandardKey.ZoomIn, "Ctrl+="]
+        onActivated: webViewRoot.zoomIn()
+    }
+    Shortcut {
+        sequence: StandardKey.ZoomOut
+        onActivated: webViewRoot.zoomOut()
+    }
+    Shortcut {
+        sequence: "Ctrl+0"
+        onActivated: webViewRoot.zoomReset()
+    }
+    Shortcut {
+        sequence: "F11"
+        onActivated: webViewRoot.toggleFullScreen()
+    }
+
+    // Hidden helper used by copyUrl(); TextEdit.copy() uses the system clipboard.
+    TextEdit {
+        id: clipboardHelper
+        visible: false
+        width: 0
+        height: 0
+    }
+
+    ContextMenu {
+        id: linkContextMenu
+        webviewItem: webview
+        onReloadRequested: webViewRoot.reload()
+        onSavePdfRequested: webViewRoot.printPage()
+        onSaveMhtmlRequested: webViewRoot.saveMHTML()
+    }
+
+    function openAuthPopup(request) {
+        if (authPopupLoader.active)
+            authPopupLoader.active = false;
+        authPopupLoader.active = true;
+        request.openIn(authPopupLoader.item.view);
+    }
+
+    function closeAuthPopup() {
+        authPopupLoader.active = false;
+    }
+
+    Loader {
+        id: authPopupLoader
+        anchors.fill: parent
+        z: 25
+        active: false
+        sourceComponent: AuthPopup {
+            profile: webViewRoot.webProfile
+            providerModel: webViewRoot.providerModel
+            permissionHandler: webViewRoot.handlePermission
+            certificateErrorHandler: function (error) {
+                error.rejectCertificate();
+                webViewRoot.showNotification(i18n("Sign-in blocked"), i18n("The sign-in site's security certificate is not trusted."), "dialog-warning");
+                webViewRoot.closeAuthPopup();
+            }
+            onCloseRequested: webViewRoot.closeAuthPopup()
+            onExternalOpenRequested: url => webview.openExternalIfSafe(url)
+        }
+    }
+
+    Loader {
+        id: fullScreenLoader
+        active: false
+        source: "FullScreenWindow.qml"
+        onLoaded: item.exitRequested.connect(webViewRoot.exitFullScreen)
+    }
+
+    Loader {
+        id: devToolsLoader
+        active: false
+        source: "DevToolsWindow.qml"
+        onLoaded: {
+            item.inspected = webview;
+            item.closeRequested.connect(webViewRoot.closeDevTools);
+        }
+    }
+
+    ColumnLayout {
+        id: topOverlays
+        z: 10
+        spacing: 0
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+
+        PlasmaComponents3.ProgressBar {
+            Layout.fillWidth: true
+            Layout.preferredHeight: visible ? 3 : 0
+            visible: webview.loading && webview.loadProgress < 100
+            from: 0
+            to: 100
+            value: webview.loadProgress
+        }
+
+        Kirigami.InlineMessage {
+            id: slowResponseMessage
+            Layout.fillWidth: true
+            Layout.margins: visible ? Kirigami.Units.smallSpacing : 0
+            visible: webViewRoot.slowResponse
+            type: Kirigami.MessageType.Warning
+            text: i18n("%1 is taking long to respond. Some services hold the connection for automated clients; retrying usually works.", webViewRoot.providerModel.hostOf(webViewRoot.currentUrl) || i18n("The site"))
+            actions: [
+                Kirigami.Action {
+                    icon.name: "view-refresh"
+                    text: i18n("Retry")
+                    onTriggered: webViewRoot.goHome()
+                },
+                Kirigami.Action {
+                    icon.name: "internet-web-browser"
+                    text: i18n("Open in Browser")
+                    onTriggered: {
+                        if (webViewRoot.isHttpUrl(plasmoid.configuration.url))
+                            Qt.openUrlExternally(plasmoid.configuration.url);
+                    }
+                }
+            ]
+        }
+
+        Kirigami.InlineMessage {
+            Layout.fillWidth: true
+            Layout.margins: visible ? Kirigami.Units.smallSpacing : 0
+            visible: !webViewRoot.mobileLayoutHintDismissed && webViewRoot.cssViewportWidth < webViewRoot.desktopViewportWidth && webview.width > 0
+            type: Kirigami.MessageType.Information
+            showCloseButton: true
+            onVisibleChanged: if (!visible && webViewRoot.cssViewportWidth < webViewRoot.desktopViewportWidth) webViewRoot.mobileLayoutHintDismissed = true
+            text: webview.zoomFactor > 1.01
+                ? i18n("At %1% zoom the page sees a %2 px wide viewport and switches to its mobile layout, which may break sign-in. Reset the zoom or widen the widget.", webViewRoot.zoomPercent, Math.round(webViewRoot.cssViewportWidth))
+                : i18n("The page sees a %1 px wide viewport and switches to its mobile layout, which may break sign-in. Widen the widget by dragging its edge.", Math.round(webViewRoot.cssViewportWidth))
+            actions: [
+                Kirigami.Action {
+                    visible: webview.zoomFactor > 1.01
+                    icon.name: "zoom-original"
+                    text: i18n("Reset Zoom")
+                    onTriggered: webViewRoot.zoomReset()
+                }
+            ]
+        }
+
+        PermissionBar {
+            Layout.fillWidth: true
+            Layout.margins: active ? Kirigami.Units.smallSpacing : 0
+            permission: webViewRoot.pendingPermission
+            onGranted: webViewRoot.resolvePendingPermission(true)
+            onDenied: webViewRoot.resolvePendingPermission(false)
+        }
+
+        FindBar {
+            id: findBar
+            Layout.fillWidth: true
+            findBarVisible: webViewRoot.findBarVisible
+            webviewItem: webview
+            onCloseRequested: webViewRoot.findBarVisible = false
+            onFindBarVisibleChanged: {
+                if (findBarVisible)
+                    findBar.focusAndSelect();
+                else
+                    findBar.clearSearch();
+            }
+        }
+    }
+
+    Rectangle {
+        id: errorOverlay
+
+        anchors.fill: parent
+        color: Kirigami.Theme.backgroundColor
+        opacity: 0.98
+        visible: webViewRoot.hasLoadError
+        z: 20
+
+        ErrorView {
+            anchors.centerIn: parent
+            width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, Kirigami.Units.gridUnit * 25)
+            errorDetails: webViewRoot.loadErrorDetails
+            onRetryRequested: webViewRoot.reload()
+            onOpenExternallyRequested: {
+                if (webViewRoot.isHttpUrl(plasmoid.configuration.url))
+                    Qt.openUrlExternally(plasmoid.configuration.url);
+            }
         }
     }
 
     Rectangle {
         id: statusBubble
 
-        property int padding: 8
+        readonly property int padding: Kirigami.Units.smallSpacing * 2
 
-        color: PlasmaCore.Theme.backgroundColor
+        color: Kirigami.Theme.backgroundColor
         visible: false
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        width: statusText.paintedWidth + padding
-        height: statusText.paintedHeight + padding
+        width: Math.min(statusText.implicitWidth + padding, parent.width)
+        height: statusText.implicitHeight + padding
+        radius: Kirigami.Units.cornerRadius
 
-        Text {
+        PlasmaComponents3.Label {
             id: statusText
-
-            anchors.centerIn: statusBubble
-            elide: Qt.ElideMiddle
-            color: PlasmaCore.Theme.textColor
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.smallSpacing
+            elide: Text.ElideMiddle
+            verticalAlignment: Text.AlignVCenter
 
             Timer {
                 id: hideStatusText
-
                 interval: 750
                 onTriggered: {
                     statusText.text = "";
                     statusBubble.visible = false;
                 }
             }
-
         }
-
-    }
-
-    Column {
-        id: downloadsBar
-
-        visible: webview.downloads.count > 0
-        spacing: 4
-
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-
-        Repeater {
-            model: webview.downloads
-
-            delegate: Rectangle {
-                width: parent.width
-                height: 40
-                color: PlasmaCore.Theme.backgroundColor
-                opacity: 0.9
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 8
-                    spacing: 8
-
-                    PlasmaComponents3.Label {
-                        text: {
-                            if (model.state === WebEngineDownloadRequest.DownloadCompleted) {
-                                return model.fileName + " - Completed";
-                            }
-                            if (model.isPdfExport) {
-                                return model.fileName + " - Saving PDF...";
-                            }
-                            let progress = Math.round((model.progress || 0) * 100);
-                            let size = "";
-                            if (model.totalBytes > 0) {
-                                let received = (model.receivedBytes / 1024 / 1024).toFixed(1);
-                                let total = (model.totalBytes / 1024 / 1024).toFixed(1);
-                                size = ` (${received}/${total} MB)`;
-                            }
-                            return model.fileName + " - " + progress + "%" + size;
-                        }
-                        Layout.fillWidth: true
-                        elide: Text.ElideMiddle
-                    }
-                    // Progress bar (visible during download)
-                    PlasmaComponents3.ProgressBar {
-                        Layout.fillWidth: true
-                        indeterminate: model.isPdfExport
-                        from: 0
-                        to: 1
-                        value: model.progress || 0
-                        visible: model.state === WebEngineDownloadRequest.DownloadInProgress
-                    }
-                    // Buttons shown after download completion
-                    RowLayout {
-                        visible: model.state === WebEngineDownloadRequest.DownloadCompleted
-                        spacing: 4
-
-                        PlasmaComponents3.Button {
-                            icon.name: "document-open"
-                            PlasmaComponents3.ToolTip.text: i18n("Open file")
-                            PlasmaComponents3.ToolTip.visible: hovered
-                            onClicked: {
-                                if (model.fullPath) {
-                                    let openPath = getOpenPath(model.fullPath);
-                                    Qt.openUrlExternally(openPath);
-                                }
-                            }
-                        }
-
-                        PlasmaComponents3.Button {
-                            icon.name: "folder-open"
-                            PlasmaComponents3.ToolTip.text: i18n("Open folder")
-                            PlasmaComponents3.ToolTip.visible: hovered
-                            onClicked: {
-                                if (model.fullPath) {
-                                    let dirPath = model.fullPath.substring(0, model.fullPath.lastIndexOf("/"));
-                                    let openPath = getOpenPath(dirPath);
-                                    Qt.openUrlExternally(openPath);
-                                }
-                            }
-                        }
-
-                        PlasmaComponents3.Button {
-                            icon.name: "dialog-close"
-                            PlasmaComponents3.ToolTip.text: i18n("Close")
-                            PlasmaComponents3.ToolTip.visible: hovered
-                            onClicked: {
-                                webview.downloads.remove(model.index);
-                            }
-                        }
-
-                    }
-                    // Cancel button (visible during download)
-                    PlasmaComponents3.Button {
-                        icon.name: "dialog-cancel"
-                        visible: model.state === WebEngineDownloadRequest.DownloadInProgress && !model.isPdfExport
-                        PlasmaComponents3.ToolTip.text: i18n("Cancel")
-                        PlasmaComponents3.ToolTip.visible: hovered
-                        onClicked: {
-                            // Get the cached download object using the unique ID
-                            let downloadData = webview.downloadCache[model.downloadId];
-                            if (downloadData && downloadData.download) {
-                                // Disconnect signal handlers before canceling
-                                downloadData.download.receivedBytesChanged.disconnect(downloadData.bytesConnection);
-                                downloadData.download.stateChanged.disconnect(downloadData.stateConnection);
-                                
-                                // Cancel the download
-                                downloadData.download.cancel();
-                                
-                                // Clean up cache
-                                delete webview.downloadCache[model.downloadId];
-                                
-                                // Remove from downloads model
-                                webview.downloads.remove(index);
-                            }
-                        }
-                    }
-
-                }
-
-            }
-
-        }
-
     }
 
 }

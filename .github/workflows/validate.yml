@@ -1,0 +1,37 @@
+name: Validate Plasmoid
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes qt6-declarative-dev-tools libxml2-utils zip gettext python3
+
+      - name: Validate metadata, QML, translations and package
+        run: |
+          set -e
+          python3 -m json.tool metadata.json > /dev/null
+          xmllint --noout contents/config/main.xml
+          mapfile -t qml < <(find contents/ui contents/config -type f -name '*.qml')
+          qmllint "${qml[@]}"
+          for po in locale/*.po; do msgfmt --check --check-format -o /dev/null "$po"; done
+          # Build the runtime package the same way the README documents and make
+          # sure it carries only runtime files (no dev/VCS files).
+          zip -qr /tmp/pkg.plasmoid metadata.json contents LICENSE
+          if unzip -l /tmp/pkg.plasmoid | grep -E '(^|/)(docs|\.git|\.github)/'; then
+            echo 'Package contains non-runtime files' >&2; exit 1
+          fi

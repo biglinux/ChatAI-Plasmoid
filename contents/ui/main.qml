@@ -1,372 +1,274 @@
+/*
+ *  SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+ *  SPDX-FileCopyrightText: 2025 Bruno Gonçalves <bigbruno@gmail.com>
+ *  SPDX-FileCopyrightText: 2026 Rafael Ruscher <rruscher@gmail.com>
+ *
+ *  SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ */
+
 import QtQuick
 import QtQuick.Layouts
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.plasmoid 2.0
 
-// Main plasmoid item that contains all the widget functionality
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
+
+import "Migration.js" as Migration
+
+/*
+ * Plasmoid orchestration: representations, lazy WebView, pin, in-widget
+ * settings, fullscreen guard and configuration migration.
+ *
+ * Note: compactRepresentation/fullRepresentation are components in Plasma 6,
+ * so their inner ids are not visible here. Shared state lives on the root and
+ * the inner items push their values up.
+ */
 PlasmoidItem {
     id: root
 
-    // Define the available chat models and their properties
-    // This property combines both predefined and custom sites
-    property var models: {
-        // Define base models with their default properties
-        let baseModels = [{
-            "id": "duckduckgo",
-            "url": "https://duckduckgo.com/chat",
-            "text": "DuckDuckGo Chat",
-            "prop": "showDuckDuckGoChat"
-        }, {
-            "id": "chatgpt",
-            "url": "https://chatgpt.com",
-            "text": "ChatGPT",
-            "prop": "showChatGPT"
-        }, {
-            "id": "huggingface",
-            "url": "https://huggingface.co/chat",
-            "text": "HugginChat",
-            "prop": "showHugginChat"
-        }, {
-            "id": "copilot",
-            "url": "https://copilot.microsoft.com/",
-            "text": "Bing Copilot",
-            "prop": "showBingCopilot"
-        }, {
-            "id": "google",
-            "url": "https://gemini.google.com/app",
-            "text": "Google Gemini",
-            "prop": "showGoogleGemini"
-        }, {
-            "id": "blackbox",
-            "url": "https://www.blackbox.ai",
-            "text": "BlackBox AI",
-            "prop": "showBlackBox"
-        }, {
-            "id": "you",
-            "url": "https://you.com/?chatMode=default",
-            "text": "You",
-            "prop": "showYou"
-        }, {
-            "id": "perplexity",
-            "url": "https://www.perplexity.ai",
-            "text": "Perplexity",
-            "prop": "showPerplexity"
-        }, {
-            "id": "lobechat",
-            "url": "https://lobechat.com/chat",
-            "text": "LobeChat",
-            "prop": "showLobeChat"
-        }, {
-            "id": "bigagi",
-            "url": "https://get.big-agi.com",
-            "text": "Big-AGI",
-            "prop": "showBigAGI"
-        }, {
-            "id": "claude",
-            "url": "https://claude.ai/new",
-            "text": "Claude",
-            "prop": "showClaude"
-        }, {
-            "id": "deepseek",
-            "url": "https://chat.deepseek.com",
-            "text": "DeepSeek",
-            "prop": "showDeepSeek"
-        }, {
-            "id": "meta",
-            "url": "https://www.meta.ai",
-            "text": "Meta AI",
-            "prop": "showMetaAI"
-        }, {
-            "id": "grok",
-            "url": "https://x.com/i/grok",
-            "text": "Grok",
-            "prop": "showGrok"
-        }];
-        // Add custom sites from configuration to the models list
-        let customSites = plasmoid.configuration.customSites || [];
-        if (Array.isArray(customSites)) {
-            customSites.forEach((site) => {
-                if (site && typeof site === 'string' && site.includes('|')) {
-                    const [name, url] = site.split('|');
-                    if (name && url)
-                        baseModels.push({
-                        "id": name.toLowerCase().replace(/\s+/g, '-'),
-                        "url": url,
-                        "text": name,
-                        "prop": "showCustom_" + name.toLowerCase().replace(/\s+/g, '_')
-                    });
-
-                }
-            });
-        }
-        return baseModels;
+    ProviderModel {
+        id: providerRegistry
     }
 
-    // Initialize the plasmoid and check if it should load on startup
+    // WebView.qml root while loaded (null after Close). Pushed by the Loader.
+    property var webviewRoot: null
+    readonly property bool fullScreenActive: webviewRoot ? webviewRoot.fullScreenActive : false
+    property bool settingsOpen: false
+    property string settingsCategory: "general"
+    // True after Close until the next expansion: keeps the Loader inactive.
+    property bool webviewClosed: false
+    // Native dialogs (folder chooser, prompts) deactivate the popup window.
+    property bool headerModalOpen: false
+    property bool settingsModalOpen: false
+    readonly property var currentProvider: providerRegistry.providerForUrl(plasmoid.configuration.url)
+
+    // Pin is the single source of truth.
+    hideOnWindowDeactivate: !(plasmoid.configuration.pin || headerModalOpen || settingsModalOpen || fullScreenActive)
+    toolTipMainText: i18n("ChatAI")
+    toolTipSubText: currentProvider ? currentProvider.name : providerRegistry.nameForUrl(plasmoid.configuration.url)
+
     Component.onCompleted: {
-        // If loadOnStartup is enabled in configuration
-        if (plasmoid.configuration.loadOnStartup) {
-            webviewLoader.active = true; // Activate the WebView loader
-            root.expanded = true; // Expand the plasmoid
-        }
+        if (Migration.run(plasmoid.configuration, providerRegistry.legacyUrlMap()))
+            console.info("ChatAI: configuration migrated to schema", plasmoid.configuration.configVersion);
     }
 
-    // Widget appearance when collapsed (icon only)
+    onExpandedChanged: {
+        if (root.expanded)
+            root.webviewClosed = false;
+    }
+
+    function openSettings(category) {
+        settingsCategory = category || "general";
+        settingsOpen = true;
+    }
+
+    function closeSettings() {
+        settingsOpen = false;
+    }
+
+    function closeWebView() {
+        settingsOpen = false;
+        webviewClosed = true;
+        root.expanded = false;
+    }
+
+    function recreateWebView() {
+        webviewClosed = true;
+        Qt.callLater(function () { root.webviewClosed = false; });
+    }
+
+    function goHome() {
+        if (webviewRoot)
+            webviewRoot.goHome();
+    }
+
     compactRepresentation: CompactRepresentation {
-        id: compactRep
-
-        models: root.models
-        webview: root.webviewRoot ? root.webviewRoot.webview : null
+        plasmoidItem: root
+        providerModel: providerRegistry
     }
 
-    // Widget appearance when expanded (full view)
     fullRepresentation: ColumnLayout {
         id: mainLayout
 
-        // Expose WebView root for other components
-        property alias webviewRoot: webviewLoader.item
-        // Update the property to use Types.Location and add the change monitor
-        property bool reverseLayout: plasmoid.location === PlasmaCore.Types.TopEdge
+        // AI web apps switch to their mobile layouts below ~768 CSS px, so the
+        // popup opens at a desktop-friendly size by default. The user can still
+        // drag it smaller (a hint appears if the page falls back to mobile).
+        readonly property int minimumViewportWidth: 780
+        readonly property int defaultWidth: Math.max(Kirigami.Units.gridUnit * 28, minimumViewportWidth + Kirigami.Units.gridUnit * 2)
+        readonly property int defaultHeight: Kirigami.Units.gridUnit * 39
 
-        // Function to reorder components
-        function reorderComponents() {
-            let components = reverseLayout ? [webviewLoader, headerMouseArea, headerRoot] : [headerRoot, headerMouseArea, webviewLoader];
-            // Clear and re-add the components in the correct order
-            for (let i = children.length - 1; i >= 0; i--) {
-                children[i].parent = null;
-            }
-            components.forEach((component) => {
-                component.parent = mainLayout;
-            });
-            // Update the anchors of headerMouseArea
-            if (headerRoot && headerMouseArea) {
-                if (reverseLayout) {
-                    headerMouseArea.anchors.top = undefined;
-                    headerMouseArea.anchors.bottom = parent.bottom;
-                } else {
-                    headerMouseArea.anchors.bottom = undefined;
-                    headerMouseArea.anchors.top = parent.top;
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 18
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 18
+        Layout.preferredWidth: plasmoid.configuration.dialogWidth > 0 ? plasmoid.configuration.dialogWidth : defaultWidth
+        Layout.preferredHeight: plasmoid.configuration.dialogHeight > 0 ? plasmoid.configuration.dialogHeight : defaultHeight
+
+        spacing: 0
+
+        // Debounced persistence of the popup size.
+        Timer {
+            id: saveSizeTimer
+            interval: 500
+            repeat: false
+            onTriggered: {
+                const currentWidth = Math.round(mainLayout.width);
+                const currentHeight = Math.round(mainLayout.height);
+                if (currentWidth > 0 && currentHeight > 0
+                    && (currentWidth !== plasmoid.configuration.dialogWidth || currentHeight !== plasmoid.configuration.dialogHeight)) {
+                    plasmoid.configuration.dialogWidth = currentWidth;
+                    plasmoid.configuration.dialogHeight = currentHeight;
                 }
             }
         }
 
-        // Set minimum dimensions for the expanded view
-        Layout.minimumWidth: Kirigami.Units.gridUnit * 28
-        Layout.minimumHeight: Kirigami.Units.gridUnit * 39
-        Component.onCompleted: {
-            reorderComponents();
-        }
-        spacing: 0
+        onWidthChanged: saveSizeTimer.restart()
+        onHeightChanged: saveSizeTimer.restart()
 
-        // Add monitor for plasmoid location change
-        Connections {
-            function onLocationChanged() {
-                mainLayout.reverseLayout = plasmoid.location === PlasmaCore.Types.TopEdge;
-                reorderComponents();
-            }
-
-            target: plasmoid
-        }
-
-        // Header component with auto-hide behavior
         Header {
             id: headerRoot
 
             property bool headerVisible: false
-            property bool isInteracting: false
-            property bool shouldBeVisible: {
+            readonly property bool shouldBeVisible: {
                 if (plasmoid.configuration.hideHeader)
                     return false;
-
-                if (!plasmoid.configuration.autoHideHeader)
+                if (!plasmoid.configuration.autoHideHeader || root.settingsOpen)
                     return true;
-
-                return headerVisible || isInteracting || headerMouseArea.containsMouse;
+                return headerVisible || menuOpen || headerHover.hovered || revealStrip.hovered;
             }
 
-            models: root.models
+            providerModel: providerRegistry
+            webviewRoot: root.webviewRoot
+            settingsOpen: root.settingsOpen
             Layout.fillWidth: true
-            z: 2 // Increase the z-index to ensure it is above the MouseArea
-            // Callback to close the WebView and collapse the widget
-            closeWebViewCallback: function() {
-                webviewLoader.active = false;
-                root.expanded = false;
-            }
-            // Handle navigation
-            onGoBackToHomePage: webviewRoot.goBackToHomePage()
-            onReloadPageRequested: webviewRoot.reloadPage()
-            onNavigateBackRequested: webviewRoot.goBack()
-            onNavigateForwardRequested: webviewRoot.goForward()
-            onPrintPageRequested: webviewRoot.printPage()
             Layout.preferredHeight: shouldBeVisible ? implicitHeight : 0
             Layout.maximumHeight: Layout.preferredHeight
             Layout.minimumHeight: 0
+            Layout.bottomMargin: shouldBeVisible ? Kirigami.Units.smallSpacing : 0
+            z: 2
             visible: Layout.preferredHeight > 0
-            opacity: Layout.preferredHeight > 0 ? 1 : 0
+            opacity: shouldBeVisible ? 1 : 0
             clip: true
-            // Adjust the anchors of headerMouseArea based on the panel position
-            Component.onCompleted: {
-                if (mainLayout.reverseLayout) {
-                    headerMouseArea.anchors.top = undefined;
-                    headerMouseArea.anchors.bottom = parent.bottom;
-                } else {
-                    headerMouseArea.anchors.bottom = undefined;
-                    headerMouseArea.anchors.top = parent.top;
+
+            onHomeRequested: root.goHome()
+            onCloseRequested: root.closeWebView()
+            onSettingsRequested: category => root.openSettings(category)
+            onAboutRequested: root.openSettings("about")
+            onShortcutsRequested: root.openSettings("about")
+            onModalOpenChanged: root.headerModalOpen = modalOpen
+
+            // A finished or failed download reveals the auto-hidden toolbar for
+            // a moment so the indicator can be noticed (no modal popup).
+            Connections {
+                target: root.webviewRoot
+                function onDownloadAttention() {
+                    headerRoot.headerVisible = true;
+                    hideTimer.restart();
                 }
             }
 
-            // Timer for hiding
+            // Hover detection without participating in the layout.
+            HoverHandler {
+                id: headerHover
+                onHoveredChanged: {
+                    if (hovered) {
+                        headerRoot.headerVisible = true;
+                        hideTimer.stop();
+                    } else if (!headerRoot.menuOpen) {
+                        hideTimer.restart();
+                    }
+                }
+            }
+
+            onMenuOpenChanged: {
+                if (!menuOpen && !headerHover.hovered)
+                    hideTimer.restart();
+            }
+
             Timer {
                 id: hideTimer
-
-                interval: 2000
+                interval: 3000
                 onTriggered: {
-                    if (!headerRoot.isInteracting)
+                    if (!headerRoot.menuOpen && !headerHover.hovered)
                         headerRoot.headerVisible = false;
-
                 }
             }
 
-            // Timer to check interactions
-            Timer {
-                id: interactionTimer
-
-                interval: 500
-                repeat: true
-                running: headerRoot.isInteracting
-                onTriggered: {
-                    // Check if there is still interaction with any component
-                    let stillInteracting = false;
-                    for (let i = 0; i < headerRoot.children.length; i++) {
-                        let child = headerRoot.children[i];
-                        if (child.activeFocus || (child.hasOwnProperty("pressed") && child.pressed)) {
-                            stillInteracting = true;
-                            break;
-                        }
-                    }
-                    headerRoot.isInteracting = stillInteracting;
-                    if (!stillInteracting && !headerMouseArea.containsMouse)
-                        hideTimer.restart();
-
-                }
-            }
-
-            // Connections to monitor interactions
-            Connections {
-                function onActiveFocusChanged() {
-                    if (target.activeFocus) {
-                        headerRoot.isInteracting = true;
-                        hideTimer.stop();
-                    }
-                }
-
-                target: headerRoot
-            }
-
-            // Intercept mouse events
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                propagateComposedEvents: true
-                onEntered: {
-                    headerRoot.headerVisible = true;
-                    hideTimer.stop();
-                }
-                onExited: {
-                    if (!headerRoot.isInteracting)
-                        hideTimer.restart();
-
-                }
-                onPressed: {
-                    headerRoot.isInteracting = true;
-                    mouse.accepted = false;
-                }
-                onReleased: {
-                    headerRoot.isInteracting = false;
-                    if (!containsMouse)
-                        hideTimer.restart();
-
-                    mouse.accepted = false;
-                }
-            }
-
-            // Animations
             Behavior on Layout.preferredHeight {
                 NumberAnimation {
-                    duration: 400
+                    duration: Kirigami.Units.shortDuration
                     easing.type: Easing.InOutCubic
                 }
-
             }
 
             Behavior on opacity {
                 NumberAnimation {
-                    duration: 400
+                    duration: Kirigami.Units.shortDuration
                     easing.type: Easing.InOutQuad
                 }
-
             }
-
         }
 
-        // Mouse detection area
-        MouseArea {
-            id: headerMouseArea
+        // Thin strip that reveals the auto-hidden header.
+        Item {
+            id: revealStrip
+            readonly property bool hovered: stripHover.hovered
+            Layout.fillWidth: true
+            Layout.preferredHeight: plasmoid.configuration.autoHideHeader && !headerRoot.shouldBeVisible ? 3 : 0
+            z: 1
 
-            height: 2
-            hoverEnabled: true
-            z: 1 // Place below the header
-            propagateComposedEvents: true
-            onEntered: {
-                headerRoot.headerVisible = true;
-                hideTimer.stop();
+            HoverHandler {
+                id: stripHover
+                onHoveredChanged: {
+                    if (hovered) {
+                        headerRoot.headerVisible = true;
+                        hideTimer.stop();
+                    }
+                }
             }
-            onExited: {
-                if (!headerRoot.isInteracting)
-                    hideTimer.restart();
-
-            }
-            // Pass mouse events to child components
-            onClicked: mouse.accepted = false
-            onPressed: mouse.accepted = false
-            onReleased: mouse.accepted = false
-            onDoubleClicked: mouse.accepted = false
-            onPositionChanged: mouse.accepted = false
-            onPressAndHold: mouse.accepted = false
-
-            anchors {
-                left: parent.left
-                right: parent.right
-                top: parent.top
-            }
-
         }
 
-        // WebView loader that manages the web content
-        Loader {
-            id: webviewLoader
-
-            // Keep WebView active if expanded, already loaded, or configured to load on startup
-            active: root.expanded || webviewLoader.item !== null || plasmoid.configuration.loadOnStartup
-            source: "WebView.qml"
+        Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.topMargin: 0
-        }
 
-        // Monitor plasmoid expansion state
-        Connections {
-            // Activate WebView when plasmoid is expanded
-            function onExpandedChanged() {
-                if (root.expanded)
-                    webviewLoader.active = true;
-
+            // Lazy WebEngine: created on first expansion (or when Plasma
+            // preloads the representation and loadOnStartup is set),
+            // destroyed by Close.
+            Loader {
+                id: webviewLoader
+                anchors.fill: parent
+                active: !root.webviewClosed && (root.expanded || item !== null || plasmoid.configuration.loadOnStartup)
+                asynchronous: true
+                visible: !root.settingsOpen
+                sourceComponent: WebView {
+                    providerModel: providerRegistry
+                    hidden: !root.expanded || root.settingsOpen
+                }
+                onItemChanged: root.webviewRoot = item
+                onStatusChanged: {
+                    if (status === Loader.Error)
+                        console.error("ChatAI: failed to load WebView.qml");
+                }
             }
 
-            target: root
+            Loader {
+                id: settingsLoader
+                anchors.fill: parent
+                active: root.settingsOpen
+                visible: active
+                onActiveChanged: {
+                    if (!active)
+                        root.settingsModalOpen = false;
+                }
+                sourceComponent: SettingsPanel {
+                    providerModel: providerRegistry
+                    runtime: root.webviewRoot
+                    category: root.settingsCategory
+                    onCategoryChanged: root.settingsCategory = category
+                    onCloseRequested: root.closeSettings()
+                    onModalOpenChanged: root.settingsModalOpen = modalOpen
+                    // Changing the storage name needs a fresh WebEngineView.
+                    onProfileRecreationRequested: root.recreateWebView()
+                }
+            }
         }
-
     }
-
 }
