@@ -507,17 +507,17 @@ See `metadata.json` for the authors recorded in the package.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/ruscher">
-                    <img src="https://avatars.githubusercontent.com/u/355281?v=4" width="100;" alt="ruscher"/>
-                    <br />
-                    <sub><b>ruscher</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/bigbruno">
                     <img src="https://avatars.githubusercontent.com/u/6098501?v=4" width="100;" alt="bigbruno"/>
                     <br />
                     <sub><b>Bruno Gonçalves</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/ruscher">
+                    <img src="https://avatars.githubusercontent.com/u/355281?v=4" width="100;" alt="ruscher"/>
+                    <br />
+                    <sub><b>ruscher</b></sub>
                 </a>
             </td>
             <td align="center">
