@@ -19,193 +19,193 @@ msgstr ""
 #: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:185
 #: contents/ui/SettingsPanel.qml:34
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:186
 #: contents/ui/SettingsPanel.qml:35
 msgid "Sites"
-msgstr ""
+msgstr "Site-uri"
 
 #: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:187
 #: contents/ui/SettingsPanel.qml:36
 msgid "Permissions"
-msgstr ""
+msgstr "Permisiuni"
 
 #: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:188
 #: contents/ui/SettingsPanel.qml:37
 msgid "Web Features"
-msgstr ""
+msgstr "Funcții web"
 
 #: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:147
 #: contents/ui/ChatAIMenu.qml:189 contents/ui/DownloadPopup.qml:97
 #: contents/ui/SettingsPanel.qml:38
 msgid "Downloads"
-msgstr ""
+msgstr "Descărcări"
 
 #: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:190
 #: contents/ui/SettingsPanel.qml:39
 msgid "Cache and Data"
-msgstr ""
+msgstr "Cache și Date"
 
 #: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:191
 #: contents/ui/SettingsPanel.qml:40
 msgid "Appearance"
-msgstr ""
+msgstr "Aspect."
 
 #: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:192
 #: contents/ui/SettingsPanel.qml:41
 msgid "Advanced"
-msgstr ""
+msgstr "Avansat"
 
 #: contents/config/config.qml:56
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #: contents/ui/AiSelector.qml:30
 msgid "Custom address…"
-msgstr ""
+msgstr "Adresă personalizată…"
 
 #: contents/ui/AiSelector.qml:58
 msgid "AI assistant"
-msgstr ""
+msgstr "asistent AI"
 
 #: contents/ui/AiSelector.qml:64
 msgid "Choose the AI assistant"
-msgstr ""
+msgstr "Alege asistentul AI"
 
 #: contents/ui/AuthPopup.qml:61
 msgctxt "popup window title with host"
 msgid "Sign in — %1"
-msgstr ""
+msgstr "Conectare — %1"
 
 #: contents/ui/AuthPopup.qml:61
 msgid "Sign in"
-msgstr ""
+msgstr "Conectare"
 
 #: contents/ui/AuthPopup.qml:76
 msgid "Close sign-in window"
-msgstr ""
+msgstr "Închide fereastra de autentificare"
 
 #: contents/ui/ChatAIMenu.qml:79 contents/ui/WebView.qml:1132
 msgid "Open in Browser"
-msgstr ""
+msgstr "Deschide în browser"
 
 #: contents/ui/ChatAIMenu.qml:86
 msgid "Copy Address"
-msgstr ""
+msgstr "Copiați adresa"
 
 #: contents/ui/ChatAIMenu.qml:93
 msgid "Reload Ignoring Cache"
-msgstr ""
+msgstr "Reîncărcare Ignorând Cache-ul"
 
 #: contents/ui/ChatAIMenu.qml:103
 #, javascript-format
 msgid "Zoom (%1%)"
-msgstr ""
+msgstr "Zoom (%1%)"
 
 #: contents/ui/ChatAIMenu.qml:108
 msgid "Zoom In"
-msgstr ""
+msgstr "Mărește"
 
 #: contents/ui/ChatAIMenu.qml:113
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoomare în afară"
 
 #: contents/ui/ChatAIMenu.qml:118
 msgid "Reset Zoom (100%)"
-msgstr ""
+msgstr "Resetare zoom (100%)"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "Ieșire din modul pe ecran complet"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Full Screen"
-msgstr ""
+msgstr "Ecran complet"
 
 #: contents/ui/ChatAIMenu.qml:136
 #: contents/ui/settings/AppearanceSettings.qml:127
 msgid "Hide Toolbar Automatically"
-msgstr ""
+msgstr "Ascunde bara de instrumente automat."
 
 #: contents/ui/ChatAIMenu.qml:147
 msgid "Downloads (%1)"
-msgstr ""
+msgstr "Descărcări (%1)"
 
 #: contents/ui/ChatAIMenu.qml:161
 #: contents/ui/settings/AppearanceSettings.qml:49
 msgid "Home"
-msgstr ""
+msgstr "Acasă"
 
 #: contents/ui/ChatAIMenu.qml:170
 msgid "Find in Page"
-msgstr ""
+msgstr "Caută în pagină"
 
 #: contents/ui/ChatAIMenu.qml:180
 msgid "ChatAI Settings"
-msgstr ""
+msgstr "Setări ChatAI"
 
 #: contents/ui/ChatAIMenu.qml:205
 msgid "Open Configuration Window…"
-msgstr ""
+msgstr "Deschide Fereastra de Configurare…"
 
 #: contents/ui/ChatAIMenu.qml:213
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Comenzi rapide de la tastatură"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Close Developer Tools"
-msgstr ""
+msgstr "Închideți Instrumentele pentru Dezvoltatori"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Developer Tools"
-msgstr ""
+msgstr "Instrumente pentru dezvoltatori"
 
 #: contents/ui/ChatAIMenu.qml:233
 msgid "About ChatAI"
-msgstr ""
+msgstr "Despre ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:27 contents/ui/WebView.qml:670
 #: contents/ui/main.qml:46 contents/ui/settings/AboutSettings.qml:65
 msgid "ChatAI"
-msgstr ""
+msgstr "ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:42
 msgid "Open ChatAI — %1"
-msgstr ""
+msgstr "Deschide ChatAI — %1"
 
 #: contents/ui/ContextMenu.qml:32 contents/ui/Header.qml:110
 msgid "Back"
-msgstr ""
+msgstr "Înapoi"
 
 #: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:127
 msgid "Forward"
-msgstr ""
+msgstr "Înaintați"
 
 #: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:145
 #: contents/ui/settings/AppearanceSettings.qml:48
 msgid "Reload"
-msgstr ""
+msgstr "Reîncarcă"
 
 #: contents/ui/ContextMenu.qml:56
 msgid "Save as PDF"
-msgstr ""
+msgstr "Salvează ca PDF"
 
 #: contents/ui/ContextMenu.qml:63
 msgid "Save as MHTML"
-msgstr ""
+msgstr "Salvează ca MHTML"
 
 #: contents/ui/ContextMenu.qml:70
 msgid "Open Link in Browser"
-msgstr ""
+msgstr "Deschide linkul în browser"
 
 #: contents/ui/ContextMenu.qml:77
 msgid "Copy Link Address"
-msgstr ""
+msgstr "Copiați adresa linkului"
 
 #: contents/ui/DevToolsWindow.qml:22
 msgid "ChatAI — Developer tools"
-msgstr ""
+msgstr "ChatAI — Instrumente pentru dezvoltatori"
 
 #: contents/ui/DownloadBar.qml:48
 msgid "%1 - Completed"
@@ -230,11 +230,11 @@ msgstr "Deschide folderul"
 #: contents/ui/DownloadBar.qml:106 contents/ui/FindBar.qml:89
 #: contents/ui/settings/AppearanceSettings.qml:51
 msgid "Close"
-msgstr ""
+msgstr "Închide"
 
 #: contents/ui/DownloadBar.qml:117 contents/ui/DownloadPopup.qml:231
 msgid "Cancel"
-msgstr ""
+msgstr "Anulează"
 
 #: contents/ui/DownloadIndicator.qml:36
 msgid "One download in progress"
@@ -266,42 +266,42 @@ msgstr[2] ""
 
 #: contents/ui/DownloadIndicator.qml:44
 msgid "Open the downloads list"
-msgstr ""
+msgstr "Deschide lista de descărcări"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "bytes"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "kilobytes"
 msgid "kB"
-msgstr ""
+msgstr "kB"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "megabytes"
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "gigabytes"
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "terabytes"
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: contents/ui/DownloadPopup.qml:46
 msgctxt "file size: value and unit"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: contents/ui/DownloadPopup.qml:50
 msgctxt "transfer rate"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: contents/ui/DownloadPopup.qml:55
 msgid "%1 second left"
@@ -326,21 +326,21 @@ msgstr[2] ""
 
 #: contents/ui/DownloadPopup.qml:64
 msgid "Starting…"
-msgstr ""
+msgstr "Începere…"
 
 #: contents/ui/DownloadPopup.qml:67 contents/ui/DownloadPopup.qml:69
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 din %2"
 
 #: contents/ui/DownloadPopup.qml:67
 msgid "Paused — %1"
-msgstr ""
+msgstr "Pauză — %1"
 
 #: contents/ui/DownloadPopup.qml:71
 #, javascript-format
 msgctxt "percentage"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: contents/ui/DownloadPopup.qml:76
 msgctxt "separator between download status parts"
@@ -349,537 +349,537 @@ msgstr ""
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "PDF saved — %1"
-msgstr ""
+msgstr "PDF salvat — %1"
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "Completed — %1"
-msgstr ""
+msgstr "Finalizat — %1"
 
 #: contents/ui/DownloadPopup.qml:81
 #: contents/ui/settings/DownloadsSettings.qml:140
 msgid "Cancelled"
-msgstr ""
+msgstr "Anulat"
 
 #: contents/ui/DownloadPopup.qml:83
 msgid "Interrupted — %1"
-msgstr ""
+msgstr "Interzis — %1"
 
 #: contents/ui/DownloadPopup.qml:83
 #: contents/ui/settings/DownloadsSettings.qml:141
 msgid "Interrupted"
-msgstr ""
+msgstr "Interzis"
 
 #: contents/ui/DownloadPopup.qml:85
 msgid "Unknown state"
-msgstr ""
+msgstr "Stare necunoscută"
 
 #: contents/ui/DownloadPopup.qml:104
 msgid "Clear finished"
-msgstr ""
+msgstr "Șterge finalizat"
 
 #: contents/ui/DownloadPopup.qml:125
 msgid "No downloads in this session"
-msgstr ""
+msgstr "Nu există descărcări în această sesiune."
 
 #: contents/ui/DownloadPopup.qml:137
 msgid "Downloads list"
-msgstr ""
+msgstr "Lista descărcărilor"
 
 #: contents/ui/DownloadPopup.qml:147
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Resume"
-msgstr ""
+msgstr "Rezumat"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Pause"
-msgstr ""
+msgstr "Pauză"
 
 #: contents/ui/DownloadPopup.qml:237 contents/ui/WebView.qml:624
 msgid "Open"
-msgstr ""
+msgstr "Deschide"
 
 #: contents/ui/DownloadPopup.qml:243 contents/ui/WebView.qml:628
 msgid "Show in Folder"
-msgstr ""
+msgstr "Arată în folder"
 
 #: contents/ui/DownloadPopup.qml:249 contents/ui/WebView.qml:1127
 msgid "Retry"
-msgstr ""
+msgstr "Încercați din nou"
 
 #: contents/ui/DownloadPopup.qml:255
 msgid "Remove from list"
-msgstr ""
+msgstr "Elimină din listă"
 
 #: contents/ui/DownloadPopup.qml:273
 #: contents/ui/settings/DownloadsSettings.qml:81
 msgid "Open Download Folder"
-msgstr ""
+msgstr "Deschide folderul de descărcări"
 
 #: contents/ui/DownloadPopup.qml:279
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Alegeți folderul…"
 
 #: contents/ui/ErrorView.qml:21
 msgid "Web content error"
-msgstr ""
+msgstr "Eroare de conținut web"
 
 #: contents/ui/ErrorView.qml:31
 msgid "This service could not be loaded inside ChatAI."
-msgstr ""
+msgstr "Acest serviciu nu a putut fi încărcat în ChatAI."
 
 #: contents/ui/ErrorView.qml:54
 msgid "Try again"
-msgstr ""
+msgstr "Încearcă din nou."
 
 #: contents/ui/ErrorView.qml:61
 msgid "Open in browser"
-msgstr ""
+msgstr "Deschide în browser"
 
 #: contents/ui/FindBar.qml:28 contents/ui/settings/AboutSettings.qml:44
 #: contents/ui/settings/HelpSettings.qml:21
 msgid "Find in page"
-msgstr ""
+msgstr "Caută în pagină"
 
 #: contents/ui/FindBar.qml:47
 msgid "Find in page…"
-msgstr ""
+msgstr "Caută în pagină…"
 
 #: contents/ui/FindBar.qml:61
 msgid "Find previous"
-msgstr ""
+msgstr "Găsește anterior"
 
 #: contents/ui/FindBar.qml:75
 msgid "Find next"
-msgstr ""
+msgstr "Găsește următorul"
 
 #: contents/ui/FullScreenWindow.qml:24
 msgid "ChatAI — Full screen"
-msgstr ""
+msgstr "ChatAI — Ecran complet"
 
 #: contents/ui/Header.qml:102
 msgid "Pinned: stays open when clicking outside"
-msgstr ""
+msgstr "Fixat: rămâne deschis când se face clic în afară"
 
 #: contents/ui/Header.qml:102
 msgid "Pin: keep open when clicking outside"
-msgstr ""
+msgstr "Pin: rămâi deschis când faci clic în afară"
 
 #: contents/ui/Header.qml:145
 msgid "Stop loading"
-msgstr ""
+msgstr "Oprește încărcarea"
 
 #: contents/ui/Header.qml:154
 msgid "Home page of the current assistant"
-msgstr ""
+msgstr "Pagina principală a asistentului curent"
 
 #: contents/ui/Header.qml:174
 msgid "Custom address"
-msgstr ""
+msgstr "Adresă personalizată"
 
 #: contents/ui/Header.qml:187
 msgid "Find in page (Ctrl+F)"
-msgstr ""
+msgstr "Caută în pagină (Ctrl+F)"
 
 #: contents/ui/Header.qml:205
 msgid "More actions"
-msgstr ""
+msgstr "Mai multe acțiuni"
 
 #: contents/ui/Header.qml:235
 msgid "Close and release memory"
-msgstr ""
+msgstr "Închide și eliberează memoria"
 
 #: contents/ui/Header.qml:249 contents/ui/settings/DownloadsSettings.qml:88
 msgid "Choose Download Folder"
-msgstr ""
+msgstr "Alegeți folderul de descărcare"
 
 #: contents/ui/PermissionBar.qml:40
 msgid "%1 wants to show notifications"
-msgstr ""
+msgstr "%1 dorește să afișeze notificări"
 
 #: contents/ui/PermissionBar.qml:42
 msgid "%1 wants to use your microphone"
-msgstr ""
+msgstr "%1 vrea să folosească microfonul tău"
 
 #: contents/ui/PermissionBar.qml:44
 msgid "%1 wants to use your camera"
-msgstr ""
+msgstr "%1 vrea să folosească camera ta"
 
 #: contents/ui/PermissionBar.qml:46
 msgid "%1 wants to use your camera and microphone"
-msgstr ""
+msgstr "%1 vrea să folosească camera și microfonul tău."
 
 #: contents/ui/PermissionBar.qml:49
 msgid "%1 wants to share your screen"
-msgstr ""
+msgstr "%1 vrea să împărtășească ecranul tău"
 
 #: contents/ui/PermissionBar.qml:51
 msgid "%1 wants to know your location"
-msgstr ""
+msgstr "%1 vrea să știe locația ta"
 
 #: contents/ui/PermissionBar.qml:53
 msgid "%1 wants to read your clipboard"
-msgstr ""
+msgstr "%1 vrea să citească clipboard-ul tău"
 
 #: contents/ui/PermissionBar.qml:55
 msgid "%1 requests a permission"
-msgstr ""
+msgstr "%1 solicită o permisiune"
 
 #: contents/ui/PermissionBar.qml:91
 msgid "Your choice is remembered for this site. Review it in Settings › Permissions."
-msgstr ""
+msgstr "Alegerea ta este reținută pentru acest site. Revizuiește-o în Setări › Permisiuni."
 
 #: contents/ui/PermissionBar.qml:100
 msgid "Block"
-msgstr ""
+msgstr "Blocați"
 
 #: contents/ui/PermissionBar.qml:106
 msgid "Allow"
-msgstr ""
+msgstr "Permite"
 
 #: contents/ui/ProviderModel.qml:34
 msgctxt "provider category"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: contents/ui/ProviderModel.qml:35
 msgctxt "provider category"
 msgid "Search"
-msgstr ""
+msgstr "Caută"
 
 #: contents/ui/ProviderModel.qml:36
 msgctxt "provider category"
 msgid "Code"
-msgstr ""
+msgstr "Cod"
 
 #: contents/ui/ProviderModel.qml:37
 msgctxt "provider category"
 msgid "Privacy"
-msgstr ""
+msgstr "Confidențialitate"
 
 #: contents/ui/ProviderModel.qml:38
 msgctxt "provider category"
 msgid "Agents"
-msgstr ""
+msgstr "Agenți"
 
 #: contents/ui/ProviderModel.qml:39
 msgctxt "provider category"
 msgid "Open models"
-msgstr ""
+msgstr "Deschide modele"
 
 #: contents/ui/ProviderModel.qml:42
 msgid "Google sign-in works with the default browser identity. If Google says the browser may not be secure, make sure \"Identify as Chromium\" is off in Advanced."
-msgstr ""
+msgstr "Autentificarea Google funcționează cu identitatea browserului implicit. Dacă Google spune că browserul poate să nu fie sigur, asigurați-vă că \"Identificare ca Chromium\" este dezactivat în Avansat."
 
 #: contents/ui/ProviderModel.qml:48
 msgid "OpenAI's assistant with voice, files and web search."
-msgstr ""
+msgstr "Asistentul OpenAI cu voce, fișiere și căutare pe web."
 
 #: contents/ui/ProviderModel.qml:55
 msgid "Anthropic's assistant for writing, analysis and code."
-msgstr ""
+msgstr "Asistentul Anthropic pentru scriere, analiză și cod."
 
 #: contents/ui/ProviderModel.qml:58
 msgid "Claude only allows account creation and Google sign-in in well-known browsers. Sign in with an e-mail code or reuse credentials created in a regular browser."
-msgstr ""
+msgstr "Claude permite doar crearea de conturi și autentificarea Google în browsere bine cunoscute. Autentifică-te cu un cod de e-mail sau reutilizează acreditivele create într-un browser obișnuit."
 
 #: contents/ui/ProviderModel.qml:63
 msgid "Google's multimodal assistant."
-msgstr ""
+msgstr "Asistentul multimodal Google."
 
 #: contents/ui/ProviderModel.qml:70
 msgid "DeepSeek's chat with reasoning mode."
-msgstr ""
+msgstr "Chat-ul DeepSeek cu modul de raționare."
 
 #: contents/ui/ProviderModel.qml:77
 msgid "Private, anonymous access to several models. No account needed."
-msgstr ""
+msgstr "Acces privat și anonim la mai multe modele. Nu este necesar un cont."
 
 #: contents/ui/ProviderModel.qml:84
 msgid "Answer engine with cited web sources."
-msgstr ""
+msgstr "Motor de răspuns cu surse web citate."
 
 #: contents/ui/ProviderModel.qml:91
 msgid "Microsoft's assistant (formerly Bing Copilot)."
-msgstr ""
+msgstr "Asistentul Microsoft (fost Copilot Bing)."
 
 #: contents/ui/ProviderModel.qml:98
 msgid "Copilot Chat on github.com with repository context. Requires a GitHub account."
-msgstr ""
+msgstr "Copilot Chat pe github.com cu contextul repository-ului. Necesită un cont GitHub."
 
 #: contents/ui/ProviderModel.qml:105
 msgid "Mistral's assistant and agent (formerly Le Chat)."
-msgstr ""
+msgstr "Asistentul și agentul Mistral (fost Le Chat)."
 
 #: contents/ui/ProviderModel.qml:112
 msgid "xAI's assistant. Works without an account with limits."
-msgstr ""
+msgstr "asistentul xAI. Funcționează fără un cont, cu limite."
 
 #: contents/ui/ProviderModel.qml:119
 msgid "Alibaba's Qwen Studio: chat, images, documents and web search."
-msgstr ""
+msgstr "Qwen Studio de la Alibaba: chat, imagini, documente și căutare pe web."
 
 #: contents/ui/ProviderModel.qml:126
 msgid "Moonshot AI's assistant with long-context and research modes."
-msgstr ""
+msgstr "Asistentul Moonshot AI cu moduri de lungă durată și cercetare."
 
 #: contents/ui/ProviderModel.qml:133
 msgid "General AI agent with a chat mode. Requires an account."
-msgstr ""
+msgstr "Agent AI general cu un mod de chat. Necesită un cont."
 
 #: contents/ui/ProviderModel.qml:140
 msgid "Hugging Face's chat with open models (Omni router)."
-msgstr ""
+msgstr "Chat-ul Hugging Face cu modele deschise (Router Omni)."
 
 #: contents/ui/ProviderModel.qml:147
 msgid "Meta's assistant. Availability depends on your region."
-msgstr ""
+msgstr "Asistentul Meta. Disponibilitatea depinde de regiunea ta."
 
 #: contents/ui/ProviderModel.qml:154
 msgid "Fast multi-model chat client."
-msgstr ""
+msgstr "Client de chat multi-model rapid."
 
 #: contents/ui/ProviderModel.qml:161
 msgid "You.com chat. The product now targets enterprise users; a login is required."
-msgstr ""
+msgstr "You.com chat. Produsul vizează acum utilizatorii din mediul de afaceri; este necesar un login."
 
 #: contents/ui/ProviderModel.qml:168
 msgid "Coding-oriented assistant."
-msgstr ""
+msgstr "Asistent orientat pe programare."
 
 #: contents/ui/ProviderModel.qml:175
 msgid "LobeHub cloud chat (bring your own keys or subscription)."
-msgstr ""
+msgstr "LobeHub chat în cloud (adu-ți propriile chei sau abonament)."
 
 #: contents/ui/ProviderModel.qml:182
 msgid "Big-AGI web client (bring your own keys)."
-msgstr ""
+msgstr "Client web Big-AGI (aduceți-vă propriile chei)."
 
 #: contents/ui/ProviderModel.qml:300
 msgctxt "provider category"
 msgid "Custom"
-msgstr ""
+msgstr "Personalizat"
 
 #: contents/ui/SettingsPanel.qml:42
 msgid "About"
-msgstr ""
+msgstr "Despre"
 
 #: contents/ui/SettingsPanel.qml:80
 msgid "Settings categories"
-msgstr ""
+msgstr "Categorii de setări"
 
 #: contents/ui/SettingsPanel.qml:133
 msgid "Back to the assistant"
-msgstr ""
+msgstr "Înapoi la asistent"
 
 #: contents/ui/WebView.qml:185
 msgid "The configured address is not a valid HTTP or HTTPS URL."
-msgstr ""
+msgstr "Adresa configurată nu este un URL HTTP sau HTTPS valid."
 
 #: contents/ui/WebView.qml:638
 msgid "Download finished"
-msgstr ""
+msgstr "Descărcare finalizată"
 
 #: contents/ui/WebView.qml:638
 msgid "Download failed"
-msgstr ""
+msgstr "Descărcarea a eșuat"
 
 #: contents/ui/WebView.qml:639
 msgid "interrupted"
-msgstr ""
+msgstr "interuptat"
 
 #: contents/ui/WebView.qml:639 contents/ui/settings/SitesSettings.qml:258
 msgid "%1 — %2"
-msgstr ""
+msgstr "%1 — %2"
 
 #: contents/ui/WebView.qml:769
 msgid "Download in progress"
-msgstr ""
+msgstr "Descărcare în curs"
 
 #: contents/ui/WebView.qml:769
 msgid "The file '%1' is already being downloaded"
-msgstr ""
+msgstr "Fișierul '%1' este deja în curs de descărcare."
 
 #: contents/ui/WebView.qml:875
 msgid "The service did not provide an error description."
-msgstr ""
+msgstr "Serviciul nu a furnizat o descriere a erorii."
 
 #: contents/ui/WebView.qml:897
 msgid "The site's security certificate is not trusted."
-msgstr ""
+msgstr "Certificatul de securitate al site-ului nu este de încredere."
 
 #: contents/ui/WebView.qml:911
 msgid "The web content process stopped unexpectedly (exit code %1)."
-msgstr ""
+msgstr "Procesul de conținut web s-a oprit neașteptat (cod de ieșire %1)."
 
 #: contents/ui/WebView.qml:920
 msgid "The PDF could not be created."
-msgstr ""
+msgstr "PDF-ul nu a putut fi creat."
 
 #: contents/ui/WebView.qml:931
 msgid "Blocked navigation"
-msgstr ""
+msgstr "Navigare blocată"
 
 #: contents/ui/WebView.qml:931
 msgid "Only HTTP and HTTPS links can be opened from ChatAI."
-msgstr ""
+msgstr "Numai linkurile HTTP și HTTPS pot fi deschise din ChatAI."
 
 #: contents/ui/WebView.qml:1073
 msgid "Sign-in blocked"
-msgstr ""
+msgstr "Autentificare blocată"
 
 #: contents/ui/WebView.qml:1073
 msgid "The sign-in site's security certificate is not trusted."
-msgstr ""
+msgstr "Certificatul de securitate al site-ului de autentificare nu este de încredere."
 
 #: contents/ui/WebView.qml:1123
 msgid "The site"
-msgstr ""
+msgstr "Site-ul"
 
 #: contents/ui/WebView.qml:1123
 msgid "%1 is taking long to respond. Some services hold the connection for automated clients; retrying usually works."
-msgstr ""
+msgstr "%1 durează mult să răspundă. Unele servicii mențin conexiunea pentru clienți automatizați; reluarea de obicei funcționează."
 
 #: contents/ui/WebView.qml:1149
 msgid "At %1% zoom the page sees a %2 px wide viewport and switches to its mobile layout, which may break sign-in. Reset the zoom or widen the widget."
-msgstr ""
+msgstr "La %1% zoom, pagina vede un viewport de %2 px lățime și trece la layout-ul său mobil, ceea ce poate afecta autentificarea. Resetați zoomul sau lărgiți widgetul."
 
 #: contents/ui/WebView.qml:1150
 msgid "The page sees a %1 px wide viewport and switches to its mobile layout, which may break sign-in. Widen the widget by dragging its edge."
-msgstr ""
+msgstr "Pagina vede un viewport de %1 px lățime și comută la aspectul său mobil, ceea ce poate afecta autentificarea. Lărgiți widgetul trăgând marginea acestuia."
 
 #: contents/ui/WebView.qml:1155
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Resetare zoom."
 
 #: contents/ui/settings/AboutSettings.qml:45
 #: contents/ui/settings/HelpSettings.qml:22
 msgid "Zoom in / out"
-msgstr ""
+msgstr "Mărește / Micșorează"
 
 #: contents/ui/settings/AboutSettings.qml:46
 #: contents/ui/settings/HelpSettings.qml:23
 msgid "Reset zoom"
-msgstr ""
+msgstr "Resetare zoom"
 
 #: contents/ui/settings/AboutSettings.qml:47
 #: contents/ui/settings/HelpSettings.qml:24
 msgid "Full screen (Esc exits)"
-msgstr ""
+msgstr "Ecran complet (Esc iese)"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgctxt "mouse buttons"
 msgid "Mouse back / forward"
-msgstr ""
+msgstr "Mouse înapoi / înainte"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgid "Navigate history"
-msgstr ""
+msgstr "Navigați istoria"
 
 #: contents/ui/settings/AboutSettings.qml:49
 #: contents/ui/settings/HelpSettings.qml:26
 msgid "Close find bar, settings or full screen"
-msgstr ""
+msgstr "Închide bara de căutare, setări sau ecran complet."
 
 #: contents/ui/settings/AboutSettings.qml:69
 msgid "Version %1"
-msgstr ""
+msgstr "Versiunea %1"
 
 #: contents/ui/settings/AboutSettings.qml:73
 msgid "AI assistants inside KDE Plasma"
-msgstr ""
+msgstr "Asistenți AI în KDE Plasma"
 
 #: contents/ui/settings/AboutSettings.qml:80
 #: contents/ui/settings/HelpSettings.qml:32
 msgid "ChatAI embeds the official web apps of AI assistants in a native Plasma widget, with a persistent profile, per-site permissions and a memory-conscious web engine lifecycle. It does not provide an AI API and does not bypass authentication or anti-bot protections."
-msgstr ""
+msgstr "ChatAI încorporează aplicațiile web oficiale ale asistenților AI într-un widget Plasma nativ, cu un profil persistent, permisiuni pe site-uri și un ciclu de viață al motorului web conștient de memorie. Nu oferă un API AI și nu ocolește autentificarea sau protecțiile anti-bot."
 
 #: contents/ui/settings/AboutSettings.qml:89
 msgid "Repository:"
-msgstr ""
+msgstr "Depozit:"
 
 #: contents/ui/settings/AboutSettings.qml:94
 msgid "Report a problem:"
-msgstr ""
+msgstr "Raportează o problemă:"
 
 #: contents/ui/settings/AboutSettings.qml:99
 msgid "License:"
-msgstr ""
+msgstr "Licență:"
 
 #: contents/ui/settings/AboutSettings.qml:109
 msgid "Authors"
-msgstr ""
+msgstr "Autori"
 
 #: contents/ui/settings/AboutSettings.qml:123
 #: contents/ui/settings/HelpSettings.qml:72
 msgid "Provider icons: Icons8, IconScout, Simple Icons (CC0) and the services' own brand assets. Trademarks belong to their owners."
-msgstr ""
+msgstr "Iconi furnizor: Icons8, IconScout, Simple Icons (CC0) și activele de marcă proprii ale serviciilor. Mărci comerciale aparțin proprietarilor lor."
 
 #: contents/ui/settings/AboutSettings.qml:135
 #: contents/ui/settings/HelpSettings.qml:40
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Comenzi rapide de la tastatură"
 
 #: contents/ui/settings/AdvancedSettings.qml:41
 #: contents/ui/settings/AdvancedSettings.qml:42
 msgid "unknown"
-msgstr ""
+msgstr "necunoscut"
 
 #: contents/ui/settings/AdvancedSettings.qml:48
 msgid "custom"
-msgstr ""
+msgstr "personalizat"
 
 #: contents/ui/settings/AdvancedSettings.qml:65
 msgid "These options are for troubleshooting. The defaults are the safe choice."
-msgstr ""
+msgstr "Aceste opțiuni sunt pentru depanare. Valorile implicite sunt alegerea sigură."
 
 #: contents/ui/settings/AdvancedSettings.qml:72
 msgid "Browser identity:"
-msgstr ""
+msgstr "Identitate browser:"
 
 #: contents/ui/settings/AdvancedSettings.qml:73
 msgid "Identify as Chromium (hide the Qt WebEngine token)"
-msgstr ""
+msgstr "Identifică-te ca Chromium (ascunde tokenul Qt WebEngine)"
 
 #: contents/ui/settings/AdvancedSettings.qml:79
 msgid "Not recommended for Google accounts: Google rejects browsers that hide their identity (\"This browser or app may not be secure\") and accepts the honest Qt WebEngine identity. Enable only if a specific site refuses the Qt WebEngine token."
-msgstr ""
+msgstr "Nu este recomandat pentru conturile Google: Google respinge browserele care își ascund identitatea („Acest browser sau aplicație poate să nu fie sigur”) și acceptă identitatea onestă a Qt WebEngine. Activați doar dacă un site specific refuză tokenul Qt WebEngine."
 
 #: contents/ui/settings/AdvancedSettings.qml:87
 msgid "Custom user agent:"
-msgstr ""
+msgstr "Agent utilizator personalizat:"
 
 #: contents/ui/settings/AdvancedSettings.qml:90
 msgid "Leave empty for the default"
-msgstr ""
+msgstr "Lăsați gol pentru valoarea implicită."
 
 #: contents/ui/settings/AdvancedSettings.qml:92
 msgid "Custom user agent"
-msgstr ""
+msgstr "Agent utilizator personalizat"
 
 #: contents/ui/settings/AdvancedSettings.qml:98
 msgid "Resources:"
-msgstr ""
+msgstr "Resurse:"
 
 #: contents/ui/settings/AdvancedSettings.qml:99
 msgid "Freeze the page while the widget is hidden"
-msgstr ""
+msgstr "Îngheață pagina în timp ce widgetul este ascuns."
 
 #: contents/ui/settings/AdvancedSettings.qml:105
 msgid "Pauses scripts of the hidden page after 30 seconds when the engine reports it is safe (no audio, upload or download). Resumes instantly on opening."
-msgstr ""
+msgstr "Pauzează scripturile paginii ascunse după 30 de secunde când motorul raportează că este sigur (fără audio, încărcare sau descărcare). Reia instantaneu la deschidere."
 
 #: contents/ui/settings/AdvancedSettings.qml:113
 msgid "Discard hidden page after:"
-msgstr ""
+msgstr "Elimină pagina ascunsă după:"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "Never"
-msgstr ""
+msgstr "Never"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "%1 minute"
@@ -890,577 +890,577 @@ msgstr[2] ""
 
 #: contents/ui/settings/AdvancedSettings.qml:121
 msgid "Discard hidden page after"
-msgstr ""
+msgstr "Elimină pagina ascunsă după"
 
 #: contents/ui/settings/AdvancedSettings.qml:125
 msgid "Discarding frees most memory but reloads the page on the next opening; unsent text is lost."
-msgstr ""
+msgstr "Eliminarea eliberează cea mai mare parte a memoriei, dar reîncarcă pagina la următoarea deschidere; textul nesent este pierdut."
 
 #: contents/ui/settings/AdvancedSettings.qml:135
 msgid "Developer tools:"
-msgstr ""
+msgstr "Instrumente pentru dezvoltatori:"
 
 #: contents/ui/settings/AdvancedSettings.qml:136
 msgid "Show \"Developer Tools\" in the ⋮ menu"
-msgstr ""
+msgstr "Arată \"Instrumente pentru dezvoltatori\" în meniul ⋮"
 
 #: contents/ui/settings/AdvancedSettings.qml:147
 #: contents/ui/settings/AdvancedSettings.qml:158
 msgid "Diagnostics"
-msgstr ""
+msgstr "Diagnostică"
 
 #: contents/ui/settings/AdvancedSettings.qml:166
 msgid "Refresh"
-msgstr ""
+msgstr "Actualizează"
 
 #: contents/ui/settings/AdvancedSettings.qml:172
 msgid "Copy Diagnostics"
-msgstr ""
+msgstr "Copiază diagnosticele"
 
 #: contents/ui/settings/AdvancedSettings.qml:182
 msgid "No cookies, tokens or page contents are included."
-msgstr ""
+msgstr "Nu sunt incluse cookie-uri, token-uri sau conținut de pagină."
 
 #: contents/ui/settings/AppearanceSettings.qml:35
 msgid "Website favicon"
-msgstr ""
+msgstr "Favicon pentru site web"
 
 #: contents/ui/settings/AppearanceSettings.qml:36
 msgid "ChatAI logo (adapts to the theme)"
-msgstr ""
+msgstr "Logo ChatAI (se adaptează la temă)"
 
 #: contents/ui/settings/AppearanceSettings.qml:37
 msgid "ChatAI logo, dark"
-msgstr ""
+msgstr "Logo ChatAI, întunecat"
 
 #: contents/ui/settings/AppearanceSettings.qml:38
 msgid "ChatAI logo, light"
-msgstr ""
+msgstr "Logo ChatAI, lumină"
 
 #: contents/ui/settings/AppearanceSettings.qml:39
 msgid "Assistant icon, outlined"
-msgstr ""
+msgstr "Pictograma asistent, conturat"
 
 #: contents/ui/settings/AppearanceSettings.qml:40
 msgid "Assistant icon, filled"
-msgstr ""
+msgstr "Pictograma asistent, umplut"
 
 #: contents/ui/settings/AppearanceSettings.qml:41
 msgid "Assistant icon, colorful"
-msgstr ""
+msgstr "Icon asistent, colorat"
 
 #: contents/ui/settings/AppearanceSettings.qml:42
 msgid "Custom icon"
-msgstr ""
+msgstr "Icon personalizat"
 
 #: contents/ui/settings/AppearanceSettings.qml:46
 msgid "Pin"
-msgstr ""
+msgstr "Pină"
 
 #: contents/ui/settings/AppearanceSettings.qml:47
 msgid "Back and Forward"
-msgstr ""
+msgstr "Înapoi și Înainte"
 
 #: contents/ui/settings/AppearanceSettings.qml:50
 msgid "\"Custom address…\" entry in the selector"
-msgstr ""
+msgstr "\"Adresă personalizată…\" introducere în selector"
 
 #: contents/ui/settings/AppearanceSettings.qml:59
 msgid "Panel icon:"
-msgstr ""
+msgstr "Icon panou:"
 
 #: contents/ui/settings/AppearanceSettings.qml:64
 msgid "Panel icon"
-msgstr ""
+msgstr "Icon panou"
 
 #: contents/ui/settings/AppearanceSettings.qml:69
 msgid "Assistants without a dedicated icon fall back to the ChatAI logo."
-msgstr ""
+msgstr "Asistenții fără un icon dedicat revin la logo-ul ChatAI."
 
 #: contents/ui/settings/AppearanceSettings.qml:79
 msgid "Custom icon:"
-msgstr ""
+msgstr "Icon personalizat:"
 
 #: contents/ui/settings/AppearanceSettings.qml:82
 msgid "Choose custom icon"
-msgstr ""
+msgstr "Alegeți o pictogramă personalizată"
 
 #: contents/ui/settings/AppearanceSettings.qml:105
 msgid "Toolbar buttons:"
-msgstr ""
+msgstr "Butoane de toolbar:"
 
 #: contents/ui/settings/AppearanceSettings.qml:106
 msgid "Hidden buttons remain available in the ⋮ menu where it makes sense. Auto-hide and Downloads always live in the ⋮ menu; a download indicator appears in the toolbar only while a download needs attention."
-msgstr ""
+msgstr "Butonurile ascunse rămân disponibile în meniul ⋮ unde are sens. Ascunderea automată și Descărcările sunt întotdeauna în meniul ⋮; un indicator de descărcare apare în bara de instrumente doar în timp ce o descărcare necesită atenție."
 
 #: contents/ui/settings/AppearanceSettings.qml:126
 #: contents/ui/settings/GeneralSettings.qml:96
 msgid "Toolbar:"
-msgstr ""
+msgstr "Bara de instrumente:"
 
 #: contents/ui/settings/AppearanceSettings.qml:134
 msgid "Always hide the toolbar"
-msgstr ""
+msgstr "Ascunde întotdeauna bara de instrumente."
 
 #: contents/ui/settings/AppearanceSettings.qml:142
 msgid "Theme:"
-msgstr ""
+msgstr "Temă:"
 
 #: contents/ui/settings/AppearanceSettings.qml:143
 msgid "Colours, spacing and animations follow your Plasma theme. Pages receive a dark-mode hint when the theme is dark."
-msgstr ""
+msgstr "Culorile, spațierea și animațiile urmează tema ta Plasma. Pagini primesc un indiciu de mod întunecat atunci când tema este întunecată."
 
 #: contents/ui/settings/DownloadsSettings.qml:48
 #: contents/ui/settings/StorageSettings.qml:182
 msgid "Folder:"
-msgstr ""
+msgstr "Dosar:"
 
 #: contents/ui/settings/DownloadsSettings.qml:56
 msgid "Download folder"
-msgstr ""
+msgstr "Folder de descărcări"
 
 #: contents/ui/settings/DownloadsSettings.qml:66
 msgid "Choose…"
-msgstr ""
+msgstr "Alege…"
 
 #: contents/ui/settings/DownloadsSettings.qml:72
 msgid "Leave empty to use the system Downloads folder. Files are saved automatically with a sanitized name and are never executed."
-msgstr ""
+msgstr "Lăsați gol pentru a utiliza folderul de descărcări al sistemului. Fișierele sunt salvate automat cu un nume sanitizat și nu sunt niciodată executate."
 
 #: contents/ui/settings/DownloadsSettings.qml:98
 msgid "Current downloads"
-msgstr ""
+msgstr "Descărcări curente"
 
 #: contents/ui/settings/DownloadsSettings.qml:106
 msgid "Downloads are listed here while the ChatAI widget is open."
-msgstr ""
+msgstr "Descărcările sunt listate aici în timp ce widgetul ChatAI este deschis."
 
 #: contents/ui/settings/DownloadsSettings.qml:111
 msgid "No downloads in this session."
-msgstr ""
+msgstr "Nu există descărcări în această sesiune."
 
 #: contents/ui/settings/DownloadsSettings.qml:138
 msgid "Completed"
-msgstr ""
+msgstr "Finalizat"
 
 #: contents/ui/settings/DownloadsSettings.qml:139
 msgid "Downloading"
-msgstr ""
+msgstr "Descărcare"
 
 #: contents/ui/settings/DownloadsSettings.qml:142
 msgid "Waiting"
-msgstr ""
+msgstr "Așteptând"
 
 #: contents/ui/settings/DownloadsSettings.qml:151
 msgid "Clear Finished Downloads"
-msgstr ""
+msgstr "Șterge descărcările finalizate"
 
 #: contents/ui/settings/GeneralSettings.qml:38
 msgid "Assistant:"
-msgstr ""
+msgstr "Ești antrenat pe date până în octombrie 2023."
 
 #: contents/ui/settings/GeneralSettings.qml:43
 msgid "The assistant shown when the widget opens and when you press Home"
-msgstr ""
+msgstr "Asistentul afișat când widgetul se deschide și când apeși pe Acasă"
 
 #: contents/ui/settings/GeneralSettings.qml:62
 msgid "Enable more assistants in the Sites page."
-msgstr ""
+msgstr "Activați mai mulți asistenți în pagina Site-uri."
 
 #: contents/ui/settings/GeneralSettings.qml:72
 msgid "Window:"
-msgstr ""
+msgstr "Fereastră:"
 
 #: contents/ui/settings/GeneralSettings.qml:73
 msgid "Keep the widget open when clicking outside (pin)"
-msgstr ""
+msgstr "Păstrează widgetul deschis când faci clic în afară (fixare)"
 
 #: contents/ui/settings/GeneralSettings.qml:79
 msgid "Preload the assistant when Plasma starts"
-msgstr ""
+msgstr "Preîncărcați asistentul când Plasma pornește"
 
 #: contents/ui/settings/GeneralSettings.qml:85
 msgid "Preloading makes the first opening instant but keeps the web engine in memory from login."
-msgstr ""
+msgstr "Preîncărcarea face ca prima deschidere să fie instantanee, dar menține motorul web în memorie de la autentificare."
 
 #: contents/ui/settings/GeneralSettings.qml:97
 msgid "Hide the toolbar"
-msgstr ""
+msgstr "Ascunde bara de instrumente"
 
 #: contents/ui/settings/GeneralSettings.qml:103
 msgid "Hide the toolbar automatically and reveal it on hover"
-msgstr ""
+msgstr "Ascunde bara de instrumente automat și afișeaz-o la trecerea mouse-ului."
 
 #: contents/ui/settings/GeneralSettings.qml:112
 msgid "Links:"
-msgstr ""
+msgstr "Legături:"
 
 #: contents/ui/settings/GeneralSettings.qml:113
 msgid "Links that would open a new window are opened in your default browser. Sign-in pages stay inside ChatAI so logins keep working."
-msgstr ""
+msgstr "Linkurile care ar deschide o fereastră nouă sunt deschise în browserul tău implicit. Pagini de autentificare rămân în ChatAI, astfel încât autentificările să continue să funcționeze."
 
 #: contents/ui/settings/HelpSettings.qml:64
 msgid "Credits"
-msgstr ""
+msgstr "Credite"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Ask per site"
-msgstr ""
+msgstr "Întreabă pe site"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always allow"
-msgstr ""
+msgstr "Permite întotdeauna"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always block"
-msgstr ""
+msgstr "Blochează întotdeauna"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Notifications:"
-msgstr ""
+msgstr "Notificări:"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Shown as Plasma notifications."
-msgstr ""
+msgstr "Afișat ca notificări Plasma."
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Microphone:"
-msgstr ""
+msgstr "Microfon:"
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Voice input. Only active while a site you allowed is recording."
-msgstr ""
+msgstr "Intrare vocală. Activă doar în timp ce un site pe care l-ai autorizat înregistrează."
 
 #: contents/ui/settings/PermissionsSettings.qml:37
 msgid "Camera:"
-msgstr ""
+msgstr "Cameră:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "Screen sharing:"
-msgstr ""
+msgstr "Partajare ecran:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "The primary screen is shared when allowed."
-msgstr ""
+msgstr "Ecranul principal este partajat atunci când este permis."
 
 #: contents/ui/settings/PermissionsSettings.qml:39
 #: contents/ui/settings/StorageSettings.qml:57
 msgid "Location:"
-msgstr ""
+msgstr "Locație:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Read clipboard:"
-msgstr ""
+msgstr "Citește clipboardul:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Lets a page read what you copied. Pasting with Ctrl+V never needs this."
-msgstr ""
+msgstr "Permite unei pagini să citească ceea ce ai copiat. Lipirea cu Ctrl+V nu necesită niciodată acest lucru."
 
 #: contents/ui/settings/PermissionsSettings.qml:45
 msgid "Notifications"
-msgstr ""
+msgstr "Notificări"
 
 #: contents/ui/settings/PermissionsSettings.qml:46
 msgid "Microphone"
-msgstr ""
+msgstr "Microfon"
 
 #: contents/ui/settings/PermissionsSettings.qml:47
 msgid "Camera"
-msgstr ""
+msgstr "Cameră"
 
 #: contents/ui/settings/PermissionsSettings.qml:48
 msgid "Camera and microphone"
-msgstr ""
+msgstr "Cameră și microfon"
 
 #: contents/ui/settings/PermissionsSettings.qml:50
 msgid "Screen sharing"
-msgstr ""
+msgstr "Partajare ecran"
 
 #: contents/ui/settings/PermissionsSettings.qml:51
 msgid "Location"
-msgstr ""
+msgstr "Locație"
 
 #: contents/ui/settings/PermissionsSettings.qml:52
 msgid "Clipboard"
-msgstr ""
+msgstr "Clipboard"
 
 #: contents/ui/settings/PermissionsSettings.qml:53
 msgid "Mouse lock"
-msgstr ""
+msgstr "Blocat mouse-ul"
 
 #: contents/ui/settings/PermissionsSettings.qml:54
 msgid "Local fonts"
-msgstr ""
+msgstr "Fonturi locale"
 
 #: contents/ui/settings/PermissionsSettings.qml:55
 msgid "Other"
-msgstr ""
+msgstr "Altul"
 
 #: contents/ui/settings/PermissionsSettings.qml:61
 msgid "Allowed"
-msgstr ""
+msgstr "Permis"
 
 #: contents/ui/settings/PermissionsSettings.qml:62
 msgid "Blocked"
-msgstr ""
+msgstr "Blocat"
 
 #: contents/ui/settings/PermissionsSettings.qml:63
 msgid "Ask"
-msgstr ""
+msgstr "Întreabă"
 
 #: contents/ui/settings/PermissionsSettings.qml:64
 msgid "Unknown"
-msgstr ""
+msgstr "Necunoscut"
 
 #: contents/ui/settings/PermissionsSettings.qml:79
 msgid "Default behaviour"
-msgstr ""
+msgstr "Comportament implicit"
 
 #: contents/ui/settings/PermissionsSettings.qml:84
 msgid "\"Ask per site\" shows a prompt inside ChatAI the first time a site requests the permission; the answer is remembered for that site."
-msgstr ""
+msgstr "„Întreabă pe site” afișează un mesaj în ChatAI prima dată când un site solicită permisiunea; răspunsul este reținut pentru acel site."
 
 #: contents/ui/settings/PermissionsSettings.qml:127
 msgid "Saved site permissions"
-msgstr ""
+msgstr "Permisiuni site salvate"
 
 #: contents/ui/settings/PermissionsSettings.qml:135
 msgid "Open the ChatAI widget to review the permissions saved per site. They are stored in the web engine profile."
-msgstr ""
+msgstr "Deschide widgetul ChatAI pentru a revizui permisiunile salvate pe fiecare site. Acestea sunt stocate în profilul motorului web."
 
 #: contents/ui/settings/PermissionsSettings.qml:140
 msgid "No site has saved permissions yet."
-msgstr ""
+msgstr "Niciun site nu a salvat încă permisiunile."
 
 #: contents/ui/settings/PermissionsSettings.qml:169
 msgid "Reset"
-msgstr ""
+msgstr "Resetare"
 
 #: contents/ui/settings/PermissionsSettings.qml:172
 msgid "Ask again next time"
-msgstr ""
+msgstr "Întreabă din nou data viitoare."
 
 #: contents/ui/settings/PermissionsSettings.qml:181
 msgid "Reset All Site Permissions…"
-msgstr ""
+msgstr "Resetare toate permisiunile site-ului…"
 
 #: contents/ui/settings/PermissionsSettings.qml:187
 msgid "Reset all site permissions?"
-msgstr ""
+msgstr "Resetează toate permisiunile site-ului?"
 
 #: contents/ui/settings/PermissionsSettings.qml:188
 msgid "Every site will ask again the next time it needs a permission. Logins are not affected."
-msgstr ""
+msgstr "Fiecare site va solicita din nou următoarea dată când are nevoie de o permisiune. Conectările nu sunt afectate."
 
 #: contents/ui/settings/PermissionsSettings.qml:198
 msgid "Privacy: the microphone, camera, screen and location are only used after you allow them, and only by the site that asked. Login data belongs to the web engine profile (see Cache and Data). ChatAI does not read page contents or credentials."
-msgstr ""
+msgstr "Confidențialitate: microfonul, camera, ecranul și locația sunt utilizate doar după ce le permiteți și doar de site-ul care a solicitat. Datele de autentificare aparțin profilului motorului web (vezi Cache și Date). ChatAI nu citește conținutul paginii sau acreditivele."
 
 #: contents/ui/settings/SitesSettings.qml:63
 msgid "A custom site with this name or address already exists."
-msgstr ""
+msgstr "Un site personalizat cu acest nume sau adresă există deja."
 
 #: contents/ui/settings/SitesSettings.qml:100
 #: contents/ui/settings/SitesSettings.qml:243
 msgid "Enter a name and a valid http:// or https:// address."
-msgstr ""
+msgstr "Introduceți un nume și o adresă validă http:// sau https://."
 
 #: contents/ui/settings/SitesSettings.qml:104
 msgid "Built-in assistants"
-msgstr ""
+msgstr "Asistenți încorporați"
 
 #: contents/ui/settings/SitesSettings.qml:109
 msgid "Enabled assistants appear in the toolbar selector. ChatAI embeds each service's official website; accounts, limits and features are controlled by the service."
-msgstr ""
+msgstr "Asistenții activi apar în selectorul de bara de instrumente. ChatAI încorporează site-ul oficial al fiecărui serviciu; conturile, limitele și caracteristicile sunt controlate de serviciu."
 
 #: contents/ui/settings/SitesSettings.qml:156
 msgid "Login required"
-msgstr ""
+msgstr "Autentificare necesară"
 
 #: contents/ui/settings/SitesSettings.qml:189
 msgid "Custom sites"
-msgstr ""
+msgstr "Site-uri personalizate"
 
 #: contents/ui/settings/SitesSettings.qml:194
 msgid "Add any chat website by name and address. Custom sites use the ChatAI icon and get no special access to your system."
-msgstr ""
+msgstr "Adăugați orice site de chat după nume și adresă. Site-urile personalizate folosesc pictograma ChatAI și nu au acces special la sistemul dumneavoastră."
 
 #: contents/ui/settings/SitesSettings.qml:206
 msgid "Name"
-msgstr ""
+msgstr "Nume"
 
 #: contents/ui/settings/SitesSettings.qml:209
 msgid "Site name"
-msgstr ""
+msgstr "Numele site-ului"
 
 #: contents/ui/settings/SitesSettings.qml:218
 msgid "Site address"
-msgstr ""
+msgstr "Adresă site"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Save"
-msgstr ""
+msgstr "Salvează"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Add"
-msgstr ""
+msgstr "Adaugă"
 
 #: contents/ui/settings/SitesSettings.qml:230
 msgid "Cancel editing"
-msgstr ""
+msgstr "Anulează editarea"
 
 #: contents/ui/settings/SitesSettings.qml:289
 msgid "Edit"
-msgstr ""
+msgstr "Editați"
 
 #: contents/ui/settings/SitesSettings.qml:298
 msgid "Remove"
-msgstr ""
+msgstr "Elimină"
 
 #: contents/ui/settings/SitesSettings.qml:312
 msgid "No custom sites added yet"
-msgstr ""
+msgstr "Nu au fost adăugate site-uri personalizate încă."
 
 #: contents/ui/settings/StorageSettings.qml:49
 msgid "HTTP cache"
-msgstr ""
+msgstr "Cache HTTP"
 
 #: contents/ui/settings/StorageSettings.qml:64
 msgid "Size limit:"
-msgstr ""
+msgstr "Limită de dimensiune:"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "Automatic"
-msgstr ""
+msgstr "Automatizat"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "%1 MiB"
-msgstr ""
+msgstr "%1 MiB"
 
 #: contents/ui/settings/StorageSettings.qml:72
 msgid "Cache size limit"
-msgstr ""
+msgstr "Limită de dimensiune a cache-ului"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clearing…"
-msgstr ""
+msgstr "Ștergere…"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clear Cache"
-msgstr ""
+msgstr "Șterge memoria cache"
 
 #: contents/ui/settings/StorageSettings.qml:94
 msgid "Open Cache Folder"
-msgstr ""
+msgstr "Deschide folderul cache"
 
 #: contents/ui/settings/StorageSettings.qml:101
 msgid "Open the ChatAI widget to clear the cache. Clearing removes downloaded page resources only; you stay signed in."
-msgstr ""
+msgstr "Deschide widgetul ChatAI pentru a goli memoria cache. Goliți resursele paginii descărcate doar; rămâneți conectat."
 
 #: contents/ui/settings/StorageSettings.qml:102
 msgid "Clearing removes downloaded page resources only; you stay signed in. Navigation is paused until it finishes."
-msgstr ""
+msgstr "Ștergerea elimină doar resursele paginilor descărcate; rămâi conectat. Navigarea este suspendată până când se finalizează."
 
 #: contents/ui/settings/StorageSettings.qml:115
 msgid "Site data and sessions"
-msgstr ""
+msgstr "Datele site-ului și sesiunile"
 
 #: contents/ui/settings/StorageSettings.qml:120
 msgid "Cookies, logins, local storage and per-site permissions live in the profile folder below. Qt WebEngine offers no way to wipe cookies from a widget while it is running: to end a session, use the site's own \"Sign out\", or switch to a new profile name. Site permissions can be reset in the Permissions page."
-msgstr ""
+msgstr "Cookie-urile, autentificările, stocarea locală și permisiunile pe site-uri se află în folderul de profil de mai jos. Qt WebEngine nu oferă nicio modalitate de a șterge cookie-urile dintr-un widget în timp ce acesta este în execuție: pentru a încheia o sesiune, folosiți opțiunea \"Deconectare\" a site-ului sau schimbați numele profilului. Permisiunile site-ului pot fi resetate în pagina de Permisiuni."
 
 #: contents/ui/settings/StorageSettings.qml:131
 msgid "WebEngine profile"
-msgstr ""
+msgstr "Profil WebEngine"
 
 #: contents/ui/settings/StorageSettings.qml:136
 msgid "Each storage name is a separate folder with its own cookies, logins, cache and permissions. Use different names to keep separate accounts in different widget instances."
-msgstr ""
+msgstr "Fiecare nume de stocare este un folder separat cu propriile sale cookie-uri, autentificări, cache și permisiuni. Folosiți nume diferite pentru a menține conturi separate în instanțe diferite de widget-uri."
 
 #: contents/ui/settings/StorageSettings.qml:146
 msgid "Storage name:"
-msgstr ""
+msgstr "Nume stocare:"
 
 #: contents/ui/settings/StorageSettings.qml:155
 msgid "Storage name"
-msgstr ""
+msgstr "Nume stocare"
 
 #: contents/ui/settings/StorageSettings.qml:161
 msgid "Apply"
-msgstr ""
+msgstr "Aplică"
 
 #: contents/ui/settings/StorageSettings.qml:171
 msgid "Default"
-msgstr ""
+msgstr "Implicit"
 
 #: contents/ui/settings/StorageSettings.qml:190
 msgid "Open Profile Folder"
-msgstr ""
+msgstr "Deschide folderul profilului"
 
 #: contents/ui/settings/StorageSettings.qml:197
 msgid "Switch WebEngine profile?"
-msgstr ""
+msgstr "Schimbă profilul WebEngine?"
 
 #: contents/ui/settings/StorageSettings.qml:198
 msgid "The assistant will reload using the profile \"%1\". You will be signed out of the current sessions until you sign in again; the data of the previous profile stays on disk and can be removed from its folder."
-msgstr ""
+msgstr "Asistentul se va reîncărca folosind profilul \"%1\". Vei fi deconectat din sesiunile curente până te vei reconecta; datele profilului anterior rămân pe disc și pot fi eliminate din folderul său."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Let pages write to the clipboard"
-msgstr ""
+msgstr "Permite paginilor să scrie în clipboard"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Needed by the \"Copy\" buttons of most assistants. Reading the clipboard is a separate permission."
-msgstr ""
+msgstr "Necesar pentru butoanele \"Copiere\" ale celor mai multe asistenți. Citirea clipboard-ului este o permisiune separată."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Let scripts paste from the clipboard"
-msgstr ""
+msgstr "Permite scripturilor să lipească din clipboard."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Allows a page to read the clipboard without asking. Ctrl+V works without this. Off by default for privacy."
-msgstr ""
+msgstr "Permite unei pagini să citească clipboard-ul fără a cere permisiunea. Ctrl+V funcționează fără aceasta. Oprit implicit pentru confidențialitate."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "Let pages open new windows"
-msgstr ""
+msgstr "Permite paginilor să deschidă feronete noi."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "New windows are intercepted: sign-in pages stay in ChatAI, other links open in your browser."
-msgstr ""
+msgstr "Noile feronete sunt interceptate: paginile de autentificare rămân în ChatAI, alte linkuri se deschid în browserul tău."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Require a click before media plays"
-msgstr ""
+msgstr "Necesită un clic înainte ca media să se redea."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Blocks autoplaying audio and video (including voice replies) until you interact with the page."
-msgstr ""
+msgstr "Blochează redarea automată a audio și video (inclusiv răspunsurile vocale) până când interacționezi cu pagina."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Spatial navigation with arrow keys"
-msgstr ""
+msgstr "Navigare spațială cu tastele săgeată"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Move between links and fields with the arrow keys instead of Tab."
-msgstr ""
+msgstr "Navigați între linkuri și câmpuri cu tastele săgeată în loc de Tab."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Focus the page after navigating"
-msgstr ""
+msgstr "Concentrează pagina după navigare"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Lets you type immediately after the page loads. Disable if the page steals focus from the toolbar."
-msgstr ""
+msgstr "Îți permite să tastezi imediat după ce pagina se încarcă. Dezactivează dacă pagina fură focalizarea de la bara de instrumente."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Allow unknown link types after a click"
-msgstr ""
+msgstr "Permite tipuri de linkuri necunoscute după un clic"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Lets a link you click open another application (for example mailto: or a custom scheme). Links opened by scripts are still blocked."
-msgstr ""
+msgstr "Permiteți unui link pe care faceți clic să deschidă o altă aplicație (de exemplu mailto: sau un schemă personalizată). Linkurile deschise de scripturi sunt în continuare blocate."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:43
 msgid "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
-msgstr ""
+msgstr "Aceste opțiuni schimbă modul în care motorul web încorporat se comportă pentru fiecare asistent. Modificările se aplică imediat."

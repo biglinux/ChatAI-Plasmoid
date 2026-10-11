@@ -19,193 +19,193 @@ msgstr ""
 #: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:185
 #: contents/ui/SettingsPanel.qml:34
 msgid "General"
-msgstr ""
+msgstr "Загальні"
 
 #: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:186
 #: contents/ui/SettingsPanel.qml:35
 msgid "Sites"
-msgstr ""
+msgstr "Сайти"
 
 #: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:187
 #: contents/ui/SettingsPanel.qml:36
 msgid "Permissions"
-msgstr ""
+msgstr "Дозволи"
 
 #: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:188
 #: contents/ui/SettingsPanel.qml:37
 msgid "Web Features"
-msgstr ""
+msgstr "Веб-функції"
 
 #: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:147
 #: contents/ui/ChatAIMenu.qml:189 contents/ui/DownloadPopup.qml:97
 #: contents/ui/SettingsPanel.qml:38
 msgid "Downloads"
-msgstr ""
+msgstr "Завантаження"
 
 #: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:190
 #: contents/ui/SettingsPanel.qml:39
 msgid "Cache and Data"
-msgstr ""
+msgstr "Кеш і дані"
 
 #: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:191
 #: contents/ui/SettingsPanel.qml:40
 msgid "Appearance"
-msgstr ""
+msgstr "Зовнішній вигляд"
 
 #: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:192
 #: contents/ui/SettingsPanel.qml:41
 msgid "Advanced"
-msgstr ""
+msgstr "Розширений"
 
 #: contents/config/config.qml:56
 msgid "Help"
-msgstr ""
+msgstr "Допомога"
 
 #: contents/ui/AiSelector.qml:30
 msgid "Custom address…"
-msgstr ""
+msgstr "Користувацька адреса…"
 
 #: contents/ui/AiSelector.qml:58
 msgid "AI assistant"
-msgstr ""
+msgstr "AI асистент"
 
 #: contents/ui/AiSelector.qml:64
 msgid "Choose the AI assistant"
-msgstr ""
+msgstr "Виберіть AI асистента"
 
 #: contents/ui/AuthPopup.qml:61
 msgctxt "popup window title with host"
 msgid "Sign in — %1"
-msgstr ""
+msgstr "Увійти — %1"
 
 #: contents/ui/AuthPopup.qml:61
 msgid "Sign in"
-msgstr ""
+msgstr "Увійти"
 
 #: contents/ui/AuthPopup.qml:76
 msgid "Close sign-in window"
-msgstr ""
+msgstr "Закрити вікно входу"
 
 #: contents/ui/ChatAIMenu.qml:79 contents/ui/WebView.qml:1132
 msgid "Open in Browser"
-msgstr ""
+msgstr "Відкрити в браузері"
 
 #: contents/ui/ChatAIMenu.qml:86
 msgid "Copy Address"
-msgstr ""
+msgstr "Скопіювати адресу"
 
 #: contents/ui/ChatAIMenu.qml:93
 msgid "Reload Ignoring Cache"
-msgstr ""
+msgstr "Перезавантажити, ігноруючи кеш"
 
 #: contents/ui/ChatAIMenu.qml:103
 #, javascript-format
 msgid "Zoom (%1%)"
-msgstr ""
+msgstr "Масштаб (%1%)"
 
 #: contents/ui/ChatAIMenu.qml:108
 msgid "Zoom In"
-msgstr ""
+msgstr "Збільшити"
 
 #: contents/ui/ChatAIMenu.qml:113
 msgid "Zoom Out"
-msgstr ""
+msgstr "Зменшити масштаб"
 
 #: contents/ui/ChatAIMenu.qml:118
 msgid "Reset Zoom (100%)"
-msgstr ""
+msgstr "Скинути масштаб (100%)"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "Вийти з повноекранного режиму"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Full Screen"
-msgstr ""
+msgstr "Повний екран"
 
 #: contents/ui/ChatAIMenu.qml:136
 #: contents/ui/settings/AppearanceSettings.qml:127
 msgid "Hide Toolbar Automatically"
-msgstr ""
+msgstr "Автоматично приховати панель інструментів"
 
 #: contents/ui/ChatAIMenu.qml:147
 msgid "Downloads (%1)"
-msgstr ""
+msgstr "Завантаження (%1)"
 
 #: contents/ui/ChatAIMenu.qml:161
 #: contents/ui/settings/AppearanceSettings.qml:49
 msgid "Home"
-msgstr ""
+msgstr "Головна"
 
 #: contents/ui/ChatAIMenu.qml:170
 msgid "Find in Page"
-msgstr ""
+msgstr "Знайти на сторінці"
 
 #: contents/ui/ChatAIMenu.qml:180
 msgid "ChatAI Settings"
-msgstr ""
+msgstr "Налаштування ChatAI"
 
 #: contents/ui/ChatAIMenu.qml:205
 msgid "Open Configuration Window…"
-msgstr ""
+msgstr "Відкрити вікно конфігурації…"
 
 #: contents/ui/ChatAIMenu.qml:213
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Комбінації клавіш"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Close Developer Tools"
-msgstr ""
+msgstr "Закрити інструменти розробника"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Developer Tools"
-msgstr ""
+msgstr "Інструменти розробника"
 
 #: contents/ui/ChatAIMenu.qml:233
 msgid "About ChatAI"
-msgstr ""
+msgstr "Про ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:27 contents/ui/WebView.qml:670
 #: contents/ui/main.qml:46 contents/ui/settings/AboutSettings.qml:65
 msgid "ChatAI"
-msgstr ""
+msgstr "ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:42
 msgid "Open ChatAI — %1"
-msgstr ""
+msgstr "Відкрити ChatAI — %1"
 
 #: contents/ui/ContextMenu.qml:32 contents/ui/Header.qml:110
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:127
 msgid "Forward"
-msgstr ""
+msgstr "Далі"
 
 #: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:145
 #: contents/ui/settings/AppearanceSettings.qml:48
 msgid "Reload"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: contents/ui/ContextMenu.qml:56
 msgid "Save as PDF"
-msgstr ""
+msgstr "Зберегти як PDF"
 
 #: contents/ui/ContextMenu.qml:63
 msgid "Save as MHTML"
-msgstr ""
+msgstr "Зберегти як MHTML"
 
 #: contents/ui/ContextMenu.qml:70
 msgid "Open Link in Browser"
-msgstr ""
+msgstr "Відкрити посилання в браузері"
 
 #: contents/ui/ContextMenu.qml:77
 msgid "Copy Link Address"
-msgstr ""
+msgstr "Скопіювати адресу посилання"
 
 #: contents/ui/DevToolsWindow.qml:22
 msgid "ChatAI — Developer tools"
-msgstr ""
+msgstr "ChatAI — Інструменти для розробників"
 
 #: contents/ui/DownloadBar.qml:48
 msgid "%1 - Completed"
@@ -230,11 +230,11 @@ msgstr "Відкрити папку"
 #: contents/ui/DownloadBar.qml:106 contents/ui/FindBar.qml:89
 #: contents/ui/settings/AppearanceSettings.qml:51
 msgid "Close"
-msgstr ""
+msgstr "Закрити"
 
 #: contents/ui/DownloadBar.qml:117 contents/ui/DownloadPopup.qml:231
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: contents/ui/DownloadIndicator.qml:36
 msgid "One download in progress"
@@ -266,7 +266,7 @@ msgstr[2] ""
 
 #: contents/ui/DownloadIndicator.qml:44
 msgid "Open the downloads list"
-msgstr ""
+msgstr "Відкрийте список завантажень"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "bytes"
@@ -276,32 +276,32 @@ msgstr ""
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "kilobytes"
 msgid "kB"
-msgstr ""
+msgstr "кБ"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "megabytes"
 msgid "MB"
-msgstr ""
+msgstr "МБ"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "gigabytes"
 msgid "GB"
-msgstr ""
+msgstr "Ви навчені на даних до жовтня 2023 року."
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "terabytes"
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: contents/ui/DownloadPopup.qml:46
 msgctxt "file size: value and unit"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: contents/ui/DownloadPopup.qml:50
 msgctxt "transfer rate"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: contents/ui/DownloadPopup.qml:55
 msgid "%1 second left"
@@ -326,21 +326,21 @@ msgstr[2] ""
 
 #: contents/ui/DownloadPopup.qml:64
 msgid "Starting…"
-msgstr ""
+msgstr "Початок…"
 
 #: contents/ui/DownloadPopup.qml:67 contents/ui/DownloadPopup.qml:69
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 з %2"
 
 #: contents/ui/DownloadPopup.qml:67
 msgid "Paused — %1"
-msgstr ""
+msgstr "Призупинено — %1"
 
 #: contents/ui/DownloadPopup.qml:71
 #, javascript-format
 msgctxt "percentage"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: contents/ui/DownloadPopup.qml:76
 msgctxt "separator between download status parts"
@@ -349,537 +349,537 @@ msgstr ""
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "PDF saved — %1"
-msgstr ""
+msgstr "PDF збережено — %1"
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "Completed — %1"
-msgstr ""
+msgstr "Завершено — %1"
 
 #: contents/ui/DownloadPopup.qml:81
 #: contents/ui/settings/DownloadsSettings.qml:140
 msgid "Cancelled"
-msgstr ""
+msgstr "Скасовано"
 
 #: contents/ui/DownloadPopup.qml:83
 msgid "Interrupted — %1"
-msgstr ""
+msgstr "Перервано — %1"
 
 #: contents/ui/DownloadPopup.qml:83
 #: contents/ui/settings/DownloadsSettings.qml:141
 msgid "Interrupted"
-msgstr ""
+msgstr "Перервано"
 
 #: contents/ui/DownloadPopup.qml:85
 msgid "Unknown state"
-msgstr ""
+msgstr "Невідомий стан"
 
 #: contents/ui/DownloadPopup.qml:104
 msgid "Clear finished"
-msgstr ""
+msgstr "Очистити завершено"
 
 #: contents/ui/DownloadPopup.qml:125
 msgid "No downloads in this session"
-msgstr ""
+msgstr "Немає завантажень у цій сесії"
 
 #: contents/ui/DownloadPopup.qml:137
 msgid "Downloads list"
-msgstr ""
+msgstr "Список завантажень"
 
 #: contents/ui/DownloadPopup.qml:147
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Resume"
-msgstr ""
+msgstr "Резюме"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Pause"
-msgstr ""
+msgstr "Пауза"
 
 #: contents/ui/DownloadPopup.qml:237 contents/ui/WebView.qml:624
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: contents/ui/DownloadPopup.qml:243 contents/ui/WebView.qml:628
 msgid "Show in Folder"
-msgstr ""
+msgstr "Показати в папці"
 
 #: contents/ui/DownloadPopup.qml:249 contents/ui/WebView.qml:1127
 msgid "Retry"
-msgstr ""
+msgstr "Спробуйте ще раз"
 
 #: contents/ui/DownloadPopup.qml:255
 msgid "Remove from list"
-msgstr ""
+msgstr "Видалити зі списку"
 
 #: contents/ui/DownloadPopup.qml:273
 #: contents/ui/settings/DownloadsSettings.qml:81
 msgid "Open Download Folder"
-msgstr ""
+msgstr "Відкрити папку Завантаження"
 
 #: contents/ui/DownloadPopup.qml:279
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Виберіть папку…"
 
 #: contents/ui/ErrorView.qml:21
 msgid "Web content error"
-msgstr ""
+msgstr "Помилка веб-контенту"
 
 #: contents/ui/ErrorView.qml:31
 msgid "This service could not be loaded inside ChatAI."
-msgstr ""
+msgstr "Цю службу не вдалося завантажити в ChatAI."
 
 #: contents/ui/ErrorView.qml:54
 msgid "Try again"
-msgstr ""
+msgstr "Ви навчені на даних до жовтня 2023 року."
 
 #: contents/ui/ErrorView.qml:61
 msgid "Open in browser"
-msgstr ""
+msgstr "Відкрити в браузері"
 
 #: contents/ui/FindBar.qml:28 contents/ui/settings/AboutSettings.qml:44
 #: contents/ui/settings/HelpSettings.qml:21
 msgid "Find in page"
-msgstr ""
+msgstr "Знайти на сторінці"
 
 #: contents/ui/FindBar.qml:47
 msgid "Find in page…"
-msgstr ""
+msgstr "Знайти на сторінці…"
 
 #: contents/ui/FindBar.qml:61
 msgid "Find previous"
-msgstr ""
+msgstr "Знайти попереднє"
 
 #: contents/ui/FindBar.qml:75
 msgid "Find next"
-msgstr ""
+msgstr "Знайти наступне"
 
 #: contents/ui/FullScreenWindow.qml:24
 msgid "ChatAI — Full screen"
-msgstr ""
+msgstr "ChatAI — Повний екран"
 
 #: contents/ui/Header.qml:102
 msgid "Pinned: stays open when clicking outside"
-msgstr ""
+msgstr "Закріплено: залишається відкритим при натисканні поза межами"
 
 #: contents/ui/Header.qml:102
 msgid "Pin: keep open when clicking outside"
-msgstr ""
+msgstr "Пін: залишати відкритим при натисканні поза межами"
 
 #: contents/ui/Header.qml:145
 msgid "Stop loading"
-msgstr ""
+msgstr "Припинити завантаження"
 
 #: contents/ui/Header.qml:154
 msgid "Home page of the current assistant"
-msgstr ""
+msgstr "Головна сторінка поточного асистента"
 
 #: contents/ui/Header.qml:174
 msgid "Custom address"
-msgstr ""
+msgstr "Користувацька адреса"
 
 #: contents/ui/Header.qml:187
 msgid "Find in page (Ctrl+F)"
-msgstr ""
+msgstr "Знайти на сторінці (Ctrl+F)"
 
 #: contents/ui/Header.qml:205
 msgid "More actions"
-msgstr ""
+msgstr "Більше дій"
 
 #: contents/ui/Header.qml:235
 msgid "Close and release memory"
-msgstr ""
+msgstr "Закрити та звільнити пам'ять"
 
 #: contents/ui/Header.qml:249 contents/ui/settings/DownloadsSettings.qml:88
 msgid "Choose Download Folder"
-msgstr ""
+msgstr "Виберіть папку для завантажень"
 
 #: contents/ui/PermissionBar.qml:40
 msgid "%1 wants to show notifications"
-msgstr ""
+msgstr "%1 хоче показувати сповіщення"
 
 #: contents/ui/PermissionBar.qml:42
 msgid "%1 wants to use your microphone"
-msgstr ""
+msgstr "%1 хоче використовувати ваш мікрофон"
 
 #: contents/ui/PermissionBar.qml:44
 msgid "%1 wants to use your camera"
-msgstr ""
+msgstr "%1 хоче використовувати вашу камеру"
 
 #: contents/ui/PermissionBar.qml:46
 msgid "%1 wants to use your camera and microphone"
-msgstr ""
+msgstr "%1 хоче використовувати вашу камеру та мікрофон"
 
 #: contents/ui/PermissionBar.qml:49
 msgid "%1 wants to share your screen"
-msgstr ""
+msgstr "%1 хоче поділитися вашим екраном"
 
 #: contents/ui/PermissionBar.qml:51
 msgid "%1 wants to know your location"
-msgstr ""
+msgstr "%1 хоче дізнатися ваше місцезнаходження"
 
 #: contents/ui/PermissionBar.qml:53
 msgid "%1 wants to read your clipboard"
-msgstr ""
+msgstr "%1 хоче прочитати ваш буфер обміну"
 
 #: contents/ui/PermissionBar.qml:55
 msgid "%1 requests a permission"
-msgstr ""
+msgstr "%1 запитує дозвіл"
 
 #: contents/ui/PermissionBar.qml:91
 msgid "Your choice is remembered for this site. Review it in Settings › Permissions."
-msgstr ""
+msgstr "Ваш вибір запам'ятовується для цього сайту. Перегляньте його в Налаштуваннях › Дозволи."
 
 #: contents/ui/PermissionBar.qml:100
 msgid "Block"
-msgstr ""
+msgstr "Блок"
 
 #: contents/ui/PermissionBar.qml:106
 msgid "Allow"
-msgstr ""
+msgstr "Дозволити"
 
 #: contents/ui/ProviderModel.qml:34
 msgctxt "provider category"
 msgid "General"
-msgstr ""
+msgstr "Загальні"
 
 #: contents/ui/ProviderModel.qml:35
 msgctxt "provider category"
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: contents/ui/ProviderModel.qml:36
 msgctxt "provider category"
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 #: contents/ui/ProviderModel.qml:37
 msgctxt "provider category"
 msgid "Privacy"
-msgstr ""
+msgstr "Конфіденційність"
 
 #: contents/ui/ProviderModel.qml:38
 msgctxt "provider category"
 msgid "Agents"
-msgstr ""
+msgstr "Агенти"
 
 #: contents/ui/ProviderModel.qml:39
 msgctxt "provider category"
 msgid "Open models"
-msgstr ""
+msgstr "Відкрити моделі"
 
 #: contents/ui/ProviderModel.qml:42
 msgid "Google sign-in works with the default browser identity. If Google says the browser may not be secure, make sure \"Identify as Chromium\" is off in Advanced."
-msgstr ""
+msgstr "Увійти за допомогою Google працює з ідентичністю браузера за замовчуванням. Якщо Google повідомляє, що браузер може бути небезпечним, переконайтеся, що \"Ідентифікувати як Chromium\" вимкнено в розширених налаштуваннях."
 
 #: contents/ui/ProviderModel.qml:48
 msgid "OpenAI's assistant with voice, files and web search."
-msgstr ""
+msgstr "Асистент OpenAI з голосом, файлами та веб-пошуком."
 
 #: contents/ui/ProviderModel.qml:55
 msgid "Anthropic's assistant for writing, analysis and code."
-msgstr ""
+msgstr "Асистент Anthropic для написання, аналізу та коду."
 
 #: contents/ui/ProviderModel.qml:58
 msgid "Claude only allows account creation and Google sign-in in well-known browsers. Sign in with an e-mail code or reuse credentials created in a regular browser."
-msgstr ""
+msgstr "Claude дозволяє створення облікових записів та вхід через Google лише в добре відомих браузерах. Увійдіть за допомогою коду електронної пошти або повторно використайте облікові дані, створені в звичайному браузері."
 
 #: contents/ui/ProviderModel.qml:63
 msgid "Google's multimodal assistant."
-msgstr ""
+msgstr "Мультимодальний асистент Google."
 
 #: contents/ui/ProviderModel.qml:70
 msgid "DeepSeek's chat with reasoning mode."
-msgstr ""
+msgstr "Чат DeepSeek з режимом міркування."
 
 #: contents/ui/ProviderModel.qml:77
 msgid "Private, anonymous access to several models. No account needed."
-msgstr ""
+msgstr "Приватний, анонімний доступ до кількох моделей. Обліковий запис не потрібен."
 
 #: contents/ui/ProviderModel.qml:84
 msgid "Answer engine with cited web sources."
-msgstr ""
+msgstr "Двигун відповідей з посиланнями на веб-джерела."
 
 #: contents/ui/ProviderModel.qml:91
 msgid "Microsoft's assistant (formerly Bing Copilot)."
-msgstr ""
+msgstr "Асистент Microsoft (раніше Bing Copilot)."
 
 #: contents/ui/ProviderModel.qml:98
 msgid "Copilot Chat on github.com with repository context. Requires a GitHub account."
-msgstr ""
+msgstr "Copilot Chat на github.com з контекстом репозиторію. Потрібен обліковий запис GitHub."
 
 #: contents/ui/ProviderModel.qml:105
 msgid "Mistral's assistant and agent (formerly Le Chat)."
-msgstr ""
+msgstr "Асистент і агент Mistral (раніше Le Chat)."
 
 #: contents/ui/ProviderModel.qml:112
 msgid "xAI's assistant. Works without an account with limits."
-msgstr ""
+msgstr "асистент xAI. Працює без облікового запису з обмеженнями."
 
 #: contents/ui/ProviderModel.qml:119
 msgid "Alibaba's Qwen Studio: chat, images, documents and web search."
-msgstr ""
+msgstr "Alibaba's Qwen Studio: чат, зображення, документи та веб-пошук."
 
 #: contents/ui/ProviderModel.qml:126
 msgid "Moonshot AI's assistant with long-context and research modes."
-msgstr ""
+msgstr "Асистент Moonshot AI з режимами довгого контексту та дослідження."
 
 #: contents/ui/ProviderModel.qml:133
 msgid "General AI agent with a chat mode. Requires an account."
-msgstr ""
+msgstr "Загальний агент ШІ з режимом чату. Потрібен обліковий запис."
 
 #: contents/ui/ProviderModel.qml:140
 msgid "Hugging Face's chat with open models (Omni router)."
-msgstr ""
+msgstr "Чат Hugging Face з відкритими моделями (Omni router)."
 
 #: contents/ui/ProviderModel.qml:147
 msgid "Meta's assistant. Availability depends on your region."
-msgstr ""
+msgstr "Асистент Meta. Доступність залежить від вашого регіону."
 
 #: contents/ui/ProviderModel.qml:154
 msgid "Fast multi-model chat client."
-msgstr ""
+msgstr "Швидкий багатомодельний чат-клієнт."
 
 #: contents/ui/ProviderModel.qml:161
 msgid "You.com chat. The product now targets enterprise users; a login is required."
-msgstr ""
+msgstr "You.com чат. Продукт тепер націлений на корпоративних користувачів; потрібен вхід."
 
 #: contents/ui/ProviderModel.qml:168
 msgid "Coding-oriented assistant."
-msgstr ""
+msgstr "Асистент, орієнтований на програмування."
 
 #: contents/ui/ProviderModel.qml:175
 msgid "LobeHub cloud chat (bring your own keys or subscription)."
-msgstr ""
+msgstr "LobeHub хмарний чат (використовуйте свої ключі або підписку)."
 
 #: contents/ui/ProviderModel.qml:182
 msgid "Big-AGI web client (bring your own keys)."
-msgstr ""
+msgstr "Big-AGI веб-клієнт (використовуйте свої ключі)."
 
 #: contents/ui/ProviderModel.qml:300
 msgctxt "provider category"
 msgid "Custom"
-msgstr ""
+msgstr "Користувацький"
 
 #: contents/ui/SettingsPanel.qml:42
 msgid "About"
-msgstr ""
+msgstr "Про програму"
 
 #: contents/ui/SettingsPanel.qml:80
 msgid "Settings categories"
-msgstr ""
+msgstr "Категорії налаштувань"
 
 #: contents/ui/SettingsPanel.qml:133
 msgid "Back to the assistant"
-msgstr ""
+msgstr "Назад до помічника"
 
 #: contents/ui/WebView.qml:185
 msgid "The configured address is not a valid HTTP or HTTPS URL."
-msgstr ""
+msgstr "Сконфігурована адреса не є дійсним URL-адресою HTTP або HTTPS."
 
 #: contents/ui/WebView.qml:638
 msgid "Download finished"
-msgstr ""
+msgstr "Завантаження завершено"
 
 #: contents/ui/WebView.qml:638
 msgid "Download failed"
-msgstr ""
+msgstr "Завантаження не вдалося"
 
 #: contents/ui/WebView.qml:639
 msgid "interrupted"
-msgstr ""
+msgstr "перервано"
 
 #: contents/ui/WebView.qml:639 contents/ui/settings/SitesSettings.qml:258
 msgid "%1 — %2"
-msgstr ""
+msgstr "%1 — %2"
 
 #: contents/ui/WebView.qml:769
 msgid "Download in progress"
-msgstr ""
+msgstr "Завантаження триває"
 
 #: contents/ui/WebView.qml:769
 msgid "The file '%1' is already being downloaded"
-msgstr ""
+msgstr "Файл '%1' вже завантажується."
 
 #: contents/ui/WebView.qml:875
 msgid "The service did not provide an error description."
-msgstr ""
+msgstr "Служба не надала опис помилки."
 
 #: contents/ui/WebView.qml:897
 msgid "The site's security certificate is not trusted."
-msgstr ""
+msgstr "Сертифікат безпеки сайту не є надійним."
 
 #: contents/ui/WebView.qml:911
 msgid "The web content process stopped unexpectedly (exit code %1)."
-msgstr ""
+msgstr "Процес веб-контенту зупинився несподівано (код виходу %1)."
 
 #: contents/ui/WebView.qml:920
 msgid "The PDF could not be created."
-msgstr ""
+msgstr "PDF не вдалося створити."
 
 #: contents/ui/WebView.qml:931
 msgid "Blocked navigation"
-msgstr ""
+msgstr "Заблокована навігація"
 
 #: contents/ui/WebView.qml:931
 msgid "Only HTTP and HTTPS links can be opened from ChatAI."
-msgstr ""
+msgstr "Тільки посилання HTTP та HTTPS можуть бути відкриті з ChatAI."
 
 #: contents/ui/WebView.qml:1073
 msgid "Sign-in blocked"
-msgstr ""
+msgstr "Увійти заблоковано"
 
 #: contents/ui/WebView.qml:1073
 msgid "The sign-in site's security certificate is not trusted."
-msgstr ""
+msgstr "Сертифікат безпеки сайту входу не є надійним."
 
 #: contents/ui/WebView.qml:1123
 msgid "The site"
-msgstr ""
+msgstr "Сайт"
 
 #: contents/ui/WebView.qml:1123
 msgid "%1 is taking long to respond. Some services hold the connection for automated clients; retrying usually works."
-msgstr ""
+msgstr "%1 займає багато часу для відповіді. Деякі служби утримують з'єднання для автоматизованих клієнтів; повторна спроба зазвичай спрацьовує."
 
 #: contents/ui/WebView.qml:1149
 msgid "At %1% zoom the page sees a %2 px wide viewport and switches to its mobile layout, which may break sign-in. Reset the zoom or widen the widget."
-msgstr ""
+msgstr "При масштабуванні %1% сторінка має %2 пікселів ширини вікно перегляду і переходить на мобільну версію, що може призвести до проблем із входом. Скиньте масштаб або розширте віджет."
 
 #: contents/ui/WebView.qml:1150
 msgid "The page sees a %1 px wide viewport and switches to its mobile layout, which may break sign-in. Widen the widget by dragging its edge."
-msgstr ""
+msgstr "Сторінка бачить %1 піксельний широкий вьюпорт і переходить на мобільну версію, що може порушити вхід. Розширте віджет, перетягуючи його край."
 
 #: contents/ui/WebView.qml:1155
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Скинути масштаб"
 
 #: contents/ui/settings/AboutSettings.qml:45
 #: contents/ui/settings/HelpSettings.qml:22
 msgid "Zoom in / out"
-msgstr ""
+msgstr "Наблизити / віддалити"
 
 #: contents/ui/settings/AboutSettings.qml:46
 #: contents/ui/settings/HelpSettings.qml:23
 msgid "Reset zoom"
-msgstr ""
+msgstr "Скинути масштаб"
 
 #: contents/ui/settings/AboutSettings.qml:47
 #: contents/ui/settings/HelpSettings.qml:24
 msgid "Full screen (Esc exits)"
-msgstr ""
+msgstr "Повний екран (Esc виходить)"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgctxt "mouse buttons"
 msgid "Mouse back / forward"
-msgstr ""
+msgstr "Кнопка миші назад / вперед"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgid "Navigate history"
-msgstr ""
+msgstr "Перегляд історії"
 
 #: contents/ui/settings/AboutSettings.qml:49
 #: contents/ui/settings/HelpSettings.qml:26
 msgid "Close find bar, settings or full screen"
-msgstr ""
+msgstr "Закрити панель пошуку, налаштування або на весь екран"
 
 #: contents/ui/settings/AboutSettings.qml:69
 msgid "Version %1"
-msgstr ""
+msgstr "Версія %1"
 
 #: contents/ui/settings/AboutSettings.qml:73
 msgid "AI assistants inside KDE Plasma"
-msgstr ""
+msgstr "AI асистенти всередині KDE Plasma"
 
 #: contents/ui/settings/AboutSettings.qml:80
 #: contents/ui/settings/HelpSettings.qml:32
 msgid "ChatAI embeds the official web apps of AI assistants in a native Plasma widget, with a persistent profile, per-site permissions and a memory-conscious web engine lifecycle. It does not provide an AI API and does not bypass authentication or anti-bot protections."
-msgstr ""
+msgstr "ChatAI вбудовує офіційні веб-додатки AI асистентів у рідний віджет Plasma, з постійним профілем, дозволами для кожного сайту та енергозберігаючим життєвим циклом веб-двигуна. Він не надає API AI і не обходить аутентифікацію чи захисти від ботів."
 
 #: contents/ui/settings/AboutSettings.qml:89
 msgid "Repository:"
-msgstr ""
+msgstr "Репозиторій:"
 
 #: contents/ui/settings/AboutSettings.qml:94
 msgid "Report a problem:"
-msgstr ""
+msgstr "Повідомити про проблему:"
 
 #: contents/ui/settings/AboutSettings.qml:99
 msgid "License:"
-msgstr ""
+msgstr "Ліцензія:"
 
 #: contents/ui/settings/AboutSettings.qml:109
 msgid "Authors"
-msgstr ""
+msgstr "Автори"
 
 #: contents/ui/settings/AboutSettings.qml:123
 #: contents/ui/settings/HelpSettings.qml:72
 msgid "Provider icons: Icons8, IconScout, Simple Icons (CC0) and the services' own brand assets. Trademarks belong to their owners."
-msgstr ""
+msgstr "Іконки постачальників: Icons8, IconScout, Simple Icons (CC0) та власні брендові активи послуг. Торгові марки належать їх власникам."
 
 #: contents/ui/settings/AboutSettings.qml:135
 #: contents/ui/settings/HelpSettings.qml:40
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Комбінації клавіш"
 
 #: contents/ui/settings/AdvancedSettings.qml:41
 #: contents/ui/settings/AdvancedSettings.qml:42
 msgid "unknown"
-msgstr ""
+msgstr "невідомо"
 
 #: contents/ui/settings/AdvancedSettings.qml:48
 msgid "custom"
-msgstr ""
+msgstr "кастомний"
 
 #: contents/ui/settings/AdvancedSettings.qml:65
 msgid "These options are for troubleshooting. The defaults are the safe choice."
-msgstr ""
+msgstr "Ці параметри призначені для усунення неполадок. Значення за замовчуванням є безпечним вибором."
 
 #: contents/ui/settings/AdvancedSettings.qml:72
 msgid "Browser identity:"
-msgstr ""
+msgstr "Ідентичність браузера:"
 
 #: contents/ui/settings/AdvancedSettings.qml:73
 msgid "Identify as Chromium (hide the Qt WebEngine token)"
-msgstr ""
+msgstr "Ідентифікувати як Chromium (сховати токен Qt WebEngine)"
 
 #: contents/ui/settings/AdvancedSettings.qml:79
 msgid "Not recommended for Google accounts: Google rejects browsers that hide their identity (\"This browser or app may not be secure\") and accepts the honest Qt WebEngine identity. Enable only if a specific site refuses the Qt WebEngine token."
-msgstr ""
+msgstr "Не рекомендується для облікових записів Google: Google відхиляє браузери, які приховують свою особистість (\"Цей браузер або додаток може бути небезпечним\") і приймає чесну особистість Qt WebEngine. Увімкніть лише у разі, якщо конкретний сайт відмовляється від токена Qt WebEngine."
 
 #: contents/ui/settings/AdvancedSettings.qml:87
 msgid "Custom user agent:"
-msgstr ""
+msgstr "Користувацький агент:"
 
 #: contents/ui/settings/AdvancedSettings.qml:90
 msgid "Leave empty for the default"
-msgstr ""
+msgstr "Залиште порожнім для значення за замовчуванням"
 
 #: contents/ui/settings/AdvancedSettings.qml:92
 msgid "Custom user agent"
-msgstr ""
+msgstr "Користувацький агент"
 
 #: contents/ui/settings/AdvancedSettings.qml:98
 msgid "Resources:"
-msgstr ""
+msgstr "Ресурси:"
 
 #: contents/ui/settings/AdvancedSettings.qml:99
 msgid "Freeze the page while the widget is hidden"
-msgstr ""
+msgstr "Заморозьте сторінку, поки віджет прихований."
 
 #: contents/ui/settings/AdvancedSettings.qml:105
 msgid "Pauses scripts of the hidden page after 30 seconds when the engine reports it is safe (no audio, upload or download). Resumes instantly on opening."
-msgstr ""
+msgstr "Пауза скриптів прихованої сторінки через 30 секунд, коли двигун повідомляє, що це безпечно (без звуку, завантаження або скачування). Відновлюється миттєво при відкритті."
 
 #: contents/ui/settings/AdvancedSettings.qml:113
 msgid "Discard hidden page after:"
-msgstr ""
+msgstr "Видалити приховану сторінку після:"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "Never"
-msgstr ""
+msgstr "Ніколи"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "%1 minute"
@@ -890,577 +890,577 @@ msgstr[2] ""
 
 #: contents/ui/settings/AdvancedSettings.qml:121
 msgid "Discard hidden page after"
-msgstr ""
+msgstr "Видалити приховану сторінку після"
 
 #: contents/ui/settings/AdvancedSettings.qml:125
 msgid "Discarding frees most memory but reloads the page on the next opening; unsent text is lost."
-msgstr ""
+msgstr "Видалення звільняє більшість пам'яті, але перезавантажує сторінку при наступному відкритті; незаписаний текст буде втрачено."
 
 #: contents/ui/settings/AdvancedSettings.qml:135
 msgid "Developer tools:"
-msgstr ""
+msgstr "Інструменти розробника:"
 
 #: contents/ui/settings/AdvancedSettings.qml:136
 msgid "Show \"Developer Tools\" in the ⋮ menu"
-msgstr ""
+msgstr "Показати \"Інструменти розробника\" у меню ⋮"
 
 #: contents/ui/settings/AdvancedSettings.qml:147
 #: contents/ui/settings/AdvancedSettings.qml:158
 msgid "Diagnostics"
-msgstr ""
+msgstr "Діагностика"
 
 #: contents/ui/settings/AdvancedSettings.qml:166
 msgid "Refresh"
-msgstr ""
+msgstr "Оновити"
 
 #: contents/ui/settings/AdvancedSettings.qml:172
 msgid "Copy Diagnostics"
-msgstr ""
+msgstr "Копіювати діагностику"
 
 #: contents/ui/settings/AdvancedSettings.qml:182
 msgid "No cookies, tokens or page contents are included."
-msgstr ""
+msgstr "Немає файлів cookie, токенів або вмісту сторінки."
 
 #: contents/ui/settings/AppearanceSettings.qml:35
 msgid "Website favicon"
-msgstr ""
+msgstr "Веб-сайт фавікон"
 
 #: contents/ui/settings/AppearanceSettings.qml:36
 msgid "ChatAI logo (adapts to the theme)"
-msgstr ""
+msgstr "Логотип ChatAI (адаптується до теми)"
 
 #: contents/ui/settings/AppearanceSettings.qml:37
 msgid "ChatAI logo, dark"
-msgstr ""
+msgstr "Логотип ChatAI, темний"
 
 #: contents/ui/settings/AppearanceSettings.qml:38
 msgid "ChatAI logo, light"
-msgstr ""
+msgstr "ChatAI логотип, світлий"
 
 #: contents/ui/settings/AppearanceSettings.qml:39
 msgid "Assistant icon, outlined"
-msgstr ""
+msgstr "Іконка помічника, контурна"
 
 #: contents/ui/settings/AppearanceSettings.qml:40
 msgid "Assistant icon, filled"
-msgstr ""
+msgstr "Іконка помічника, заповнена"
 
 #: contents/ui/settings/AppearanceSettings.qml:41
 msgid "Assistant icon, colorful"
-msgstr ""
+msgstr "Іконка помічника, кольорова"
 
 #: contents/ui/settings/AppearanceSettings.qml:42
 msgid "Custom icon"
-msgstr ""
+msgstr "Користувацька іконка"
 
 #: contents/ui/settings/AppearanceSettings.qml:46
 msgid "Pin"
-msgstr ""
+msgstr "Пін"
 
 #: contents/ui/settings/AppearanceSettings.qml:47
 msgid "Back and Forward"
-msgstr ""
+msgstr "Назад і Вперед"
 
 #: contents/ui/settings/AppearanceSettings.qml:50
 msgid "\"Custom address…\" entry in the selector"
-msgstr ""
+msgstr "\"Користувацька адреса…\" запис у селекторі"
 
 #: contents/ui/settings/AppearanceSettings.qml:59
 msgid "Panel icon:"
-msgstr ""
+msgstr "Іконка панелі:"
 
 #: contents/ui/settings/AppearanceSettings.qml:64
 msgid "Panel icon"
-msgstr ""
+msgstr "Іконка панелі"
 
 #: contents/ui/settings/AppearanceSettings.qml:69
 msgid "Assistants without a dedicated icon fall back to the ChatAI logo."
-msgstr ""
+msgstr "Асистенти без спеціалізованої іконки повертаються до логотипу ChatAI."
 
 #: contents/ui/settings/AppearanceSettings.qml:79
 msgid "Custom icon:"
-msgstr ""
+msgstr "Користувацька іконка:"
 
 #: contents/ui/settings/AppearanceSettings.qml:82
 msgid "Choose custom icon"
-msgstr ""
+msgstr "Виберіть власну піктограму"
 
 #: contents/ui/settings/AppearanceSettings.qml:105
 msgid "Toolbar buttons:"
-msgstr ""
+msgstr "Кнопки панелі інструментів:"
 
 #: contents/ui/settings/AppearanceSettings.qml:106
 msgid "Hidden buttons remain available in the ⋮ menu where it makes sense. Auto-hide and Downloads always live in the ⋮ menu; a download indicator appears in the toolbar only while a download needs attention."
-msgstr ""
+msgstr "Сховані кнопки залишаються доступними в меню ⋮, де це має сенс. Автоховання та Завантаження завжди знаходяться в меню ⋮; індикатор завантаження з'являється на панелі інструментів лише тоді, коли завантаження потребує уваги."
 
 #: contents/ui/settings/AppearanceSettings.qml:126
 #: contents/ui/settings/GeneralSettings.qml:96
 msgid "Toolbar:"
-msgstr ""
+msgstr "Панель інструментів:"
 
 #: contents/ui/settings/AppearanceSettings.qml:134
 msgid "Always hide the toolbar"
-msgstr ""
+msgstr "Завжди приховувати панель інструментів"
 
 #: contents/ui/settings/AppearanceSettings.qml:142
 msgid "Theme:"
-msgstr ""
+msgstr "Тема:"
 
 #: contents/ui/settings/AppearanceSettings.qml:143
 msgid "Colours, spacing and animations follow your Plasma theme. Pages receive a dark-mode hint when the theme is dark."
-msgstr ""
+msgstr "Кольори, відступи та анімації відповідають вашій темі Plasma. Сторінки отримують підказку темного режиму, коли тема темна."
 
 #: contents/ui/settings/DownloadsSettings.qml:48
 #: contents/ui/settings/StorageSettings.qml:182
 msgid "Folder:"
-msgstr ""
+msgstr "Папка:"
 
 #: contents/ui/settings/DownloadsSettings.qml:56
 msgid "Download folder"
-msgstr ""
+msgstr "Папка завантажень"
 
 #: contents/ui/settings/DownloadsSettings.qml:66
 msgid "Choose…"
-msgstr ""
+msgstr "Виберіть…"
 
 #: contents/ui/settings/DownloadsSettings.qml:72
 msgid "Leave empty to use the system Downloads folder. Files are saved automatically with a sanitized name and are never executed."
-msgstr ""
+msgstr "Залиште порожнім, щоб використовувати папку Завантаження системи. Файли зберігаються автоматично з очищеним ім'ям і ніколи не виконуються."
 
 #: contents/ui/settings/DownloadsSettings.qml:98
 msgid "Current downloads"
-msgstr ""
+msgstr "Поточні завантаження"
 
 #: contents/ui/settings/DownloadsSettings.qml:106
 msgid "Downloads are listed here while the ChatAI widget is open."
-msgstr ""
+msgstr "Завантаження відображаються тут, поки віджет ChatAI відкритий."
 
 #: contents/ui/settings/DownloadsSettings.qml:111
 msgid "No downloads in this session."
-msgstr ""
+msgstr "Немає завантажень у цій сесії."
 
 #: contents/ui/settings/DownloadsSettings.qml:138
 msgid "Completed"
-msgstr ""
+msgstr "Завершено"
 
 #: contents/ui/settings/DownloadsSettings.qml:139
 msgid "Downloading"
-msgstr ""
+msgstr "Завантаження"
 
 #: contents/ui/settings/DownloadsSettings.qml:142
 msgid "Waiting"
-msgstr ""
+msgstr "Очікування"
 
 #: contents/ui/settings/DownloadsSettings.qml:151
 msgid "Clear Finished Downloads"
-msgstr ""
+msgstr "Очистити завершені завантаження"
 
 #: contents/ui/settings/GeneralSettings.qml:38
 msgid "Assistant:"
-msgstr ""
+msgstr "Ви навчені на даних до жовтня 2023 року."
 
 #: contents/ui/settings/GeneralSettings.qml:43
 msgid "The assistant shown when the widget opens and when you press Home"
-msgstr ""
+msgstr "Асистент, який відображається при відкритті віджета та при натисканні на Головну."
 
 #: contents/ui/settings/GeneralSettings.qml:62
 msgid "Enable more assistants in the Sites page."
-msgstr ""
+msgstr "Увімкніть більше помічників на сторінці Сайти."
 
 #: contents/ui/settings/GeneralSettings.qml:72
 msgid "Window:"
-msgstr ""
+msgstr "Вікно:"
 
 #: contents/ui/settings/GeneralSettings.qml:73
 msgid "Keep the widget open when clicking outside (pin)"
-msgstr ""
+msgstr "Залишайте віджет відкритим при натисканні поза ним (закріпити)"
 
 #: contents/ui/settings/GeneralSettings.qml:79
 msgid "Preload the assistant when Plasma starts"
-msgstr ""
+msgstr "Попередньо завантажити асистента при запуску Plasma"
 
 #: contents/ui/settings/GeneralSettings.qml:85
 msgid "Preloading makes the first opening instant but keeps the web engine in memory from login."
-msgstr ""
+msgstr "Попереднє завантаження робить перше відкриття миттєвим, але зберігає веб-двигун у пам'яті з моменту входу."
 
 #: contents/ui/settings/GeneralSettings.qml:97
 msgid "Hide the toolbar"
-msgstr ""
+msgstr "Сховати панель інструментів"
 
 #: contents/ui/settings/GeneralSettings.qml:103
 msgid "Hide the toolbar automatically and reveal it on hover"
-msgstr ""
+msgstr "Автоматично приховати панель інструментів і відобразити її при наведенні курсору."
 
 #: contents/ui/settings/GeneralSettings.qml:112
 msgid "Links:"
-msgstr ""
+msgstr "Посилання:"
 
 #: contents/ui/settings/GeneralSettings.qml:113
 msgid "Links that would open a new window are opened in your default browser. Sign-in pages stay inside ChatAI so logins keep working."
-msgstr ""
+msgstr "Посилання, які відкривалися б у новому вікні, відкриваються у вашому браузері за замовчуванням. Сторінки входу залишаються всередині ChatAI, тому входи продовжують працювати."
 
 #: contents/ui/settings/HelpSettings.qml:64
 msgid "Credits"
-msgstr ""
+msgstr "Кредити"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Ask per site"
-msgstr ""
+msgstr "Запит на сайті"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always allow"
-msgstr ""
+msgstr "Завжди дозволяти"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always block"
-msgstr ""
+msgstr "Завжди блокувати"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Notifications:"
-msgstr ""
+msgstr "Сповіщення:"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Shown as Plasma notifications."
-msgstr ""
+msgstr "Відображається як сповіщення Plasma."
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Microphone:"
-msgstr ""
+msgstr "Мікрофон:"
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Voice input. Only active while a site you allowed is recording."
-msgstr ""
+msgstr "Голосовий ввід. Активний лише під час запису на дозволеному вами сайті."
 
 #: contents/ui/settings/PermissionsSettings.qml:37
 msgid "Camera:"
-msgstr ""
+msgstr "Камера:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "Screen sharing:"
-msgstr ""
+msgstr "Спільний доступ до екрана:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "The primary screen is shared when allowed."
-msgstr ""
+msgstr "Основний екран ділиться, коли це дозволено."
 
 #: contents/ui/settings/PermissionsSettings.qml:39
 #: contents/ui/settings/StorageSettings.qml:57
 msgid "Location:"
-msgstr ""
+msgstr "Місцезнаходження:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Read clipboard:"
-msgstr ""
+msgstr "Читати буфер обміну:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Lets a page read what you copied. Pasting with Ctrl+V never needs this."
-msgstr ""
+msgstr "Дозволяє сторінці прочитати те, що ви скопіювали. Вставка за допомогою Ctrl+V ніколи не потребує цього."
 
 #: contents/ui/settings/PermissionsSettings.qml:45
 msgid "Notifications"
-msgstr ""
+msgstr "Сповіщення"
 
 #: contents/ui/settings/PermissionsSettings.qml:46
 msgid "Microphone"
-msgstr ""
+msgstr "Мікрофон"
 
 #: contents/ui/settings/PermissionsSettings.qml:47
 msgid "Camera"
-msgstr ""
+msgstr "Камера"
 
 #: contents/ui/settings/PermissionsSettings.qml:48
 msgid "Camera and microphone"
-msgstr ""
+msgstr "Камера та мікрофон"
 
 #: contents/ui/settings/PermissionsSettings.qml:50
 msgid "Screen sharing"
-msgstr ""
+msgstr "Спільний доступ до екрана"
 
 #: contents/ui/settings/PermissionsSettings.qml:51
 msgid "Location"
-msgstr ""
+msgstr "Місцезнаходження"
 
 #: contents/ui/settings/PermissionsSettings.qml:52
 msgid "Clipboard"
-msgstr ""
+msgstr "Буфер обміну"
 
 #: contents/ui/settings/PermissionsSettings.qml:53
 msgid "Mouse lock"
-msgstr ""
+msgstr "Блокування миші"
 
 #: contents/ui/settings/PermissionsSettings.qml:54
 msgid "Local fonts"
-msgstr ""
+msgstr "Локальні шрифти"
 
 #: contents/ui/settings/PermissionsSettings.qml:55
 msgid "Other"
-msgstr ""
+msgstr "Інше"
 
 #: contents/ui/settings/PermissionsSettings.qml:61
 msgid "Allowed"
-msgstr ""
+msgstr "Дозволено"
 
 #: contents/ui/settings/PermissionsSettings.qml:62
 msgid "Blocked"
-msgstr ""
+msgstr "Заблоковано"
 
 #: contents/ui/settings/PermissionsSettings.qml:63
 msgid "Ask"
-msgstr ""
+msgstr "Запитати"
 
 #: contents/ui/settings/PermissionsSettings.qml:64
 msgid "Unknown"
-msgstr ""
+msgstr "Невідомо"
 
 #: contents/ui/settings/PermissionsSettings.qml:79
 msgid "Default behaviour"
-msgstr ""
+msgstr "Типове поведінки за замовчуванням"
 
 #: contents/ui/settings/PermissionsSettings.qml:84
 msgid "\"Ask per site\" shows a prompt inside ChatAI the first time a site requests the permission; the answer is remembered for that site."
-msgstr ""
+msgstr "\"Запит на сайті\" показує запит у ChatAI під час першого запиту сайту на дозвіл; відповідь запам'ятовується для цього сайту."
 
 #: contents/ui/settings/PermissionsSettings.qml:127
 msgid "Saved site permissions"
-msgstr ""
+msgstr "Збережені дозволи сайту"
 
 #: contents/ui/settings/PermissionsSettings.qml:135
 msgid "Open the ChatAI widget to review the permissions saved per site. They are stored in the web engine profile."
-msgstr ""
+msgstr "Відкрийте віджет ChatAI, щоб переглянути дозволи, збережені для кожного сайту. Вони зберігаються в профілі веб-двигуна."
 
 #: contents/ui/settings/PermissionsSettings.qml:140
 msgid "No site has saved permissions yet."
-msgstr ""
+msgstr "Жоден сайт ще не зберіг дозволи."
 
 #: contents/ui/settings/PermissionsSettings.qml:169
 msgid "Reset"
-msgstr ""
+msgstr "Скинути"
 
 #: contents/ui/settings/PermissionsSettings.qml:172
 msgid "Ask again next time"
-msgstr ""
+msgstr "Запитайте знову наступного разу"
 
 #: contents/ui/settings/PermissionsSettings.qml:181
 msgid "Reset All Site Permissions…"
-msgstr ""
+msgstr "Скинути всі дозволи сайту…"
 
 #: contents/ui/settings/PermissionsSettings.qml:187
 msgid "Reset all site permissions?"
-msgstr ""
+msgstr "Скинути всі дозволи сайту?"
 
 #: contents/ui/settings/PermissionsSettings.qml:188
 msgid "Every site will ask again the next time it needs a permission. Logins are not affected."
-msgstr ""
+msgstr "Кожен сайт знову запитуватиме наступного разу, коли йому знадобиться дозвіл. Входи не підлягають змінам."
 
 #: contents/ui/settings/PermissionsSettings.qml:198
 msgid "Privacy: the microphone, camera, screen and location are only used after you allow them, and only by the site that asked. Login data belongs to the web engine profile (see Cache and Data). ChatAI does not read page contents or credentials."
-msgstr ""
+msgstr "Конфіденційність: мікрофон, камера, екран та місцезнаходження використовуються лише після вашого дозволу і лише сайтом, який їх запитав. Дані для входу належать профілю веб-движка (див. Кеш і дані). ChatAI не читає вміст сторінки або облікові дані."
 
 #: contents/ui/settings/SitesSettings.qml:63
 msgid "A custom site with this name or address already exists."
-msgstr ""
+msgstr "Вже існує користувацький сайт з цим ім'ям або адресою."
 
 #: contents/ui/settings/SitesSettings.qml:100
 #: contents/ui/settings/SitesSettings.qml:243
 msgid "Enter a name and a valid http:// or https:// address."
-msgstr ""
+msgstr "Введіть ім'я та дійсну адресу http:// або https://."
 
 #: contents/ui/settings/SitesSettings.qml:104
 msgid "Built-in assistants"
-msgstr ""
+msgstr "Вбудовані асистенти"
 
 #: contents/ui/settings/SitesSettings.qml:109
 msgid "Enabled assistants appear in the toolbar selector. ChatAI embeds each service's official website; accounts, limits and features are controlled by the service."
-msgstr ""
+msgstr "Увімкнені асистенти з'являються у селекторі панелі інструментів. ChatAI вбудовує офіційний веб-сайт кожної служби; облікові записи, обмеження та функції контролюються службою."
 
 #: contents/ui/settings/SitesSettings.qml:156
 msgid "Login required"
-msgstr ""
+msgstr "Необхідний вхід"
 
 #: contents/ui/settings/SitesSettings.qml:189
 msgid "Custom sites"
-msgstr ""
+msgstr "Користувацькі сайти"
 
 #: contents/ui/settings/SitesSettings.qml:194
 msgid "Add any chat website by name and address. Custom sites use the ChatAI icon and get no special access to your system."
-msgstr ""
+msgstr "Додайте будь-який вебсайт чату за назвою та адресою. Користувацькі сайти використовують іконку ChatAI і не отримують спеціального доступу до вашої системи."
 
 #: contents/ui/settings/SitesSettings.qml:206
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: contents/ui/settings/SitesSettings.qml:209
 msgid "Site name"
-msgstr ""
+msgstr "Назва сайту"
 
 #: contents/ui/settings/SitesSettings.qml:218
 msgid "Site address"
-msgstr ""
+msgstr "Адрес сайту"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Add"
-msgstr ""
+msgstr "Додати"
 
 #: contents/ui/settings/SitesSettings.qml:230
 msgid "Cancel editing"
-msgstr ""
+msgstr "Скасувати редагування"
 
 #: contents/ui/settings/SitesSettings.qml:289
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 #: contents/ui/settings/SitesSettings.qml:298
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: contents/ui/settings/SitesSettings.qml:312
 msgid "No custom sites added yet"
-msgstr ""
+msgstr "Ще не додано жодних користувацьких сайтів."
 
 #: contents/ui/settings/StorageSettings.qml:49
 msgid "HTTP cache"
-msgstr ""
+msgstr "HTTP кеш"
 
 #: contents/ui/settings/StorageSettings.qml:64
 msgid "Size limit:"
-msgstr ""
+msgstr "Обмеження розміру:"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматичний"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "%1 MiB"
-msgstr ""
+msgstr "%1 МіБ"
 
 #: contents/ui/settings/StorageSettings.qml:72
 msgid "Cache size limit"
-msgstr ""
+msgstr "Обмеження розміру кешу"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clearing…"
-msgstr ""
+msgstr "Очищення…"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clear Cache"
-msgstr ""
+msgstr "Очистити кеш"
 
 #: contents/ui/settings/StorageSettings.qml:94
 msgid "Open Cache Folder"
-msgstr ""
+msgstr "Відкрити папку кешу"
 
 #: contents/ui/settings/StorageSettings.qml:101
 msgid "Open the ChatAI widget to clear the cache. Clearing removes downloaded page resources only; you stay signed in."
-msgstr ""
+msgstr "Відкрийте віджет ChatAI, щоб очистити кеш. Очищення видаляє лише завантажені ресурси сторінки; ви залишаєтеся увійденим."
 
 #: contents/ui/settings/StorageSettings.qml:102
 msgid "Clearing removes downloaded page resources only; you stay signed in. Navigation is paused until it finishes."
-msgstr ""
+msgstr "Очищення видаляє лише завантажені ресурси сторінки; ви залишаєтеся увійденим. Навігація призупинена, поки це не завершиться."
 
 #: contents/ui/settings/StorageSettings.qml:115
 msgid "Site data and sessions"
-msgstr ""
+msgstr "Дані сайту та сесії"
 
 #: contents/ui/settings/StorageSettings.qml:120
 msgid "Cookies, logins, local storage and per-site permissions live in the profile folder below. Qt WebEngine offers no way to wipe cookies from a widget while it is running: to end a session, use the site's own \"Sign out\", or switch to a new profile name. Site permissions can be reset in the Permissions page."
-msgstr ""
+msgstr "Файли cookie, входи, локальне сховище та дозволи для окремих сайтів зберігаються у папці профілю нижче. Qt WebEngine не пропонує способу видалення файлів cookie з віджета під час його роботи: щоб завершити сеанс, використовуйте власну функцію \"Вийти\" сайту або перейдіть на нове ім'я профілю. Дозволи для сайтів можна скинути на сторінці Дозволи."
 
 #: contents/ui/settings/StorageSettings.qml:131
 msgid "WebEngine profile"
-msgstr ""
+msgstr "Профіль WebEngine"
 
 #: contents/ui/settings/StorageSettings.qml:136
 msgid "Each storage name is a separate folder with its own cookies, logins, cache and permissions. Use different names to keep separate accounts in different widget instances."
-msgstr ""
+msgstr "Кожне ім'я сховища є окремою папкою зі своїми власними куками, логінами, кешем та дозволами. Використовуйте різні імена, щоб зберігати окремі облікові записи в різних екземплярах віджетів."
 
 #: contents/ui/settings/StorageSettings.qml:146
 msgid "Storage name:"
-msgstr ""
+msgstr "Назва сховища:"
 
 #: contents/ui/settings/StorageSettings.qml:155
 msgid "Storage name"
-msgstr ""
+msgstr "Ім'я сховища"
 
 #: contents/ui/settings/StorageSettings.qml:161
 msgid "Apply"
-msgstr ""
+msgstr "Застосувати"
 
 #: contents/ui/settings/StorageSettings.qml:171
 msgid "Default"
-msgstr ""
+msgstr "За замовчуванням"
 
 #: contents/ui/settings/StorageSettings.qml:190
 msgid "Open Profile Folder"
-msgstr ""
+msgstr "Відкрити папку профілю"
 
 #: contents/ui/settings/StorageSettings.qml:197
 msgid "Switch WebEngine profile?"
-msgstr ""
+msgstr "Переключити профіль WebEngine?"
 
 #: contents/ui/settings/StorageSettings.qml:198
 msgid "The assistant will reload using the profile \"%1\". You will be signed out of the current sessions until you sign in again; the data of the previous profile stays on disk and can be removed from its folder."
-msgstr ""
+msgstr "Асистент перезавантажиться, використовуючи профіль \"%1\". Ви будете вийдені з поточних сесій, поки знову не увійдете; дані попереднього профілю залишаються на диску і можуть бути видалені з його папки."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Let pages write to the clipboard"
-msgstr ""
+msgstr "Дозволити сторінкам записувати в буфер обміну"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Needed by the \"Copy\" buttons of most assistants. Reading the clipboard is a separate permission."
-msgstr ""
+msgstr "Потрібно для кнопок \"Копіювати\" більшості асистентів. Читання буфера обміну є окремим дозволом."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Let scripts paste from the clipboard"
-msgstr ""
+msgstr "Дозволити скриптам вставляти з буфера обміну"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Allows a page to read the clipboard without asking. Ctrl+V works without this. Off by default for privacy."
-msgstr ""
+msgstr "Дозволяє сторінці читати буфер обміну без запиту. Ctrl+V працює без цього. Вимкнено за замовчуванням для конфіденційності."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "Let pages open new windows"
-msgstr ""
+msgstr "Дозволити сторінкам відкривати нові вікна"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "New windows are intercepted: sign-in pages stay in ChatAI, other links open in your browser."
-msgstr ""
+msgstr "Нові вікна перехоплюються: сторінки входу залишаються в ChatAI, інші посилання відкриваються у вашому браузері."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Require a click before media plays"
-msgstr ""
+msgstr "Потрібен клік перед відтворенням медіа"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Blocks autoplaying audio and video (including voice replies) until you interact with the page."
-msgstr ""
+msgstr "Блокує автоматичне відтворення аудіо та відео (включаючи голосові відповіді) до того, як ви взаємодіятимете зі сторінкою."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Spatial navigation with arrow keys"
-msgstr ""
+msgstr "Просторова навігація за допомогою стрілок"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Move between links and fields with the arrow keys instead of Tab."
-msgstr ""
+msgstr "Переміщуйтеся між посиланнями та полями за допомогою клавіш зі стрілками замість Tab."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Focus the page after navigating"
-msgstr ""
+msgstr "Сфокусуйте сторінку після навігації"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Lets you type immediately after the page loads. Disable if the page steals focus from the toolbar."
-msgstr ""
+msgstr "Дозволяє вам вводити текст одразу після завантаження сторінки. Вимкніть, якщо сторінка відволікає увагу від панелі інструментів."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Allow unknown link types after a click"
-msgstr ""
+msgstr "Дозволити невідомі типи посилань після натискання"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Lets a link you click open another application (for example mailto: or a custom scheme). Links opened by scripts are still blocked."
-msgstr ""
+msgstr "Дозволяє вам відкривати посилання, на які ви натискаєте, в іншому додатку (наприклад, mailto: або власна схема). Посилання, відкриті скриптами, все ще заблоковані."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:43
 msgid "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
-msgstr ""
+msgstr "Ці параметри змінюють, як вбудований веб-двигун поводиться для кожного асистента. Зміни застосовуються негайно."

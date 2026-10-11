@@ -19,193 +19,193 @@ msgstr ""
 #: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:185
 #: contents/ui/SettingsPanel.qml:34
 msgid "General"
-msgstr ""
+msgstr "Γενικά"
 
 #: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:186
 #: contents/ui/SettingsPanel.qml:35
 msgid "Sites"
-msgstr ""
+msgstr "Ιστότοποι"
 
 #: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:187
 #: contents/ui/SettingsPanel.qml:36
 msgid "Permissions"
-msgstr ""
+msgstr "Άδειες"
 
 #: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:188
 #: contents/ui/SettingsPanel.qml:37
 msgid "Web Features"
-msgstr ""
+msgstr "Δυνατότητες Ιστού"
 
 #: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:147
 #: contents/ui/ChatAIMenu.qml:189 contents/ui/DownloadPopup.qml:97
 #: contents/ui/SettingsPanel.qml:38
 msgid "Downloads"
-msgstr ""
+msgstr "Λήψεις"
 
 #: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:190
 #: contents/ui/SettingsPanel.qml:39
 msgid "Cache and Data"
-msgstr ""
+msgstr "Κρυφή μνήμη και Δεδομένα"
 
 #: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:191
 #: contents/ui/SettingsPanel.qml:40
 msgid "Appearance"
-msgstr ""
+msgstr "Εμφάνιση"
 
 #: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:192
 #: contents/ui/SettingsPanel.qml:41
 msgid "Advanced"
-msgstr ""
+msgstr "Προηγμένος"
 
 #: contents/config/config.qml:56
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #: contents/ui/AiSelector.qml:30
 msgid "Custom address…"
-msgstr ""
+msgstr "Προσαρμοσμένη διεύθυνση…"
 
 #: contents/ui/AiSelector.qml:58
 msgid "AI assistant"
-msgstr ""
+msgstr "Βοηθός AI"
 
 #: contents/ui/AiSelector.qml:64
 msgid "Choose the AI assistant"
-msgstr ""
+msgstr "Επιλέξτε τον βοηθό AI"
 
 #: contents/ui/AuthPopup.qml:61
 msgctxt "popup window title with host"
 msgid "Sign in — %1"
-msgstr ""
+msgstr "Σύνδεση — %1"
 
 #: contents/ui/AuthPopup.qml:61
 msgid "Sign in"
-msgstr ""
+msgstr "Σύνδεση"
 
 #: contents/ui/AuthPopup.qml:76
 msgid "Close sign-in window"
-msgstr ""
+msgstr "Κλείσιμο παραθύρου σύνδεσης"
 
 #: contents/ui/ChatAIMenu.qml:79 contents/ui/WebView.qml:1132
 msgid "Open in Browser"
-msgstr ""
+msgstr "Άνοιγμα στον Περιηγητή"
 
 #: contents/ui/ChatAIMenu.qml:86
 msgid "Copy Address"
-msgstr ""
+msgstr "Αντιγραφή Διεύθυνσης"
 
 #: contents/ui/ChatAIMenu.qml:93
 msgid "Reload Ignoring Cache"
-msgstr ""
+msgstr "Επαναφόρτωση Αγνοώντας την Κρυφή Μνήμη"
 
 #: contents/ui/ChatAIMenu.qml:103
 #, javascript-format
 msgid "Zoom (%1%)"
-msgstr ""
+msgstr "Ζουμ (%1%)"
 
 #: contents/ui/ChatAIMenu.qml:108
 msgid "Zoom In"
-msgstr ""
+msgstr "Μεγέθυνση"
 
 #: contents/ui/ChatAIMenu.qml:113
 msgid "Zoom Out"
-msgstr ""
+msgstr "Μείωση Ζουμ"
 
 #: contents/ui/ChatAIMenu.qml:118
 msgid "Reset Zoom (100%)"
-msgstr ""
+msgstr "Επαναφορά Ζουμ (100%)"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "Έξοδος από την πλήρη οθόνη"
 
 #: contents/ui/ChatAIMenu.qml:126
 msgid "Full Screen"
-msgstr ""
+msgstr "Πλήρης οθόνη"
 
 #: contents/ui/ChatAIMenu.qml:136
 #: contents/ui/settings/AppearanceSettings.qml:127
 msgid "Hide Toolbar Automatically"
-msgstr ""
+msgstr "Αυτόματη Απόκρυψη Γραμμής Εργαλείων"
 
 #: contents/ui/ChatAIMenu.qml:147
 msgid "Downloads (%1)"
-msgstr ""
+msgstr "Λήψεις (%1)"
 
 #: contents/ui/ChatAIMenu.qml:161
 #: contents/ui/settings/AppearanceSettings.qml:49
 msgid "Home"
-msgstr ""
+msgstr "Αρχική"
 
 #: contents/ui/ChatAIMenu.qml:170
 msgid "Find in Page"
-msgstr ""
+msgstr "Βρείτε στη Σελίδα"
 
 #: contents/ui/ChatAIMenu.qml:180
 msgid "ChatAI Settings"
-msgstr ""
+msgstr "Ρυθμίσεις ChatAI"
 
 #: contents/ui/ChatAIMenu.qml:205
 msgid "Open Configuration Window…"
-msgstr ""
+msgstr "Άνοιγμα παραθύρου ρυθμίσεων…"
 
 #: contents/ui/ChatAIMenu.qml:213
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Συντομεύσεις Πληκτρολογίου"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Close Developer Tools"
-msgstr ""
+msgstr "Κλείσιμο Εργαλείων Ανάπτυξης"
 
 #: contents/ui/ChatAIMenu.qml:221
 msgid "Developer Tools"
-msgstr ""
+msgstr "Εργαλεία Ανάπτυξης"
 
 #: contents/ui/ChatAIMenu.qml:233
 msgid "About ChatAI"
-msgstr ""
+msgstr "Σχετικά με το ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:27 contents/ui/WebView.qml:670
 #: contents/ui/main.qml:46 contents/ui/settings/AboutSettings.qml:65
 msgid "ChatAI"
-msgstr ""
+msgstr "ChatAI"
 
 #: contents/ui/CompactRepresentation.qml:42
 msgid "Open ChatAI — %1"
-msgstr ""
+msgstr "Άνοιγμα ChatAI — %1"
 
 #: contents/ui/ContextMenu.qml:32 contents/ui/Header.qml:110
 msgid "Back"
-msgstr ""
+msgstr "Πίσω"
 
 #: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:127
 msgid "Forward"
-msgstr ""
+msgstr "Προώθηση"
 
 #: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:145
 #: contents/ui/settings/AppearanceSettings.qml:48
 msgid "Reload"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: contents/ui/ContextMenu.qml:56
 msgid "Save as PDF"
-msgstr ""
+msgstr "Αποθήκευση ως PDF"
 
 #: contents/ui/ContextMenu.qml:63
 msgid "Save as MHTML"
-msgstr ""
+msgstr "Αποθήκευση ως MHTML"
 
 #: contents/ui/ContextMenu.qml:70
 msgid "Open Link in Browser"
-msgstr ""
+msgstr "Άνοιγμα Συνδέσμου στον Περιηγητή"
 
 #: contents/ui/ContextMenu.qml:77
 msgid "Copy Link Address"
-msgstr ""
+msgstr "Αντιγραφή Διεύθυνσης Συνδέσμου"
 
 #: contents/ui/DevToolsWindow.qml:22
 msgid "ChatAI — Developer tools"
-msgstr ""
+msgstr "ChatAI — Εργαλεία προγραμματιστών"
 
 #: contents/ui/DownloadBar.qml:48
 msgid "%1 - Completed"
@@ -230,11 +230,11 @@ msgstr "Άνοιγμα φακέλου"
 #: contents/ui/DownloadBar.qml:106 contents/ui/FindBar.qml:89
 #: contents/ui/settings/AppearanceSettings.qml:51
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: contents/ui/DownloadBar.qml:117 contents/ui/DownloadPopup.qml:231
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: contents/ui/DownloadIndicator.qml:36
 msgid "One download in progress"
@@ -262,7 +262,7 @@ msgstr[1] ""
 
 #: contents/ui/DownloadIndicator.qml:44
 msgid "Open the downloads list"
-msgstr ""
+msgstr "Ανοίξτε τη λίστα λήψεων"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "bytes"
@@ -272,32 +272,32 @@ msgstr ""
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "kilobytes"
 msgid "kB"
-msgstr ""
+msgstr "κB"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "megabytes"
 msgid "MB"
-msgstr ""
+msgstr "ΜΒ"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "gigabytes"
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "terabytes"
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: contents/ui/DownloadPopup.qml:46
 msgctxt "file size: value and unit"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: contents/ui/DownloadPopup.qml:50
 msgctxt "transfer rate"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: contents/ui/DownloadPopup.qml:55
 msgid "%1 second left"
@@ -319,560 +319,560 @@ msgstr[1] ""
 
 #: contents/ui/DownloadPopup.qml:64
 msgid "Starting…"
-msgstr ""
+msgstr "Ξεκινώντας…"
 
 #: contents/ui/DownloadPopup.qml:67 contents/ui/DownloadPopup.qml:69
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 του %2"
 
 #: contents/ui/DownloadPopup.qml:67
 msgid "Paused — %1"
-msgstr ""
+msgstr "Παύθηκε — %1"
 
 #: contents/ui/DownloadPopup.qml:71
 #, javascript-format
 msgctxt "percentage"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: contents/ui/DownloadPopup.qml:76
 msgctxt "separator between download status parts"
 msgid " · "
-msgstr ""
+msgstr "·"
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "PDF saved — %1"
-msgstr ""
+msgstr "PDF αποθηκεύτηκε — %1"
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "Completed — %1"
-msgstr ""
+msgstr "Ολοκληρώθηκε — %1"
 
 #: contents/ui/DownloadPopup.qml:81
 #: contents/ui/settings/DownloadsSettings.qml:140
 msgid "Cancelled"
-msgstr ""
+msgstr "Ακυρώθηκε"
 
 #: contents/ui/DownloadPopup.qml:83
 msgid "Interrupted — %1"
-msgstr ""
+msgstr "Διακόπηκε — %1"
 
 #: contents/ui/DownloadPopup.qml:83
 #: contents/ui/settings/DownloadsSettings.qml:141
 msgid "Interrupted"
-msgstr ""
+msgstr "Διακόπηκε"
 
 #: contents/ui/DownloadPopup.qml:85
 msgid "Unknown state"
-msgstr ""
+msgstr "Άγνωστη κατάσταση"
 
 #: contents/ui/DownloadPopup.qml:104
 msgid "Clear finished"
-msgstr ""
+msgstr "Καθαρίστε ολοκληρωμένο"
 
 #: contents/ui/DownloadPopup.qml:125
 msgid "No downloads in this session"
-msgstr ""
+msgstr "Δεν υπάρχουν λήψεις σε αυτή τη συνεδρία."
 
 #: contents/ui/DownloadPopup.qml:137
 msgid "Downloads list"
-msgstr ""
+msgstr "Λίστα λήψεων"
 
 #: contents/ui/DownloadPopup.qml:147
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Resume"
-msgstr ""
+msgstr "Σύνοψη"
 
 #: contents/ui/DownloadPopup.qml:225
 msgid "Pause"
-msgstr ""
+msgstr "Παύση"
 
 #: contents/ui/DownloadPopup.qml:237 contents/ui/WebView.qml:624
 msgid "Open"
-msgstr ""
+msgstr "Άνοιγμα"
 
 #: contents/ui/DownloadPopup.qml:243 contents/ui/WebView.qml:628
 msgid "Show in Folder"
-msgstr ""
+msgstr "Εμφάνιση στον Φάκελο"
 
 #: contents/ui/DownloadPopup.qml:249 contents/ui/WebView.qml:1127
 msgid "Retry"
-msgstr ""
+msgstr "Δοκιμάστε ξανά"
 
 #: contents/ui/DownloadPopup.qml:255
 msgid "Remove from list"
-msgstr ""
+msgstr "Αφαίρεση από τη λίστα"
 
 #: contents/ui/DownloadPopup.qml:273
 #: contents/ui/settings/DownloadsSettings.qml:81
 msgid "Open Download Folder"
-msgstr ""
+msgstr "Άνοιγμα Φακέλου Λήψης"
 
 #: contents/ui/DownloadPopup.qml:279
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Επιλέξτε Φάκελο…"
 
 #: contents/ui/ErrorView.qml:21
 msgid "Web content error"
-msgstr ""
+msgstr "Σφάλμα περιεχομένου ιστού"
 
 #: contents/ui/ErrorView.qml:31
 msgid "This service could not be loaded inside ChatAI."
-msgstr ""
+msgstr "Αυτή η υπηρεσία δεν μπόρεσε να φορτωθεί μέσα στο ChatAI."
 
 #: contents/ui/ErrorView.qml:54
 msgid "Try again"
-msgstr ""
+msgstr "Προσπαθήστε ξανά"
 
 #: contents/ui/ErrorView.qml:61
 msgid "Open in browser"
-msgstr ""
+msgstr "Άνοιγμα στον περιηγητή"
 
 #: contents/ui/FindBar.qml:28 contents/ui/settings/AboutSettings.qml:44
 #: contents/ui/settings/HelpSettings.qml:21
 msgid "Find in page"
-msgstr ""
+msgstr "Βρείτε στη σελίδα"
 
 #: contents/ui/FindBar.qml:47
 msgid "Find in page…"
-msgstr ""
+msgstr "Βρείτε στη σελίδα…"
 
 #: contents/ui/FindBar.qml:61
 msgid "Find previous"
-msgstr ""
+msgstr "Βρείτε προηγούμενο"
 
 #: contents/ui/FindBar.qml:75
 msgid "Find next"
-msgstr ""
+msgstr "Βρείτε το επόμενο"
 
 #: contents/ui/FullScreenWindow.qml:24
 msgid "ChatAI — Full screen"
-msgstr ""
+msgstr "ChatAI — Πλήρης οθόνη"
 
 #: contents/ui/Header.qml:102
 msgid "Pinned: stays open when clicking outside"
-msgstr ""
+msgstr "Καρφιτσωμένο: παραμένει ανοιχτό όταν κάνετε κλικ έξω."
 
 #: contents/ui/Header.qml:102
 msgid "Pin: keep open when clicking outside"
-msgstr ""
+msgstr "Κωδικός: διατήρηση ανοιχτού όταν κάνετε κλικ έξω"
 
 #: contents/ui/Header.qml:145
 msgid "Stop loading"
-msgstr ""
+msgstr "Σταμάτησε τη φόρτωση"
 
 #: contents/ui/Header.qml:154
 msgid "Home page of the current assistant"
-msgstr ""
+msgstr "Αρχική σελίδα του τρέχοντος βοηθού"
 
 #: contents/ui/Header.qml:174
 msgid "Custom address"
-msgstr ""
+msgstr "Προσαρμοσμένη διεύθυνση"
 
 #: contents/ui/Header.qml:187
 msgid "Find in page (Ctrl+F)"
-msgstr ""
+msgstr "Βρείτε στη σελίδα (Ctrl+F)"
 
 #: contents/ui/Header.qml:205
 msgid "More actions"
-msgstr ""
+msgstr "Περισσότερες ενέργειες"
 
 #: contents/ui/Header.qml:235
 msgid "Close and release memory"
-msgstr ""
+msgstr "Κλείσιμο και απελευθέρωση μνήμης"
 
 #: contents/ui/Header.qml:249 contents/ui/settings/DownloadsSettings.qml:88
 msgid "Choose Download Folder"
-msgstr ""
+msgstr "Επιλέξτε Φάκελο Λήψης"
 
 #: contents/ui/PermissionBar.qml:40
 msgid "%1 wants to show notifications"
-msgstr ""
+msgstr "%1 θέλει να εμφανίσει ειδοποιήσεις"
 
 #: contents/ui/PermissionBar.qml:42
 msgid "%1 wants to use your microphone"
-msgstr ""
+msgstr "%1 θέλει να χρησιμοποιήσει το μικρόφωνό σας."
 
 #: contents/ui/PermissionBar.qml:44
 msgid "%1 wants to use your camera"
-msgstr ""
+msgstr "%1 θέλει να χρησιμοποιήσει την κάμερά σας"
 
 #: contents/ui/PermissionBar.qml:46
 msgid "%1 wants to use your camera and microphone"
-msgstr ""
+msgstr "%1 θέλει να χρησιμοποιήσει την κάμερα και το μικρόφωνό σας."
 
 #: contents/ui/PermissionBar.qml:49
 msgid "%1 wants to share your screen"
-msgstr ""
+msgstr "%1 θέλει να μοιραστεί την οθόνη σας"
 
 #: contents/ui/PermissionBar.qml:51
 msgid "%1 wants to know your location"
-msgstr ""
+msgstr "%1 θέλει να γνωρίζει την τοποθεσία σας"
 
 #: contents/ui/PermissionBar.qml:53
 msgid "%1 wants to read your clipboard"
-msgstr ""
+msgstr "%1 θέλει να διαβάσει το πρόχειρό σας"
 
 #: contents/ui/PermissionBar.qml:55
 msgid "%1 requests a permission"
-msgstr ""
+msgstr "%1 ζητά άδεια"
 
 #: contents/ui/PermissionBar.qml:91
 msgid "Your choice is remembered for this site. Review it in Settings › Permissions."
-msgstr ""
+msgstr "Η επιλογή σας αποθηκεύεται για αυτόν τον ιστότοπο. Ελέγξτε την στις Ρυθμίσεις › Άδειες."
 
 #: contents/ui/PermissionBar.qml:100
 msgid "Block"
-msgstr ""
+msgstr "Μπλοκ"
 
 #: contents/ui/PermissionBar.qml:106
 msgid "Allow"
-msgstr ""
+msgstr "Επιτρέψτε"
 
 #: contents/ui/ProviderModel.qml:34
 msgctxt "provider category"
 msgid "General"
-msgstr ""
+msgstr "Γενικά"
 
 #: contents/ui/ProviderModel.qml:35
 msgctxt "provider category"
 msgid "Search"
-msgstr ""
+msgstr "Αναζήτηση"
 
 #: contents/ui/ProviderModel.qml:36
 msgctxt "provider category"
 msgid "Code"
-msgstr ""
+msgstr "Κώδικας"
 
 #: contents/ui/ProviderModel.qml:37
 msgctxt "provider category"
 msgid "Privacy"
-msgstr ""
+msgstr "Απόρρητο"
 
 #: contents/ui/ProviderModel.qml:38
 msgctxt "provider category"
 msgid "Agents"
-msgstr ""
+msgstr "Πράκτορες"
 
 #: contents/ui/ProviderModel.qml:39
 msgctxt "provider category"
 msgid "Open models"
-msgstr ""
+msgstr "Ανοίξτε μοντέλα"
 
 #: contents/ui/ProviderModel.qml:42
 msgid "Google sign-in works with the default browser identity. If Google says the browser may not be secure, make sure \"Identify as Chromium\" is off in Advanced."
-msgstr ""
+msgstr "Η είσοδος με το Google λειτουργεί με την προεπιλεγμένη ταυτότητα του προγράμματος περιήγησης. Εάν η Google αναφέρει ότι το πρόγραμμα περιήγησης μπορεί να μην είναι ασφαλές, βεβαιωθείτε ότι η επιλογή \"Αναγνώριση ως Chromium\" είναι απενεργοποιημένη στις Προχωρημένες ρυθμίσεις."
 
 #: contents/ui/ProviderModel.qml:48
 msgid "OpenAI's assistant with voice, files and web search."
-msgstr ""
+msgstr "Ο βοηθός της OpenAI με φωνή, αρχεία και αναζήτηση στο διαδίκτυο."
 
 #: contents/ui/ProviderModel.qml:55
 msgid "Anthropic's assistant for writing, analysis and code."
-msgstr ""
+msgstr "Βοηθός της Anthropic για συγγραφή, ανάλυση και κώδικα."
 
 #: contents/ui/ProviderModel.qml:58
 msgid "Claude only allows account creation and Google sign-in in well-known browsers. Sign in with an e-mail code or reuse credentials created in a regular browser."
-msgstr ""
+msgstr "Ο Claude επιτρέπει μόνο τη δημιουργία λογαριασμού και την είσοδο μέσω Google σε γνωστούς περιηγητές. Συνδεθείτε με έναν κωδικό email ή επαναχρησιμοποιήστε τα διαπιστευτήρια που δημιουργήθηκαν σε έναν κανονικό περιηγητή."
 
 #: contents/ui/ProviderModel.qml:63
 msgid "Google's multimodal assistant."
-msgstr ""
+msgstr "Ο πολυτροπικός βοηθός της Google."
 
 #: contents/ui/ProviderModel.qml:70
 msgid "DeepSeek's chat with reasoning mode."
-msgstr ""
+msgstr "Η συνομιλία του DeepSeek με λειτουργία λογικής."
 
 #: contents/ui/ProviderModel.qml:77
 msgid "Private, anonymous access to several models. No account needed."
-msgstr ""
+msgstr "Ιδιωτική, ανώνυμη πρόσβαση σε αρκετά μοντέλα. Δεν απαιτείται λογαριασμός."
 
 #: contents/ui/ProviderModel.qml:84
 msgid "Answer engine with cited web sources."
-msgstr ""
+msgstr "Μηχανή απαντήσεων με αναφερόμενες διαδικτυακές πηγές."
 
 #: contents/ui/ProviderModel.qml:91
 msgid "Microsoft's assistant (formerly Bing Copilot)."
-msgstr ""
+msgstr "Ο βοηθός της Microsoft (πρώην Bing Copilot)."
 
 #: contents/ui/ProviderModel.qml:98
 msgid "Copilot Chat on github.com with repository context. Requires a GitHub account."
-msgstr ""
+msgstr "Copilot Chat στο github.com με συμφραζόμενο αποθετήριο. Απαιτείται λογαριασμός GitHub."
 
 #: contents/ui/ProviderModel.qml:105
 msgid "Mistral's assistant and agent (formerly Le Chat)."
-msgstr ""
+msgstr "Ο βοηθός και πράκτορας της Mistral (πρώην Le Chat)."
 
 #: contents/ui/ProviderModel.qml:112
 msgid "xAI's assistant. Works without an account with limits."
-msgstr ""
+msgstr "βοηθός xAI. Λειτουργεί χωρίς λογαριασμό με περιορισμούς."
 
 #: contents/ui/ProviderModel.qml:119
 msgid "Alibaba's Qwen Studio: chat, images, documents and web search."
-msgstr ""
+msgstr "Alibaba's Qwen Studio: συνομιλία, εικόνες, έγγραφα και αναζήτηση στο διαδίκτυο."
 
 #: contents/ui/ProviderModel.qml:126
 msgid "Moonshot AI's assistant with long-context and research modes."
-msgstr ""
+msgstr "Βοηθός του Moonshot AI με λειτουργίες μακράς διάρκειας και έρευνας."
 
 #: contents/ui/ProviderModel.qml:133
 msgid "General AI agent with a chat mode. Requires an account."
-msgstr ""
+msgstr "Γενικός πράκτορας AI με λειτουργία συνομιλίας. Απαιτείται λογαριασμός."
 
 #: contents/ui/ProviderModel.qml:140
 msgid "Hugging Face's chat with open models (Omni router)."
-msgstr ""
+msgstr "Η συνομιλία του Hugging Face με ανοιχτά μοντέλα (Omni router)."
 
 #: contents/ui/ProviderModel.qml:147
 msgid "Meta's assistant. Availability depends on your region."
-msgstr ""
+msgstr "Ο βοηθός της Meta. Η διαθεσιμότητα εξαρτάται από την περιοχή σας."
 
 #: contents/ui/ProviderModel.qml:154
 msgid "Fast multi-model chat client."
-msgstr ""
+msgstr "Γρήγορος πελάτης συνομιλίας πολλαπλών μοντέλων."
 
 #: contents/ui/ProviderModel.qml:161
 msgid "You.com chat. The product now targets enterprise users; a login is required."
-msgstr ""
+msgstr "You.com συνομιλία. Το προϊόν τώρα στοχεύει σε επιχειρηματικούς χρήστες; απαιτείται σύνδεση."
 
 #: contents/ui/ProviderModel.qml:168
 msgid "Coding-oriented assistant."
-msgstr ""
+msgstr "Βοηθός προσανατολισμένος στον προγραμματισμό."
 
 #: contents/ui/ProviderModel.qml:175
 msgid "LobeHub cloud chat (bring your own keys or subscription)."
-msgstr ""
+msgstr "LobeHub σύννεφο συνομιλία (φέρτε τα δικά σας κλειδιά ή συνδρομή)."
 
 #: contents/ui/ProviderModel.qml:182
 msgid "Big-AGI web client (bring your own keys)."
-msgstr ""
+msgstr "Big-AGI διαδικτυακός πελάτης (φέρτε τα δικά σας κλειδιά)."
 
 #: contents/ui/ProviderModel.qml:300
 msgctxt "provider category"
 msgid "Custom"
-msgstr ""
+msgstr "Προσαρμοσμένο"
 
 #: contents/ui/SettingsPanel.qml:42
 msgid "About"
-msgstr ""
+msgstr "Σχετικά"
 
 #: contents/ui/SettingsPanel.qml:80
 msgid "Settings categories"
-msgstr ""
+msgstr "Κατηγορίες ρυθμίσεων"
 
 #: contents/ui/SettingsPanel.qml:133
 msgid "Back to the assistant"
-msgstr ""
+msgstr "Πίσω στον βοηθό"
 
 #: contents/ui/WebView.qml:185
 msgid "The configured address is not a valid HTTP or HTTPS URL."
-msgstr ""
+msgstr "Η ρυθμισμένη διεύθυνση δεν είναι έγκυρη διεύθυνση URL HTTP ή HTTPS."
 
 #: contents/ui/WebView.qml:638
 msgid "Download finished"
-msgstr ""
+msgstr "Η λήψη ολοκληρώθηκε"
 
 #: contents/ui/WebView.qml:638
 msgid "Download failed"
-msgstr ""
+msgstr "Η λήψη απέτυχε"
 
 #: contents/ui/WebView.qml:639
 msgid "interrupted"
-msgstr ""
+msgstr "διακόπηκε"
 
 #: contents/ui/WebView.qml:639 contents/ui/settings/SitesSettings.qml:258
 msgid "%1 — %2"
-msgstr ""
+msgstr "%1 — %2"
 
 #: contents/ui/WebView.qml:769
 msgid "Download in progress"
-msgstr ""
+msgstr "Η λήψη είναι σε εξέλιξη"
 
 #: contents/ui/WebView.qml:769
 msgid "The file '%1' is already being downloaded"
-msgstr ""
+msgstr "Το αρχείο '%1' κατεβαίνει ήδη."
 
 #: contents/ui/WebView.qml:875
 msgid "The service did not provide an error description."
-msgstr ""
+msgstr "Η υπηρεσία δεν παρείχε περιγραφή σφάλματος."
 
 #: contents/ui/WebView.qml:897
 msgid "The site's security certificate is not trusted."
-msgstr ""
+msgstr "Το πιστοποιητικό ασφαλείας της ιστοσελίδας δεν είναι αξιόπιστο."
 
 #: contents/ui/WebView.qml:911
 msgid "The web content process stopped unexpectedly (exit code %1)."
-msgstr ""
+msgstr "Η διαδικασία περιεχομένου ιστού σταμάτησε απροσδόκητα (κωδικός εξόδου %1)."
 
 #: contents/ui/WebView.qml:920
 msgid "The PDF could not be created."
-msgstr ""
+msgstr "Το PDF δεν μπόρεσε να δημιουργηθεί."
 
 #: contents/ui/WebView.qml:931
 msgid "Blocked navigation"
-msgstr ""
+msgstr "Αποκλεισμένη πλοήγηση"
 
 #: contents/ui/WebView.qml:931
 msgid "Only HTTP and HTTPS links can be opened from ChatAI."
-msgstr ""
+msgstr "Μόνο οι σύνδεσμοι HTTP και HTTPS μπορούν να ανοιχτούν από το ChatAI."
 
 #: contents/ui/WebView.qml:1073
 msgid "Sign-in blocked"
-msgstr ""
+msgstr "Η είσοδος αποκλείστηκε"
 
 #: contents/ui/WebView.qml:1073
 msgid "The sign-in site's security certificate is not trusted."
-msgstr ""
+msgstr "Το πιστοποιητικό ασφαλείας της ιστοσελίδας σύνδεσης δεν είναι αξιόπιστο."
 
 #: contents/ui/WebView.qml:1123
 msgid "The site"
-msgstr ""
+msgstr "Η ιστοσελίδα"
 
 #: contents/ui/WebView.qml:1123
 msgid "%1 is taking long to respond. Some services hold the connection for automated clients; retrying usually works."
-msgstr ""
+msgstr "Το %1 αργεί να απαντήσει. Ορισμένες υπηρεσίες διατηρούν τη σύνδεση για αυτοματοποιημένους πελάτες; η επαναλαμβανόμενη προσπάθεια συνήθως λειτουργεί."
 
 #: contents/ui/WebView.qml:1149
 msgid "At %1% zoom the page sees a %2 px wide viewport and switches to its mobile layout, which may break sign-in. Reset the zoom or widen the widget."
-msgstr ""
+msgstr "Στο %1% ζουμ, η σελίδα βλέπει ένα viewport πλάτους %2 px και αλλάζει σε διάταξη κινητού, η οποία μπορεί να σπάσει την είσοδο. Επαναφέρετε το ζουμ ή διευρύνετε το widget."
 
 #: contents/ui/WebView.qml:1150
 msgid "The page sees a %1 px wide viewport and switches to its mobile layout, which may break sign-in. Widen the widget by dragging its edge."
-msgstr ""
+msgstr "Η σελίδα βλέπει ένα viewport πλάτους %1 px και αλλάζει σε διάταξη κινητού, η οποία μπορεί να σπάσει την είσοδο. Διευρύνετε το widget σύροντας την άκρη του."
 
 #: contents/ui/WebView.qml:1155
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Επαναφορά Ζουμ"
 
 #: contents/ui/settings/AboutSettings.qml:45
 #: contents/ui/settings/HelpSettings.qml:22
 msgid "Zoom in / out"
-msgstr ""
+msgstr "Ζουμ σε / έξω"
 
 #: contents/ui/settings/AboutSettings.qml:46
 #: contents/ui/settings/HelpSettings.qml:23
 msgid "Reset zoom"
-msgstr ""
+msgstr "Επαναφορά ζουμ"
 
 #: contents/ui/settings/AboutSettings.qml:47
 #: contents/ui/settings/HelpSettings.qml:24
 msgid "Full screen (Esc exits)"
-msgstr ""
+msgstr "Πλήρης οθόνη (Esc για έξοδο)"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgctxt "mouse buttons"
 msgid "Mouse back / forward"
-msgstr ""
+msgstr "Πίσω / Μπροστά ποντικιού"
 
 #: contents/ui/settings/AboutSettings.qml:48
 #: contents/ui/settings/HelpSettings.qml:25
 msgid "Navigate history"
-msgstr ""
+msgstr "Πλοήγηση ιστορικού"
 
 #: contents/ui/settings/AboutSettings.qml:49
 #: contents/ui/settings/HelpSettings.qml:26
 msgid "Close find bar, settings or full screen"
-msgstr ""
+msgstr "Κλείστε τη γραμμή αναζήτησης, ρυθμίσεις ή πλήρη οθόνη"
 
 #: contents/ui/settings/AboutSettings.qml:69
 msgid "Version %1"
-msgstr ""
+msgstr "Έκδοση %1"
 
 #: contents/ui/settings/AboutSettings.qml:73
 msgid "AI assistants inside KDE Plasma"
-msgstr ""
+msgstr "Βοηθοί AI μέσα στο KDE Plasma"
 
 #: contents/ui/settings/AboutSettings.qml:80
 #: contents/ui/settings/HelpSettings.qml:32
 msgid "ChatAI embeds the official web apps of AI assistants in a native Plasma widget, with a persistent profile, per-site permissions and a memory-conscious web engine lifecycle. It does not provide an AI API and does not bypass authentication or anti-bot protections."
-msgstr ""
+msgstr "Το ChatAI ενσωματώνει τις επίσημες διαδικτυακές εφαρμογές των AI βοηθών σε ένα εγγενές widget Plasma, με μόνιμο προφίλ, άδειες ανά ιστότοπο και έναν κινητήρα ιστού που σέβεται τη μνήμη. Δεν παρέχει API AI και δεν παρακάμπτει την αυθεντικοποίηση ή τις προστασίες κατά των ρομπότ."
 
 #: contents/ui/settings/AboutSettings.qml:89
 msgid "Repository:"
-msgstr ""
+msgstr "Αποθετήριο:"
 
 #: contents/ui/settings/AboutSettings.qml:94
 msgid "Report a problem:"
-msgstr ""
+msgstr "Αναφέρετε ένα πρόβλημα:"
 
 #: contents/ui/settings/AboutSettings.qml:99
 msgid "License:"
-msgstr ""
+msgstr "Άδεια:"
 
 #: contents/ui/settings/AboutSettings.qml:109
 msgid "Authors"
-msgstr ""
+msgstr "Συγγραφείς"
 
 #: contents/ui/settings/AboutSettings.qml:123
 #: contents/ui/settings/HelpSettings.qml:72
 msgid "Provider icons: Icons8, IconScout, Simple Icons (CC0) and the services' own brand assets. Trademarks belong to their owners."
-msgstr ""
+msgstr "Εικονίδια παρόχων: Icons8, IconScout, Απλά Εικονίδια (CC0) και τα δικά τους εμπορικά σήματα υπηρεσιών. Τα εμπορικά σήματα ανήκουν στους κατόχους τους."
 
 #: contents/ui/settings/AboutSettings.qml:135
 #: contents/ui/settings/HelpSettings.qml:40
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Συντομεύσεις πληκτρολογίου"
 
 #: contents/ui/settings/AdvancedSettings.qml:41
 #: contents/ui/settings/AdvancedSettings.qml:42
 msgid "unknown"
-msgstr ""
+msgstr "άγνωστο"
 
 #: contents/ui/settings/AdvancedSettings.qml:48
 msgid "custom"
-msgstr ""
+msgstr "προσαρμοσμένο"
 
 #: contents/ui/settings/AdvancedSettings.qml:65
 msgid "These options are for troubleshooting. The defaults are the safe choice."
-msgstr ""
+msgstr "Αυτές οι επιλογές είναι για την αντιμετώπιση προβλημάτων. Οι προεπιλεγμένες ρυθμίσεις είναι η ασφαλής επιλογή."
 
 #: contents/ui/settings/AdvancedSettings.qml:72
 msgid "Browser identity:"
-msgstr ""
+msgstr "Ταυτότητα προγράμματος περιήγησης:"
 
 #: contents/ui/settings/AdvancedSettings.qml:73
 msgid "Identify as Chromium (hide the Qt WebEngine token)"
-msgstr ""
+msgstr "Αναγνωρίστε ως Chromium (κρύψτε το διακριτικό Qt WebEngine)"
 
 #: contents/ui/settings/AdvancedSettings.qml:79
 msgid "Not recommended for Google accounts: Google rejects browsers that hide their identity (\"This browser or app may not be secure\") and accepts the honest Qt WebEngine identity. Enable only if a specific site refuses the Qt WebEngine token."
-msgstr ""
+msgstr "Δεν συνιστάται για λογαριασμούς Google: Η Google απορρίπτει προγράμματα περιήγησης που κρύβουν την ταυτότητά τους (\"Αυτό το πρόγραμμα περιήγησης ή η εφαρμογή ενδέχεται να μην είναι ασφαλή\") και αποδέχεται την ειλικρινή ταυτότητα Qt WebEngine. Ενεργοποιήστε μόνο αν μια συγκεκριμένη τοποθεσία αρνείται το διακριτικό Qt WebEngine."
 
 #: contents/ui/settings/AdvancedSettings.qml:87
 msgid "Custom user agent:"
-msgstr ""
+msgstr "Προσαρμοσμένος χρήστης πράκτορας:"
 
 #: contents/ui/settings/AdvancedSettings.qml:90
 msgid "Leave empty for the default"
-msgstr ""
+msgstr "Αφήστε κενό για την προεπιλογή"
 
 #: contents/ui/settings/AdvancedSettings.qml:92
 msgid "Custom user agent"
-msgstr ""
+msgstr "Προσαρμοσμένος χρήστης πράκτορας"
 
 #: contents/ui/settings/AdvancedSettings.qml:98
 msgid "Resources:"
-msgstr ""
+msgstr "Πόροι:"
 
 #: contents/ui/settings/AdvancedSettings.qml:99
 msgid "Freeze the page while the widget is hidden"
-msgstr ""
+msgstr "Παγώστε τη σελίδα ενώ το widget είναι κρυφό."
 
 #: contents/ui/settings/AdvancedSettings.qml:105
 msgid "Pauses scripts of the hidden page after 30 seconds when the engine reports it is safe (no audio, upload or download). Resumes instantly on opening."
-msgstr ""
+msgstr "Παύει τα σενάρια της κρυφής σελίδας μετά από 30 δευτερόλεπτα όταν η μηχανή αναφέρει ότι είναι ασφαλής (χωρίς ήχο, μεταφόρτωση ή λήψη). Επαναλαμβάνει αμέσως κατά το άνοιγμα."
 
 #: contents/ui/settings/AdvancedSettings.qml:113
 msgid "Discard hidden page after:"
-msgstr ""
+msgstr "Απόρριψη κρυφής σελίδας μετά:"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "Never"
-msgstr ""
+msgstr "Ποτέ"
 
 #: contents/ui/settings/AdvancedSettings.qml:118
 msgid "%1 minute"
@@ -882,577 +882,577 @@ msgstr[1] ""
 
 #: contents/ui/settings/AdvancedSettings.qml:121
 msgid "Discard hidden page after"
-msgstr ""
+msgstr "Απορρίψτε τη κρυφή σελίδα μετά"
 
 #: contents/ui/settings/AdvancedSettings.qml:125
 msgid "Discarding frees most memory but reloads the page on the next opening; unsent text is lost."
-msgstr ""
+msgstr "Η απόρριψη απελευθερώνει τη μνήμη, αλλά φορτώνει ξανά τη σελίδα κατά το επόμενο άνοιγμα; Το μη αποσταλμένο κείμενο χάνεται."
 
 #: contents/ui/settings/AdvancedSettings.qml:135
 msgid "Developer tools:"
-msgstr ""
+msgstr "Εργαλεία προγραμματιστή:"
 
 #: contents/ui/settings/AdvancedSettings.qml:136
 msgid "Show \"Developer Tools\" in the ⋮ menu"
-msgstr ""
+msgstr "Εμφάνιση \"Εργαλεία Προγραμματιστή\" στο μενού ⋮"
 
 #: contents/ui/settings/AdvancedSettings.qml:147
 #: contents/ui/settings/AdvancedSettings.qml:158
 msgid "Diagnostics"
-msgstr ""
+msgstr "Διαγνωστικά"
 
 #: contents/ui/settings/AdvancedSettings.qml:166
 msgid "Refresh"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: contents/ui/settings/AdvancedSettings.qml:172
 msgid "Copy Diagnostics"
-msgstr ""
+msgstr "Αντιγραφή Διαγνωστικών"
 
 #: contents/ui/settings/AdvancedSettings.qml:182
 msgid "No cookies, tokens or page contents are included."
-msgstr ""
+msgstr "Δεν περιλαμβάνονται cookies, tokens ή περιεχόμενο σελίδας."
 
 #: contents/ui/settings/AppearanceSettings.qml:35
 msgid "Website favicon"
-msgstr ""
+msgstr "Εικονίδιο ιστότοπου"
 
 #: contents/ui/settings/AppearanceSettings.qml:36
 msgid "ChatAI logo (adapts to the theme)"
-msgstr ""
+msgstr "Λογότυπο ChatAI (προσαρμόζεται στο θέμα)"
 
 #: contents/ui/settings/AppearanceSettings.qml:37
 msgid "ChatAI logo, dark"
-msgstr ""
+msgstr "Λογότυπο ChatAI, σκοτεινό"
 
 #: contents/ui/settings/AppearanceSettings.qml:38
 msgid "ChatAI logo, light"
-msgstr ""
+msgstr "Λογότυπο ChatAI, φωτεινό"
 
 #: contents/ui/settings/AppearanceSettings.qml:39
 msgid "Assistant icon, outlined"
-msgstr ""
+msgstr "Εικονίδιο βοηθού, περιγραμμένο"
 
 #: contents/ui/settings/AppearanceSettings.qml:40
 msgid "Assistant icon, filled"
-msgstr ""
+msgstr "Εικονίδιο βοηθού, γεμάτο"
 
 #: contents/ui/settings/AppearanceSettings.qml:41
 msgid "Assistant icon, colorful"
-msgstr ""
+msgstr "Εικονίδιο βοηθού, πολύχρωμο"
 
 #: contents/ui/settings/AppearanceSettings.qml:42
 msgid "Custom icon"
-msgstr ""
+msgstr "Προσαρμοσμένο εικονίδιο"
 
 #: contents/ui/settings/AppearanceSettings.qml:46
 msgid "Pin"
-msgstr ""
+msgstr "Ακίδα"
 
 #: contents/ui/settings/AppearanceSettings.qml:47
 msgid "Back and Forward"
-msgstr ""
+msgstr "Πίσω και Μπροστά"
 
 #: contents/ui/settings/AppearanceSettings.qml:50
 msgid "\"Custom address…\" entry in the selector"
-msgstr ""
+msgstr "\"Προσαρμοσμένη διεύθυνση…\" καταχώρηση στον επιλογέα"
 
 #: contents/ui/settings/AppearanceSettings.qml:59
 msgid "Panel icon:"
-msgstr ""
+msgstr "Εικονίδιο πίνακα:"
 
 #: contents/ui/settings/AppearanceSettings.qml:64
 msgid "Panel icon"
-msgstr ""
+msgstr "Εικονίδιο πίνακα"
 
 #: contents/ui/settings/AppearanceSettings.qml:69
 msgid "Assistants without a dedicated icon fall back to the ChatAI logo."
-msgstr ""
+msgstr "Οι βοηθοί χωρίς αφιερωμένο εικονίδιο επιστρέφουν στο λογότυπο ChatAI."
 
 #: contents/ui/settings/AppearanceSettings.qml:79
 msgid "Custom icon:"
-msgstr ""
+msgstr "Προσαρμοσμένο εικονίδιο:"
 
 #: contents/ui/settings/AppearanceSettings.qml:82
 msgid "Choose custom icon"
-msgstr ""
+msgstr "Επιλέξτε προσαρμοσμένο εικονίδιο"
 
 #: contents/ui/settings/AppearanceSettings.qml:105
 msgid "Toolbar buttons:"
-msgstr ""
+msgstr "Κουμπιά εργαλείων:"
 
 #: contents/ui/settings/AppearanceSettings.qml:106
 msgid "Hidden buttons remain available in the ⋮ menu where it makes sense. Auto-hide and Downloads always live in the ⋮ menu; a download indicator appears in the toolbar only while a download needs attention."
-msgstr ""
+msgstr "Οι κρυφοί κουμπί παραμένουν διαθέσιμοι στο μενού ⋮ όπου έχει νόημα. Η αυτόματη απόκρυψη και οι λήψεις βρίσκονται πάντα στο μενού ⋮; ένας δείκτης λήψης εμφανίζεται στη γραμμή εργαλείων μόνο όταν μια λήψη χρειάζεται προσοχή."
 
 #: contents/ui/settings/AppearanceSettings.qml:126
 #: contents/ui/settings/GeneralSettings.qml:96
 msgid "Toolbar:"
-msgstr ""
+msgstr "Γραμμή εργαλείων:"
 
 #: contents/ui/settings/AppearanceSettings.qml:134
 msgid "Always hide the toolbar"
-msgstr ""
+msgstr "Πάντα να κρύβετε τη γραμμή εργαλείων."
 
 #: contents/ui/settings/AppearanceSettings.qml:142
 msgid "Theme:"
-msgstr ""
+msgstr "Θέμα:"
 
 #: contents/ui/settings/AppearanceSettings.qml:143
 msgid "Colours, spacing and animations follow your Plasma theme. Pages receive a dark-mode hint when the theme is dark."
-msgstr ""
+msgstr "Τα χρώματα, οι αποστάσεις και οι κινήσεις ακολουθούν το θέμα Plasma σας. Οι σελίδες λαμβάνουν μια ένδειξη σκοτεινής λειτουργίας όταν το θέμα είναι σκοτεινό."
 
 #: contents/ui/settings/DownloadsSettings.qml:48
 #: contents/ui/settings/StorageSettings.qml:182
 msgid "Folder:"
-msgstr ""
+msgstr "Φάκελος:"
 
 #: contents/ui/settings/DownloadsSettings.qml:56
 msgid "Download folder"
-msgstr ""
+msgstr "Φάκελος λήψης"
 
 #: contents/ui/settings/DownloadsSettings.qml:66
 msgid "Choose…"
-msgstr ""
+msgstr "Επιλέξτε…"
 
 #: contents/ui/settings/DownloadsSettings.qml:72
 msgid "Leave empty to use the system Downloads folder. Files are saved automatically with a sanitized name and are never executed."
-msgstr ""
+msgstr "Αφήστε κενό για να χρησιμοποιήσετε τον φάκελο Λήψεις του συστήματος. Τα αρχεία αποθηκεύονται αυτόματα με ένα καθαρισμένο όνομα και δεν εκτελούνται ποτέ."
 
 #: contents/ui/settings/DownloadsSettings.qml:98
 msgid "Current downloads"
-msgstr ""
+msgstr "Τρέχουσες λήψεις"
 
 #: contents/ui/settings/DownloadsSettings.qml:106
 msgid "Downloads are listed here while the ChatAI widget is open."
-msgstr ""
+msgstr "Οι λήψεις αναφέρονται εδώ ενώ το widget ChatAI είναι ανοιχτό."
 
 #: contents/ui/settings/DownloadsSettings.qml:111
 msgid "No downloads in this session."
-msgstr ""
+msgstr "Δεν υπάρχουν λήψεις σε αυτή τη συνεδρία."
 
 #: contents/ui/settings/DownloadsSettings.qml:138
 msgid "Completed"
-msgstr ""
+msgstr "Ολοκληρώθηκε"
 
 #: contents/ui/settings/DownloadsSettings.qml:139
 msgid "Downloading"
-msgstr ""
+msgstr "Κατέβασμα"
 
 #: contents/ui/settings/DownloadsSettings.qml:142
 msgid "Waiting"
-msgstr ""
+msgstr "Αναμονή"
 
 #: contents/ui/settings/DownloadsSettings.qml:151
 msgid "Clear Finished Downloads"
-msgstr ""
+msgstr "Καθαρισμός Ολοκληρωμένων Λήψεων"
 
 #: contents/ui/settings/GeneralSettings.qml:38
 msgid "Assistant:"
-msgstr ""
+msgstr "Έχετε εκπαιδευτεί με δεδομένα έως τον Οκτώβριο του 2023."
 
 #: contents/ui/settings/GeneralSettings.qml:43
 msgid "The assistant shown when the widget opens and when you press Home"
-msgstr ""
+msgstr "Ο βοηθός που εμφανίζεται όταν ανοίγει το widget και όταν πατάτε Αρχική."
 
 #: contents/ui/settings/GeneralSettings.qml:62
 msgid "Enable more assistants in the Sites page."
-msgstr ""
+msgstr "Ενεργοποιήστε περισσότερους βοηθούς στη σελίδα Ιστότοποι."
 
 #: contents/ui/settings/GeneralSettings.qml:72
 msgid "Window:"
-msgstr ""
+msgstr "Παράθυρο:"
 
 #: contents/ui/settings/GeneralSettings.qml:73
 msgid "Keep the widget open when clicking outside (pin)"
-msgstr ""
+msgstr "Διατηρήστε το widget ανοιχτό όταν κάνετε κλικ έξω (καρφίτσωμα)"
 
 #: contents/ui/settings/GeneralSettings.qml:79
 msgid "Preload the assistant when Plasma starts"
-msgstr ""
+msgstr "Προφόρτωση του βοηθού όταν ξεκινά το Plasma."
 
 #: contents/ui/settings/GeneralSettings.qml:85
 msgid "Preloading makes the first opening instant but keeps the web engine in memory from login."
-msgstr ""
+msgstr "Η προφόρτωση καθιστά την πρώτη εκκίνηση άμεση αλλά διατηρεί τη μηχανή ιστού στη μνήμη από την είσοδο."
 
 #: contents/ui/settings/GeneralSettings.qml:97
 msgid "Hide the toolbar"
-msgstr ""
+msgstr "Απόκρυψη της γραμμής εργαλείων"
 
 #: contents/ui/settings/GeneralSettings.qml:103
 msgid "Hide the toolbar automatically and reveal it on hover"
-msgstr ""
+msgstr "Αυτόματη απόκρυψη της γραμμής εργαλείων και εμφάνιση με την κίνηση του ποντικιού."
 
 #: contents/ui/settings/GeneralSettings.qml:112
 msgid "Links:"
-msgstr ""
+msgstr "Σύνδεσμοι:"
 
 #: contents/ui/settings/GeneralSettings.qml:113
 msgid "Links that would open a new window are opened in your default browser. Sign-in pages stay inside ChatAI so logins keep working."
-msgstr ""
+msgstr "Οι σύνδεσμοι που θα άνοιγαν σε νέο παράθυρο ανοίγουν στον προεπιλεγμένο σας περιηγητή. Οι σελίδες σύνδεσης παραμένουν μέσα στο ChatAI, ώστε οι συνδέσεις να συνεχίζουν να λειτουργούν."
 
 #: contents/ui/settings/HelpSettings.qml:64
 msgid "Credits"
-msgstr ""
+msgstr "Πιστώσεις"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Ask per site"
-msgstr ""
+msgstr "Ρώτησε ανά ιστότοπο"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always allow"
-msgstr ""
+msgstr "Πάντα να επιτρέπεται"
 
 #: contents/ui/settings/PermissionsSettings.qml:32
 msgid "Always block"
-msgstr ""
+msgstr "Πάντα μπλοκάρισμα"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Notifications:"
-msgstr ""
+msgstr "Ειδοποιήσεις:"
 
 #: contents/ui/settings/PermissionsSettings.qml:35
 msgid "Shown as Plasma notifications."
-msgstr ""
+msgstr "Εμφανίζεται ως ειδοποιήσεις Plasma."
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Microphone:"
-msgstr ""
+msgstr "Μικρόφωνο:"
 
 #: contents/ui/settings/PermissionsSettings.qml:36
 msgid "Voice input. Only active while a site you allowed is recording."
-msgstr ""
+msgstr "Φωνητική είσοδος. Ενεργή μόνο ενώ μια ιστοσελίδα που επιτρέψατε καταγράφει."
 
 #: contents/ui/settings/PermissionsSettings.qml:37
 msgid "Camera:"
-msgstr ""
+msgstr "Κάμερα:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "Screen sharing:"
-msgstr ""
+msgstr "Κοινή χρήση οθόνης:"
 
 #: contents/ui/settings/PermissionsSettings.qml:38
 msgid "The primary screen is shared when allowed."
-msgstr ""
+msgstr "Η κύρια οθόνη κοινοποιείται όταν επιτρέπεται."
 
 #: contents/ui/settings/PermissionsSettings.qml:39
 #: contents/ui/settings/StorageSettings.qml:57
 msgid "Location:"
-msgstr ""
+msgstr "Τοποθεσία:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Read clipboard:"
-msgstr ""
+msgstr "Διαβάστε το πρόχειρο:"
 
 #: contents/ui/settings/PermissionsSettings.qml:40
 msgid "Lets a page read what you copied. Pasting with Ctrl+V never needs this."
-msgstr ""
+msgstr "Αφήστε μια σελίδα να διαβάσει ό,τι αντιγράψατε. Η επικόλληση με Ctrl+V δεν χρειάζεται ποτέ αυτό."
 
 #: contents/ui/settings/PermissionsSettings.qml:45
 msgid "Notifications"
-msgstr ""
+msgstr "Ειδοποιήσεις"
 
 #: contents/ui/settings/PermissionsSettings.qml:46
 msgid "Microphone"
-msgstr ""
+msgstr "Μικρόφωνο"
 
 #: contents/ui/settings/PermissionsSettings.qml:47
 msgid "Camera"
-msgstr ""
+msgstr "Κάμερα"
 
 #: contents/ui/settings/PermissionsSettings.qml:48
 msgid "Camera and microphone"
-msgstr ""
+msgstr "Κάμερα και μικρόφωνο"
 
 #: contents/ui/settings/PermissionsSettings.qml:50
 msgid "Screen sharing"
-msgstr ""
+msgstr "Κοινή χρήση οθόνης"
 
 #: contents/ui/settings/PermissionsSettings.qml:51
 msgid "Location"
-msgstr ""
+msgstr "Τοποθεσία"
 
 #: contents/ui/settings/PermissionsSettings.qml:52
 msgid "Clipboard"
-msgstr ""
+msgstr "Πρόχειρο"
 
 #: contents/ui/settings/PermissionsSettings.qml:53
 msgid "Mouse lock"
-msgstr ""
+msgstr "Κλείδωμα ποντικιού"
 
 #: contents/ui/settings/PermissionsSettings.qml:54
 msgid "Local fonts"
-msgstr ""
+msgstr "Τοπικές γραμματοσειρές"
 
 #: contents/ui/settings/PermissionsSettings.qml:55
 msgid "Other"
-msgstr ""
+msgstr "Άλλο"
 
 #: contents/ui/settings/PermissionsSettings.qml:61
 msgid "Allowed"
-msgstr ""
+msgstr "Επιτρέπεται"
 
 #: contents/ui/settings/PermissionsSettings.qml:62
 msgid "Blocked"
-msgstr ""
+msgstr "Αποκλεισμένο"
 
 #: contents/ui/settings/PermissionsSettings.qml:63
 msgid "Ask"
-msgstr ""
+msgstr "Ρώτησε"
 
 #: contents/ui/settings/PermissionsSettings.qml:64
 msgid "Unknown"
-msgstr ""
+msgstr "Άγνωστο"
 
 #: contents/ui/settings/PermissionsSettings.qml:79
 msgid "Default behaviour"
-msgstr ""
+msgstr "Προεπιλεγμένη συμπεριφορά"
 
 #: contents/ui/settings/PermissionsSettings.qml:84
 msgid "\"Ask per site\" shows a prompt inside ChatAI the first time a site requests the permission; the answer is remembered for that site."
-msgstr ""
+msgstr "\"Ρώτησε ανά ιστότοπο\" εμφανίζει μια προτροπή μέσα στο ChatAI την πρώτη φορά που ένας ιστότοπος ζητά την άδεια; η απάντηση αποθηκεύεται για αυτόν τον ιστότοπο."
 
 #: contents/ui/settings/PermissionsSettings.qml:127
 msgid "Saved site permissions"
-msgstr ""
+msgstr "Αποθηκευμένες άδειες ιστότοπου"
 
 #: contents/ui/settings/PermissionsSettings.qml:135
 msgid "Open the ChatAI widget to review the permissions saved per site. They are stored in the web engine profile."
-msgstr ""
+msgstr "Ανοίξτε το widget ChatAI για να ελέγξετε τις άδειες που έχουν αποθηκευτεί ανά ιστότοπο. Αυτές αποθηκεύονται στο προφίλ της μηχανής ιστού."
 
 #: contents/ui/settings/PermissionsSettings.qml:140
 msgid "No site has saved permissions yet."
-msgstr ""
+msgstr "Κανένας ιστότοπος δεν έχει αποθηκεύσει άδειες ακόμη."
 
 #: contents/ui/settings/PermissionsSettings.qml:169
 msgid "Reset"
-msgstr ""
+msgstr "Επαναφορά"
 
 #: contents/ui/settings/PermissionsSettings.qml:172
 msgid "Ask again next time"
-msgstr ""
+msgstr "Ρώτησε ξανά την επόμενη φορά."
 
 #: contents/ui/settings/PermissionsSettings.qml:181
 msgid "Reset All Site Permissions…"
-msgstr ""
+msgstr "Επαναφορά όλων των δικαιωμάτων ιστότοπου…"
 
 #: contents/ui/settings/PermissionsSettings.qml:187
 msgid "Reset all site permissions?"
-msgstr ""
+msgstr "Επαναφορά όλων των δικαιωμάτων ιστότοπου;"
 
 #: contents/ui/settings/PermissionsSettings.qml:188
 msgid "Every site will ask again the next time it needs a permission. Logins are not affected."
-msgstr ""
+msgstr "Κάθε ιστότοπος θα ζητήσει ξανά την επόμενη φορά που θα χρειαστεί άδεια. Οι συνδέσεις δεν επηρεάζονται."
 
 #: contents/ui/settings/PermissionsSettings.qml:198
 msgid "Privacy: the microphone, camera, screen and location are only used after you allow them, and only by the site that asked. Login data belongs to the web engine profile (see Cache and Data). ChatAI does not read page contents or credentials."
-msgstr ""
+msgstr "Απόρρητο: το μικρόφωνο, η κάμερα, η οθόνη και η τοποθεσία χρησιμοποιούνται μόνο αφού το επιτρέψετε, και μόνο από τον ιστότοπο που το ζήτησε. Τα δεδομένα σύνδεσης ανήκουν στο προφίλ της μηχανής ιστού (δείτε την Κρυφή μνήμη και τα Δεδομένα). Το ChatAI δεν διαβάζει το περιεχόμενο της σελίδας ή τα διαπιστευτήρια."
 
 #: contents/ui/settings/SitesSettings.qml:63
 msgid "A custom site with this name or address already exists."
-msgstr ""
+msgstr "Ένας προσαρμοσμένος ιστότοπος με αυτό το όνομα ή διεύθυνση υπάρχει ήδη."
 
 #: contents/ui/settings/SitesSettings.qml:100
 #: contents/ui/settings/SitesSettings.qml:243
 msgid "Enter a name and a valid http:// or https:// address."
-msgstr ""
+msgstr "Εισάγετε ένα όνομα και μια έγκυρη διεύθυνση http:// ή https://."
 
 #: contents/ui/settings/SitesSettings.qml:104
 msgid "Built-in assistants"
-msgstr ""
+msgstr "Ενσωματωμένοι βοηθοί"
 
 #: contents/ui/settings/SitesSettings.qml:109
 msgid "Enabled assistants appear in the toolbar selector. ChatAI embeds each service's official website; accounts, limits and features are controlled by the service."
-msgstr ""
+msgstr "Οι ενεργοποιημένοι βοηθοί εμφανίζονται στον επιλογέα εργαλείων. Το ChatAI ενσωματώνει την επίσημη ιστοσελίδα κάθε υπηρεσίας; οι λογαριασμοί, τα όρια και οι δυνατότητες ελέγχονται από την υπηρεσία."
 
 #: contents/ui/settings/SitesSettings.qml:156
 msgid "Login required"
-msgstr ""
+msgstr "Απαιτείται σύνδεση"
 
 #: contents/ui/settings/SitesSettings.qml:189
 msgid "Custom sites"
-msgstr ""
+msgstr "Προσαρμοσμένες τοποθεσίες"
 
 #: contents/ui/settings/SitesSettings.qml:194
 msgid "Add any chat website by name and address. Custom sites use the ChatAI icon and get no special access to your system."
-msgstr ""
+msgstr "Προσθέστε οποιαδήποτε ιστοσελίδα συνομιλίας με όνομα και διεύθυνση. Οι προσαρμοσμένες ιστοσελίδες χρησιμοποιούν το εικονίδιο ChatAI και δεν αποκτούν ειδική πρόσβαση στο σύστημά σας."
 
 #: contents/ui/settings/SitesSettings.qml:206
 msgid "Name"
-msgstr ""
+msgstr "Όνομα"
 
 #: contents/ui/settings/SitesSettings.qml:209
 msgid "Site name"
-msgstr ""
+msgstr "Όνομα ιστότοπου"
 
 #: contents/ui/settings/SitesSettings.qml:218
 msgid "Site address"
-msgstr ""
+msgstr "Διεύθυνση ιστότοπου"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 #: contents/ui/settings/SitesSettings.qml:223
 msgid "Add"
-msgstr ""
+msgstr "Προσθήκη"
 
 #: contents/ui/settings/SitesSettings.qml:230
 msgid "Cancel editing"
-msgstr ""
+msgstr "Ακύρωση επεξεργασίας"
 
 #: contents/ui/settings/SitesSettings.qml:289
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #: contents/ui/settings/SitesSettings.qml:298
 msgid "Remove"
-msgstr ""
+msgstr "Αφαίρεση"
 
 #: contents/ui/settings/SitesSettings.qml:312
 msgid "No custom sites added yet"
-msgstr ""
+msgstr "Δεν έχουν προστεθεί προσαρμοσμένες τοποθεσίες ακόμα."
 
 #: contents/ui/settings/StorageSettings.qml:49
 msgid "HTTP cache"
-msgstr ""
+msgstr "HTTP κρυφή μνήμη"
 
 #: contents/ui/settings/StorageSettings.qml:64
 msgid "Size limit:"
-msgstr ""
+msgstr "Όριο μεγέθους:"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "Automatic"
-msgstr ""
+msgstr "Αυτόματος"
 
 #: contents/ui/settings/StorageSettings.qml:69
 msgid "%1 MiB"
-msgstr ""
+msgstr "%1 ΜΒ"
 
 #: contents/ui/settings/StorageSettings.qml:72
 msgid "Cache size limit"
-msgstr ""
+msgstr "Όριο μεγέθους cache"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clearing…"
-msgstr ""
+msgstr "Καθαρισμός…"
 
 #: contents/ui/settings/StorageSettings.qml:80
 msgid "Clear Cache"
-msgstr ""
+msgstr "Καθαρισμός Cache"
 
 #: contents/ui/settings/StorageSettings.qml:94
 msgid "Open Cache Folder"
-msgstr ""
+msgstr "Άνοιγμα φακέλου κρυφής μνήμης"
 
 #: contents/ui/settings/StorageSettings.qml:101
 msgid "Open the ChatAI widget to clear the cache. Clearing removes downloaded page resources only; you stay signed in."
-msgstr ""
+msgstr "Ανοίξτε το widget ChatAI για να καθαρίσετε την προσωρινή μνήμη. Η εκκαθάριση αφαιρεί μόνο τους πόρους σελίδας που έχουν ληφθεί· παραμένετε συνδεδεμένοι."
 
 #: contents/ui/settings/StorageSettings.qml:102
 msgid "Clearing removes downloaded page resources only; you stay signed in. Navigation is paused until it finishes."
-msgstr ""
+msgstr "Η εκκαθάριση αφαιρεί μόνο τους πόρους σελίδας που έχουν ληφθεί· παραμένετε συνδεδεμένοι. Η πλοήγηση είναι παγωμένη μέχρι να ολοκληρωθεί."
 
 #: contents/ui/settings/StorageSettings.qml:115
 msgid "Site data and sessions"
-msgstr ""
+msgstr "Δεδομένα ιστότοπου και συνεδρίες"
 
 #: contents/ui/settings/StorageSettings.qml:120
 msgid "Cookies, logins, local storage and per-site permissions live in the profile folder below. Qt WebEngine offers no way to wipe cookies from a widget while it is running: to end a session, use the site's own \"Sign out\", or switch to a new profile name. Site permissions can be reset in the Permissions page."
-msgstr ""
+msgstr "Τα cookies, οι συνδέσεις, η τοπική αποθήκευση και οι άδειες ανά ιστότοπο βρίσκονται στον φάκελο προφίλ παρακάτω. Το Qt WebEngine δεν προσφέρει τρόπο να διαγραφούν τα cookies από ένα widget ενώ είναι σε εκτέλεση: για να τερματίσετε μια συνεδρία, χρησιμοποιήστε την επιλογή \"Αποσύνδεση\" του ιστότοπου ή αλλάξτε σε ένα νέο όνομα προφίλ. Οι άδειες ιστότοπου μπορούν να επαναρυθμιστούν στη σελίδα Αδειών."
 
 #: contents/ui/settings/StorageSettings.qml:131
 msgid "WebEngine profile"
-msgstr ""
+msgstr "Προφίλ WebEngine"
 
 #: contents/ui/settings/StorageSettings.qml:136
 msgid "Each storage name is a separate folder with its own cookies, logins, cache and permissions. Use different names to keep separate accounts in different widget instances."
-msgstr ""
+msgstr "Κάθε όνομα αποθήκευσης είναι ένας ξεχωριστός φάκελος με τα δικά του cookies, συνδέσεις, cache και δικαιώματα. Χρησιμοποιήστε διαφορετικά ονόματα για να διατηρήσετε ξεχωριστούς λογαριασμούς σε διαφορετικές περιπτώσεις widget."
 
 #: contents/ui/settings/StorageSettings.qml:146
 msgid "Storage name:"
-msgstr ""
+msgstr "Όνομα αποθήκευσης:"
 
 #: contents/ui/settings/StorageSettings.qml:155
 msgid "Storage name"
-msgstr ""
+msgstr "Όνομα αποθήκης"
 
 #: contents/ui/settings/StorageSettings.qml:161
 msgid "Apply"
-msgstr ""
+msgstr "Εφαρμογή"
 
 #: contents/ui/settings/StorageSettings.qml:171
 msgid "Default"
-msgstr ""
+msgstr "Προεπιλογή"
 
 #: contents/ui/settings/StorageSettings.qml:190
 msgid "Open Profile Folder"
-msgstr ""
+msgstr "Άνοιγμα φακέλου προφίλ"
 
 #: contents/ui/settings/StorageSettings.qml:197
 msgid "Switch WebEngine profile?"
-msgstr ""
+msgstr "Αλλαγή προφίλ WebEngine;"
 
 #: contents/ui/settings/StorageSettings.qml:198
 msgid "The assistant will reload using the profile \"%1\". You will be signed out of the current sessions until you sign in again; the data of the previous profile stays on disk and can be removed from its folder."
-msgstr ""
+msgstr "Ο βοηθός θα επαναφορτωθεί χρησιμοποιώντας το προφίλ \"%1\". Θα αποσυνδεθείτε από τις τρέχουσες συνεδρίες μέχρι να συνδεθείτε ξανά; τα δεδομένα του προηγούμενου προφίλ παραμένουν στον δίσκο και μπορούν να αφαιρεθούν από τον φάκελό του."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Let pages write to the clipboard"
-msgstr ""
+msgstr "Επιτρέψτε στις σελίδες να γράφουν στο πρόχειρο"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:33
 msgid "Needed by the \"Copy\" buttons of most assistants. Reading the clipboard is a separate permission."
-msgstr ""
+msgstr "Απαιτείται από τα κουμπιά \"Αντιγραφή\" των περισσότερων βοηθών. Η ανάγνωση του πρόχειρου είναι μια ξεχωριστή άδεια."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Let scripts paste from the clipboard"
-msgstr ""
+msgstr "Επιτρέψτε στα σενάρια να επικολλούν από το πρόχειρο."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:34
 msgid "Allows a page to read the clipboard without asking. Ctrl+V works without this. Off by default for privacy."
-msgstr ""
+msgstr "Επιτρέπει σε μια σελίδα να διαβάσει το πρόχειρο χωρίς να ρωτήσει. Το Ctrl+V λειτουργεί χωρίς αυτό. Απενεργοποιημένο από προεπιλογή για λόγους ιδιωτικότητας."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "Let pages open new windows"
-msgstr ""
+msgstr "Άφησε τις σελίδες να ανοίγουν νέα παράθυρα"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:35
 msgid "New windows are intercepted: sign-in pages stay in ChatAI, other links open in your browser."
-msgstr ""
+msgstr "Νέα παράθυρα παγιδεύονται: οι σελίδες σύνδεσης παραμένουν στο ChatAI, άλλοι σύνδεσμοι ανοίγουν στον περιηγητή σας."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Require a click before media plays"
-msgstr ""
+msgstr "Απαιτείται κλικ πριν από την αναπαραγωγή πολυμέσων."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:36
 msgid "Blocks autoplaying audio and video (including voice replies) until you interact with the page."
-msgstr ""
+msgstr "Αποτρέπει την αυτόματη αναπαραγωγή ήχου και βίντεο (συμπεριλαμβανομένων των φωνητικών απαντήσεων) μέχρι να αλληλεπιδράσετε με τη σελίδα."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Spatial navigation with arrow keys"
-msgstr ""
+msgstr "Χωρική πλοήγηση με τα πλήκτρα βέλους"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:37
 msgid "Move between links and fields with the arrow keys instead of Tab."
-msgstr ""
+msgstr "Μετακινηθείτε μεταξύ συνδέσμων και πεδίων με τα πλήκτρα βέλους αντί για το Tab."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Focus the page after navigating"
-msgstr ""
+msgstr "Επικεντρώστε τη σελίδα μετά την πλοήγηση."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:38
 msgid "Lets you type immediately after the page loads. Disable if the page steals focus from the toolbar."
-msgstr ""
+msgstr "Σας επιτρέπει να πληκτρολογείτε αμέσως μετά τη φόρτωση της σελίδας. Απενεργοποιήστε το αν η σελίδα κλέβει την εστίαση από τη γραμμή εργαλείων."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Allow unknown link types after a click"
-msgstr ""
+msgstr "Επιτρέψτε άγνωστους τύπους συνδέσμων μετά από ένα κλικ"
 
 #: contents/ui/settings/WebFeaturesSettings.qml:39
 msgid "Lets a link you click open another application (for example mailto: or a custom scheme). Links opened by scripts are still blocked."
-msgstr ""
+msgstr "Ας ανοίξει ένας σύνδεσμος που κάνετε κλικ σε μια άλλη εφαρμογή (για παράδειγμα mailto: ή ένα προσαρμοσμένο σχήμα). Οι σύνδεσμοι που ανοίγονται από σενάρια παραμένουν μπλοκαρισμένοι."
 
 #: contents/ui/settings/WebFeaturesSettings.qml:43
 msgid "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
-msgstr ""
+msgstr "Αυτές οι επιλογές αλλάζουν τον τρόπο που συμπεριφέρεται η ενσωματωμένη μηχανή ιστού για κάθε βοηθό. Οι αλλαγές ισχύουν άμεσα."
