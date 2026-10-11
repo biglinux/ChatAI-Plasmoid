@@ -267,7 +267,7 @@ msgstr "Ouvrir la liste des téléchargements"
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "bytes"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: contents/ui/DownloadPopup.qml:42
 msgctxt "kilobytes"
