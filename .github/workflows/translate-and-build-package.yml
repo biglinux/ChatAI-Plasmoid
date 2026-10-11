@@ -78,11 +78,32 @@ jobs:
           # English is the source language
           msgen "locale/$domain.pot" | msginit --no-translator --no-wrap --locale=en -i - -o locale/en.po
 
+          # attranslate 2.x mangles plural messages (joins the forms into
+          # msgstr[0]), so it only ever sees singular ones; plurals are kept
+          # from the current catalogs
+          drop_plurals() { awk 'BEGIN { RS = ""; ORS = "\n\n" } !/\nmsgid_plural /'; }
+          drop_plurals < locale/en.po > ../en-singular.po
+
           for lang in $languages; do
-            attranslate --srcFile=locale/en.po --srcLng=en --srcFormat=po --targetFormat=po \
+            po="locale/$lang.po"
+            work="../$lang-work.po"
+            # attranslate only fills messages missing from the target, so empty
+            # ones have to go or they would never be translated
+            rm -f "$work"
+            if [ -f "$po" ]; then
+              msgattrib --translated --no-obsolete --no-wrap "$po" | drop_plurals > "$work"
+            fi
+            attranslate --srcFile=../en-singular.po --srcLng=en --srcFormat=po --targetFormat=po \
               --service=openai --serviceConfig="$OPENAI_KEY" \
-              --targetFile="locale/$lang.po" --targetLng="$lang"
-            sed -i '/^#, fuzzy$/d' "locale/$lang.po"
+              --targetFile="$work" --targetLng="$lang"
+            if [ -f "$po" ]; then
+              msgcat --use-first --no-wrap "$work" "$po" -o "../$lang-merged.po"
+            else
+              cp "$work" "../$lang-merged.po"
+            fi
+            msgmerge --quiet --no-fuzzy-matching --no-wrap "../$lang-merged.po" "locale/$domain.pot" |
+              msgattrib --no-obsolete --no-wrap -o "$po"
+            sed -i '/^#, fuzzy$/d' "$po"
           done
 
           # pt_BR is reviewed by hand: only add the new strings to it
@@ -95,7 +116,8 @@ jobs:
           for po in locale/*.po; do
             lang=$(basename "$po" .po)
             mkdir -p "contents/locale/$lang/LC_MESSAGES"
-            msgfmt "$po" -o "contents/locale/$lang/LC_MESSAGES/plasma_applet_$domain.mo"
+            # --check: never commit a catalog with broken plurals or formats
+            msgfmt --check "$po" -o "contents/locale/$lang/LC_MESSAGES/plasma_applet_$domain.mo"
           done
 
       - name: Update github
