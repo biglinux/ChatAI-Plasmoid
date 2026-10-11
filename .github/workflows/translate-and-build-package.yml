@@ -40,7 +40,8 @@ jobs:
           gettext \
           npm
           # Install attranslator
-          sudo npm install --location=global attranslate
+          # v3 dropped the translation services (openai-translate.js patches v2)
+          sudo npm install --location=global attranslate@2.3.1
 
       ## Tmate ##
       - name: Setup TMATE Session
