@@ -96,31 +96,19 @@ PlasmoidItem {
         readonly property int defaultWidth: Math.max(Kirigami.Units.gridUnit * 28, minimumViewportWidth + Kirigami.Units.gridUnit * 2)
         readonly property int defaultHeight: Kirigami.Units.gridUnit * 39
 
+        // Size of a popup the user never resized. Plasma's AppletPopup
+        // remembers the size the user picks (popupWidth/popupHeight in the
+        // applet config, saved on hide, restored on startup and kept within
+        // 95% of the screen), so these must not follow the measured size: the
+        // popup adds a 1px panel separator to them, and writing the measured
+        // size back (the old dialogWidth/dialogHeight) grew the popup by 1px
+        // every 500ms while it was open.
         Layout.minimumWidth: Kirigami.Units.gridUnit * 18
         Layout.minimumHeight: Kirigami.Units.gridUnit * 18
-        Layout.preferredWidth: plasmoid.configuration.dialogWidth > 0 ? plasmoid.configuration.dialogWidth : defaultWidth
-        Layout.preferredHeight: plasmoid.configuration.dialogHeight > 0 ? plasmoid.configuration.dialogHeight : defaultHeight
+        Layout.preferredWidth: defaultWidth
+        Layout.preferredHeight: defaultHeight
 
         spacing: 0
-
-        // Debounced persistence of the popup size.
-        Timer {
-            id: saveSizeTimer
-            interval: 500
-            repeat: false
-            onTriggered: {
-                const currentWidth = Math.round(mainLayout.width);
-                const currentHeight = Math.round(mainLayout.height);
-                if (currentWidth > 0 && currentHeight > 0
-                    && (currentWidth !== plasmoid.configuration.dialogWidth || currentHeight !== plasmoid.configuration.dialogHeight)) {
-                    plasmoid.configuration.dialogWidth = currentWidth;
-                    plasmoid.configuration.dialogHeight = currentHeight;
-                }
-            }
-        }
-
-        onWidthChanged: saveSizeTimer.restart()
-        onHeightChanged: saveSizeTimer.restart()
 
         Header {
             id: headerRoot

@@ -81,6 +81,8 @@
     <!-- Legacy alias of pin (ChatAI < 1.0). Migrated. -->
     <entry name="keepOpen" type="Bool"><default>false</default></entry>
     <entry name="loadOnStartup" type="Bool"><default>false</default></entry>
+    <!-- Legacy popup size, no longer written (Plasma keeps popupWidth/popupHeight);
+         read by Migration.js to recognise older installations -->
     <entry name="dialogWidth" type="Int"><default>0</default></entry>
     <entry name="dialogHeight" type="Int"><default>0</default></entry>
 
