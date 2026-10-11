@@ -53,23 +53,49 @@ jobs:
           AZURE_KEY: ${{ secrets.AZURE_KEY }}
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
-          cd ..
-          git clone https://github.com/biglinux/big-auto-translator.git
-          mv big-auto-translator/gettext_po_generator_github.sh .
-          sudo cp -f big-auto-translator/openai-translate.js /usr/local/lib/node_modules/attranslate/dist/services/openai-translate.js
-          gitfolder=$(echo ${{ github.repository }} | rev | cut -d "/" -f1 | rev)
-          # export OriginalLang=en-US
-          bash gettext_po_generator_github.sh $gitfolder
-          # copy folder for plasmoid
-          rm -Rf $gitfolder/contents/locale
-          cp -R $gitfolder/usr/share/locale $gitfolder/contents/locale
-          # Remove json translations in plasmoid folder
-          rm $gitfolder/contents/locale/*/LC_MESSAGES/*.json
-          # Remove locale in system
-          rm -Rf $gitfolder/usr
-          # Rename ChatAI-Plasmoid.mo to plasma_applet_ChatAI-Plasmoid.mo
-          cd $gitfolder
-          find contents/locale -name "ChatAI-Plasmoid.mo" -execdir mv {} "plasma_applet_ChatAI-Plasmoid.mo" \;
+          set -euo pipefail
+          domain=ChatAI-Plasmoid
+          languages="bg cs da de el es et fi fr he hr hu is it ja ko nl no pl pt ro ru sk sv tr uk zh"
+
+          # attranslate backend used by every BigLinux package
+          git clone --depth 1 https://github.com/biglinux/big-auto-translator.git ../big-auto-translator
+          sudo cp -f ../big-auto-translator/openai-translate.js /usr/local/lib/node_modules/attranslate/dist/services/openai-translate.js
+
+          # Extract with xgettext: the awk parser in gettext_po_generator_github.sh
+          # cannot read this plasmoid's QML and produced an empty catalog, which
+          # wiped en.po and the en/pt_BR .mo files.
+          find contents -name '*.qml' -o -name '*.js' | sort | xargs xgettext \
+            --from-code=UTF-8 -L JavaScript --package-name="$domain" \
+            --msgid-bugs-address=https://github.com/ruscher/ChatAI-Plasmoid/issues \
+            -ki18n:1 -ki18nc:1c,2 -ki18np:1,2 -ki18ncp:1c,2,3 \
+            -o "locale/$domain.pot"
+          if ! grep -q '^msgid ".' "locale/$domain.pot"; then
+            echo "No translatable strings extracted, keeping the current catalogs" >&2
+            exit 1
+          fi
+
+          # English is the source language
+          msgen "locale/$domain.pot" | msginit --no-translator --no-wrap --locale=en -i - -o locale/en.po
+
+          for lang in $languages; do
+            attranslate --srcFile=locale/en.po --srcLng=en --srcFormat=po --targetFormat=po \
+              --service=openai --serviceConfig="$OPENAI_KEY" \
+              --targetFile="locale/$lang.po" --targetLng="$lang"
+            sed -i '/^#, fuzzy$/d' "locale/$lang.po"
+          done
+
+          # pt_BR is reviewed by hand: only add the new strings to it
+          msgmerge --update --no-fuzzy-matching --backup=none locale/pt_BR.po "locale/$domain.pot"
+
+          sed -i '/"POT-Creation-Date:/d;/"PO-Revision-Date:/d' locale/*.po locale/*.pot
+
+          # Plasma loads plasma_applet_<id>.mo from the package's contents/locale
+          rm -rf contents/locale
+          for po in locale/*.po; do
+            lang=$(basename "$po" .po)
+            mkdir -p "contents/locale/$lang/LC_MESSAGES"
+            msgfmt "$po" -o "contents/locale/$lang/LC_MESSAGES/plasma_applet_$domain.mo"
+          done
 
       - name: Update github
         run: |
