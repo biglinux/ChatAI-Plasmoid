@@ -338,7 +338,7 @@ msgstr "%1%"
 #: contents/ui/DownloadPopup.qml:76
 msgctxt "separator between download status parts"
 msgid " · "
-msgstr ""
+msgstr "·"
 
 #: contents/ui/DownloadPopup.qml:79
 msgid "PDF saved — %1"
