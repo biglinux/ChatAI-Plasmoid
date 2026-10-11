@@ -1,0 +1,52 @@
+# Maintainer: Rafael Ruscher <rruscher@gmail.com>
+# Maintainer: Bruno Goncalves <bigbruno@gmail.com>
+
+pkgname=chatai-plasmoid
+_plugin=ChatAI-Plasmoid
+pkgver=1.0.1
+pkgrel=1
+arch=('any')
+license=('GPL-2.0-or-later')
+pkgdesc="Access AI chat assistants (ChatGPT, Claude, Gemini, DeepSeek, Copilot and more) from the Plasma desktop"
+depends=('libplasma' 'plasma5support' 'kirigami' 'kcmutils' 'knotifications'
+         'kiconthemes' 'qt6-declarative' 'qt6-webengine' 'hicolor-icon-theme')
+makedepends=('git')
+url="https://github.com/biglinux/${_plugin}"
+
+# Local build: package a working copy (including uncommitted changes)
+# instead of cloning the repository, e.g. from the pkgbuild/ folder:
+#   CHATAI_SRC="$(realpath ..)" makepkg -sif
+if [ -n "${CHATAI_SRC:-}" ]; then
+    source=()
+    sha256sums=()
+else
+    source=("git+${url}.git")
+    sha256sums=('SKIP')
+fi
+
+package() {
+    # Verify default folder
+    if [ -n "${CHATAI_SRC:-}" ]; then
+        InternalDir="${CHATAI_SRC}"
+    else
+        InternalDir="${srcdir}/${_plugin}"
+    fi
+
+    if [ ! -f "${InternalDir}/metadata.json" ] || [ ! -d "${InternalDir}/contents" ]; then
+        echo "error: plasmoid not found in ${InternalDir}" >&2
+        return 1
+    fi
+
+    # Same runtime files the README zips into the .plasmoid
+    local plasmoid="${pkgdir}/usr/share/plasma/plasmoids/${_plugin}"
+    install -Dm644 "${InternalDir}/metadata.json" "${plasmoid}/metadata.json"
+    cp -r "${InternalDir}/contents" "${plasmoid}/"
+    find "${plasmoid}" -type d -exec chmod 755 {} +
+    find "${plasmoid}" -type f -exec chmod 644 {} +
+
+    # Icon named in metadata.json (KPlugin.Icon = chatai)
+    install -Dm644 "${InternalDir}/contents/ui/assets/logo.svg" \
+        "${pkgdir}/usr/share/icons/hicolor/scalable/apps/chatai.svg"
+
+    install -Dm644 "${InternalDir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
