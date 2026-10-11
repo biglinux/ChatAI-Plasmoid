@@ -435,7 +435,10 @@ ChatAI-Plasmoid/
 │   └── ui/                # QML: widget, WebView, provider registry, settings
 │       ├── settings/      # Shared settings pages (dialog + in-widget panel)
 │       └── assets/        # Provider and logo SVG icons
+├── docs/                  # Technical notes (not shipped in the package)
 ├── locale/                # Translation sources (.pot / .po / .json)
+├── pkgbuild/              # Arch Linux / BigLinux package
+├── tests/                 # Live regression tests for a running Plasma session
 ├── metadata.json          # Plasma package metadata
 ├── LICENSE
 └── README.md
@@ -461,6 +464,9 @@ for po in locale/*.po; do msgfmt --check --check-format -o /dev/null "$po"; done
 
 # Run the widget in a standalone window
 plasmawindowed ChatAI-Plasmoid
+
+# Popup size regression test (opens the popup on screen; see docs/TESTING.md)
+tests/popup-size-regression.sh 20 --fresh
 ```
 
 Compiled translations (`contents/locale/**/*.mo`) ship in the package; regenerate
