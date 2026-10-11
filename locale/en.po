@@ -1,59 +1,57 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# English translations for ChatAI-Plasmoid package.
+# Copyright (C) 2026 THE ChatAI-Plasmoid'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the ChatAI-Plasmoid package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ChatAI-Plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/ruscher/ChatAI-Plasmoid/issues\n"
-"POT-Creation-Date: 2026-09-17 07:15-0300\n"
-"Last-Translator: ChatAI translations\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:151
+#: contents/config/config.qml:16 contents/ui/ChatAIMenu.qml:185
 #: contents/ui/SettingsPanel.qml:34
 msgid "General"
 msgstr "General"
 
-#: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:152
+#: contents/config/config.qml:21 contents/ui/ChatAIMenu.qml:186
 #: contents/ui/SettingsPanel.qml:35
 msgid "Sites"
 msgstr "Sites"
 
-#: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:153
+#: contents/config/config.qml:26 contents/ui/ChatAIMenu.qml:187
 #: contents/ui/SettingsPanel.qml:36
 msgid "Permissions"
 msgstr "Permissions"
 
-#: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:154
+#: contents/config/config.qml:31 contents/ui/ChatAIMenu.qml:188
 #: contents/ui/SettingsPanel.qml:37
 msgid "Web Features"
 msgstr "Web Features"
 
-#: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:113
-#: contents/ui/ChatAIMenu.qml:155 contents/ui/DownloadPopup.qml:97
+#: contents/config/config.qml:36 contents/ui/ChatAIMenu.qml:147
+#: contents/ui/ChatAIMenu.qml:189 contents/ui/DownloadPopup.qml:97
 #: contents/ui/SettingsPanel.qml:38
 msgid "Downloads"
 msgstr "Downloads"
 
-#: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:156
+#: contents/config/config.qml:41 contents/ui/ChatAIMenu.qml:190
 #: contents/ui/SettingsPanel.qml:39
 msgid "Cache and Data"
 msgstr "Cache and Data"
 
-#: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:157
+#: contents/config/config.qml:46 contents/ui/ChatAIMenu.qml:191
 #: contents/ui/SettingsPanel.qml:40
 msgid "Appearance"
 msgstr "Appearance"
 
-#: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:158
+#: contents/config/config.qml:51 contents/ui/ChatAIMenu.qml:192
 #: contents/ui/SettingsPanel.qml:41
 msgid "Advanced"
 msgstr "Advanced"
@@ -87,91 +85,91 @@ msgstr "Sign in"
 msgid "Close sign-in window"
 msgstr "Close sign-in window"
 
-#: contents/ui/ChatAIMenu.qml:45 contents/ui/WebView.qml:1132
+#: contents/ui/ChatAIMenu.qml:79 contents/ui/WebView.qml:1132
 msgid "Open in Browser"
 msgstr "Open in Browser"
 
-#: contents/ui/ChatAIMenu.qml:52
+#: contents/ui/ChatAIMenu.qml:86
 msgid "Copy Address"
 msgstr "Copy Address"
 
-#: contents/ui/ChatAIMenu.qml:59
+#: contents/ui/ChatAIMenu.qml:93
 msgid "Reload Ignoring Cache"
 msgstr "Reload Ignoring Cache"
 
-#: contents/ui/ChatAIMenu.qml:69
+#: contents/ui/ChatAIMenu.qml:103
 #, javascript-format
 msgid "Zoom (%1%)"
 msgstr "Zoom (%1%)"
 
-#: contents/ui/ChatAIMenu.qml:74
+#: contents/ui/ChatAIMenu.qml:108
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: contents/ui/ChatAIMenu.qml:79
+#: contents/ui/ChatAIMenu.qml:113
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: contents/ui/ChatAIMenu.qml:84
+#: contents/ui/ChatAIMenu.qml:118
 msgid "Reset Zoom (100%)"
 msgstr "Reset Zoom (100%)"
 
-#: contents/ui/ChatAIMenu.qml:92
+#: contents/ui/ChatAIMenu.qml:126
 msgid "Exit Full Screen"
 msgstr "Exit Full Screen"
 
-#: contents/ui/ChatAIMenu.qml:92
+#: contents/ui/ChatAIMenu.qml:126
 msgid "Full Screen"
 msgstr "Full Screen"
 
-#: contents/ui/ChatAIMenu.qml:102
+#: contents/ui/ChatAIMenu.qml:136
 #: contents/ui/settings/AppearanceSettings.qml:127
 msgid "Hide Toolbar Automatically"
 msgstr "Hide Toolbar Automatically"
 
-#: contents/ui/ChatAIMenu.qml:113
+#: contents/ui/ChatAIMenu.qml:147
 msgid "Downloads (%1)"
 msgstr "Downloads (%1)"
 
-#: contents/ui/ChatAIMenu.qml:127
+#: contents/ui/ChatAIMenu.qml:161
 #: contents/ui/settings/AppearanceSettings.qml:49
 msgid "Home"
 msgstr "Home"
 
-#: contents/ui/ChatAIMenu.qml:136
+#: contents/ui/ChatAIMenu.qml:170
 msgid "Find in Page"
 msgstr "Find in Page"
 
-#: contents/ui/ChatAIMenu.qml:146
+#: contents/ui/ChatAIMenu.qml:180
 msgid "ChatAI Settings"
 msgstr "ChatAI Settings"
 
-#: contents/ui/ChatAIMenu.qml:171
+#: contents/ui/ChatAIMenu.qml:205
 msgid "Open Configuration Window…"
 msgstr "Open Configuration Window…"
 
-#: contents/ui/ChatAIMenu.qml:179
+#: contents/ui/ChatAIMenu.qml:213
 msgid "Keyboard Shortcuts"
 msgstr "Keyboard Shortcuts"
 
-#: contents/ui/ChatAIMenu.qml:187
+#: contents/ui/ChatAIMenu.qml:221
 msgid "Close Developer Tools"
 msgstr "Close Developer Tools"
 
-#: contents/ui/ChatAIMenu.qml:187
+#: contents/ui/ChatAIMenu.qml:221
 msgid "Developer Tools"
 msgstr "Developer Tools"
 
-#: contents/ui/ChatAIMenu.qml:199
+#: contents/ui/ChatAIMenu.qml:233
 msgid "About ChatAI"
 msgstr "About ChatAI"
 
-#: contents/ui/CompactRepresentation.qml:28 contents/ui/WebView.qml:670
+#: contents/ui/CompactRepresentation.qml:27 contents/ui/WebView.qml:670
 #: contents/ui/main.qml:46 contents/ui/settings/AboutSettings.qml:65
 msgid "ChatAI"
 msgstr "ChatAI"
 
-#: contents/ui/CompactRepresentation.qml:43
+#: contents/ui/CompactRepresentation.qml:42
 msgid "Open ChatAI — %1"
 msgstr "Open ChatAI — %1"
 
@@ -179,11 +177,11 @@ msgstr "Open ChatAI — %1"
 msgid "Back"
 msgstr "Back"
 
-#: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:118
+#: contents/ui/ContextMenu.qml:41 contents/ui/Header.qml:127
 msgid "Forward"
 msgstr "Forward"
 
-#: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:128
+#: contents/ui/ContextMenu.qml:50 contents/ui/Header.qml:145
 #: contents/ui/settings/AppearanceSettings.qml:48
 msgid "Reload"
 msgstr "Reload"
@@ -207,6 +205,35 @@ msgstr "Copy Link Address"
 #: contents/ui/DevToolsWindow.qml:22
 msgid "ChatAI — Developer tools"
 msgstr "ChatAI — Developer tools"
+
+#: contents/ui/DownloadBar.qml:48
+msgid "%1 - Completed"
+msgstr "%1 - Completed"
+
+#: contents/ui/DownloadBar.qml:51
+msgid "%1 - Saving PDF..."
+msgstr "%1 - Saving PDF..."
+
+#: contents/ui/DownloadBar.qml:60
+msgid "%1 - %2%%3"
+msgstr "%1 - %2%%3"
+
+#: contents/ui/DownloadBar.qml:81
+msgid "Open file"
+msgstr "Open file"
+
+#: contents/ui/DownloadBar.qml:93
+msgid "Open folder"
+msgstr "Open folder"
+
+#: contents/ui/DownloadBar.qml:106 contents/ui/FindBar.qml:89
+#: contents/ui/settings/AppearanceSettings.qml:51
+msgid "Close"
+msgstr "Close"
+
+#: contents/ui/DownloadBar.qml:117 contents/ui/DownloadPopup.qml:231
+msgid "Cancel"
+msgstr "Cancel"
 
 #: contents/ui/DownloadIndicator.qml:36
 msgid "One download in progress"
@@ -362,10 +389,6 @@ msgstr "Resume"
 msgid "Pause"
 msgstr "Pause"
 
-#: contents/ui/DownloadPopup.qml:231
-msgid "Cancel"
-msgstr "Cancel"
-
 #: contents/ui/DownloadPopup.qml:237 contents/ui/WebView.qml:624
 msgid "Open"
 msgstr "Open"
@@ -424,10 +447,6 @@ msgstr "Find previous"
 msgid "Find next"
 msgstr "Find next"
 
-#: contents/ui/FindBar.qml:89 contents/ui/settings/AppearanceSettings.qml:51
-msgid "Close"
-msgstr "Close"
-
 #: contents/ui/FullScreenWindow.qml:24
 msgid "ChatAI — Full screen"
 msgstr "ChatAI — Full screen"
@@ -440,31 +459,31 @@ msgstr "Pinned: stays open when clicking outside"
 msgid "Pin: keep open when clicking outside"
 msgstr "Pin: keep open when clicking outside"
 
-#: contents/ui/Header.qml:128
+#: contents/ui/Header.qml:145
 msgid "Stop loading"
 msgstr "Stop loading"
 
-#: contents/ui/Header.qml:137
+#: contents/ui/Header.qml:154
 msgid "Home page of the current assistant"
 msgstr "Home page of the current assistant"
 
-#: contents/ui/Header.qml:157
+#: contents/ui/Header.qml:174
 msgid "Custom address"
 msgstr "Custom address"
 
-#: contents/ui/Header.qml:170
+#: contents/ui/Header.qml:187
 msgid "Find in page (Ctrl+F)"
 msgstr "Find in page (Ctrl+F)"
 
-#: contents/ui/Header.qml:193
+#: contents/ui/Header.qml:205
 msgid "More actions"
 msgstr "More actions"
 
-#: contents/ui/Header.qml:213
+#: contents/ui/Header.qml:235
 msgid "Close and release memory"
 msgstr "Close and release memory"
 
-#: contents/ui/Header.qml:227 contents/ui/settings/DownloadsSettings.qml:88
+#: contents/ui/Header.qml:249 contents/ui/settings/DownloadsSettings.qml:88
 msgid "Choose Download Folder"
 msgstr "Choose Download Folder"
 
@@ -971,8 +990,6 @@ msgid "Toolbar:"
 msgstr "Toolbar:"
 
 #: contents/ui/settings/AppearanceSettings.qml:134
-#, fuzzy
-#| msgid "Hide the toolbar"
 msgid "Always hide the toolbar"
 msgstr "Always hide the toolbar"
 
@@ -1438,115 +1455,3 @@ msgstr "Lets a link you click open another application (for example mailto: or a
 #: contents/ui/settings/WebFeaturesSettings.qml:43
 msgid "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
 msgstr "These options change how the embedded web engine behaves for every assistant. Changes apply immediately."
-
-#~ msgid "Open file"
-#~ msgstr "Open file"
-
-#~ msgid "Go back to previous page"
-#~ msgstr "Go back to previous page"
-
-#~ msgid "Go forward to next page"
-#~ msgstr "Go forward to next page"
-
-#~ msgid "Return to homepage/default chat"
-#~ msgstr "Return to homepage/default chat"
-
-#~ msgid "Select or enter chat website URL"
-#~ msgstr "Select or enter chat website URL"
-
-#~ msgid "Header will hide automatically when not in use"
-#~ msgstr "Header will hide automatically when not in use"
-
-#~ msgid "Header will stay visible"
-#~ msgstr "Header will stay visible"
-
-#~ msgid "Manage downloads and download folder"
-#~ msgstr "Manage downloads and download folder"
-
-#~ msgid "Widget will close when clicking outside"
-#~ msgstr "Widget will close when clicking outside"
-
-#~ msgid "Custom URL..."
-#~ msgstr "Custom URL..."
-
-#~ msgid "Icon:"
-#~ msgstr "Icon:"
-
-#~ msgid "Default adaptive icon"
-#~ msgstr "Default adaptive icon"
-
-#~ msgid "Default light icon"
-#~ msgstr "Default light icon"
-
-#~ msgid "Filled icon"
-#~ msgstr "Filled icon"
-
-#~ msgid "Colorful icon"
-#~ msgstr "Colorful icon"
-
-#~ msgid "Header Options"
-#~ msgstr "Header Options"
-
-#~ msgid "Auto-hide header (show on mouse hover)"
-#~ msgstr "Auto-hide header (show on mouse hover)"
-
-#~ msgid "Hide Keep Open button"
-#~ msgstr "Hide Keep Open button"
-
-#~ msgid "Hide Custom URL button"
-#~ msgstr "Hide Custom URL button"
-
-#~ msgid "Hide Auto-Hide button"
-#~ msgstr "Hide Auto-Hide button"
-
-#~ msgid "Hide Close button"
-#~ msgstr "Hide Close button"
-
-#~ msgid "Hide Home button"
-#~ msgstr "Hide Home button"
-
-#~ msgid "Hide Download button"
-#~ msgstr "Hide Download button"
-
-#~ msgid "Hide navigation buttons"
-#~ msgstr "Hide navigation buttons"
-
-#~ msgid "Hide refresh button"
-#~ msgstr "Hide refresh button"
-
-#~ msgid "You can still use the Go back to... and Keep open actions by right-clicking the widget icon."
-#~ msgstr "You can still use the Go back to... and Keep open actions by right-clicking the widget icon."
-
-#~ msgid "Predefined Sites"
-#~ msgstr "Predefined Sites"
-
-#~ msgid "If notifications are not working create the file:"
-#~ msgstr "If notifications are not working create the file:"
-
-#~ msgid "containing the following text:"
-#~ msgstr "containing the following text:"
-
-#~ msgid "Allow geolocation access"
-#~ msgstr "Allow geolocation access"
-
-#~ msgid "Allow using webcam"
-#~ msgstr "Allow using webcam"
-
-#~ msgid "Enable spatial navigation"
-#~ msgstr "Enable spatial navigation"
-
-#~ msgid "Allows navigation between focusable elements using arrow keys"
-#~ msgstr "Allows navigation between focusable elements using arrow keys"
-
-#~ msgid "Allow JavaScript to access clipboard"
-#~ msgstr "Allow JavaScript to access clipboard"
-
-#~ msgid "Allow unknown URL schemes"
-#~ msgstr "Allow unknown URL schemes"
-
-#~ msgid ""
-#~ "Cache location: %1\n"
-#~ "Profile location: %2"
-#~ msgstr ""
-#~ "Cache location: %1\n"
-#~ "Profile location: %2"
